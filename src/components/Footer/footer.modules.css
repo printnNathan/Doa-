@@ -1,0 +1,40 @@
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 8px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer-section {
+    flex: 1;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 3px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px; /* Reduzindo o tamanho da fonte dos links */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  h2 {
+    font-size: 14px; /* Reduzindo o tamanho da fonte dos títulos */
+  }
+  
