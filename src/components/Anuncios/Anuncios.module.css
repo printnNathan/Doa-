@@ -1,3 +1,13 @@
-.ul li {
-    background-color: rgb(72, 0, 139);
+.TituloPrincipal {
+    padding: 1.2%;
 }
+
+ /*.Painel {
+    margin-left: 30%;
+}*/
+
+.Painel {
+    display: flex;
+    justify-content: center;
+  }
+  

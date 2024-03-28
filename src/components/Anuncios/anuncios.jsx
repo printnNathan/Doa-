@@ -1,10 +1,14 @@
+// Anuncios.jsx
 import { Box, Tab } from '@mui/material';
 import React, { useState } from 'react';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
-
+import PublicadosPanel from './PublicadosPanel';
+import PendentesPanel from './PendentesPanel';
+import InativosPanel from './InativosPanel';
+import ExpiradosPanel from './ExpiradosPanel';
+import Styles from '../Anuncios/Anuncios.module.css';
 
 function Anuncios() {
   const [tabSelecionada, setTabSelecionada] = useState('1');
@@ -15,18 +19,10 @@ function Anuncios() {
 
   return (
     <div>
-      <div><h1>Anúncios</h1></div>
-      {/* 
-            <ul className={styles.anuncios}>
-                <li><h2 className={styles.anuncios}>Publicados</h2></li>      
-                <li><h2>Pendentes</h2></li>
-                <li><h2>Inativos</h2></li>
-                <li><h2>Expirados</h2></li>
-            </ul> */}
-
+      <div className={Styles.TituloPrincipal}><h1>Anúncios</h1></div>
       <Box sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={tabSelecionada}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={Styles.Painel}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               <Tab label="Publicados" value="1" />
               <Tab label="Pendentes" value="2" />
@@ -34,15 +30,17 @@ function Anuncios() {
               <Tab label="Expirados" value="4" />
             </TabList>
           </Box>
-          <TabPanel value="1">Publicados</TabPanel>
-          <TabPanel value="2">Item Two</TabPanel>
-          <TabPanel value="3">Item Three</TabPanel>
-          <TabPanel value="4">Item Four</TabPanel>
+          <Box sx={{ backgroundColor: "#FF0000", paddingLeft: "20%", paddingRight: "20%"  }} >
+
+            <TabPanel value="1"><PublicadosPanel /></TabPanel>
+            <TabPanel value="2"><PendentesPanel /></TabPanel>
+            <TabPanel value="3"><InativosPanel /></TabPanel>
+            <TabPanel value="4"><ExpiradosPanel /></TabPanel>
+          </Box>
         </TabContext>
       </Box>
     </div>
   );
 }
-
 
 export default Anuncios;

@@ -5,14 +5,14 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import styles from "./Header.modules.css";
+import styles from "./Header.module.css";
 
 
 function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Doa+</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -21,7 +21,7 @@ function Header() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link href="#action2">Meus Anúncios</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -32,8 +32,8 @@ function Header() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+            <Nav.Link href="#">
+              Chat
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -43,7 +43,7 @@ function Header() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success" className={styles.Button}><FaSearch /></Button>
+            <Button variant="outline-success" className={styles.SearchButton}><FaSearch /></Button>
           </Form>
         </Navbar.Collapse>
       </Container>

@@ -1,0 +1,14 @@
+*{
+    padding: 1.3px;
+}
+
+
+
+.SearchButton {
+    background-color: #7900f94c;
+    color: black;
+}
+
+.SearchButton:hover {
+    background-color: #7800f99a; /* Cor de fundo quando o mouse passa por cima */
+}
