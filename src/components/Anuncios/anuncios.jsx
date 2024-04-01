@@ -32,7 +32,7 @@ function Anuncios() {
           </Box>
           <Box sx={{ backgroundColor: "#FF0000", paddingLeft: "20%", paddingRight: "20%"  }} >
 
-            <TabPanel value="1"><PublicadosPanel /></TabPanel>
+            <TabPanel value="1"><PendentesPanel /></TabPanel>
             <TabPanel value="2"><PendentesPanel /></TabPanel>
             <TabPanel value="3"><InativosPanel /></TabPanel>
             <TabPanel value="4"><ExpiradosPanel /></TabPanel>
