@@ -74,6 +74,6 @@ body{
     background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
     border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
     position: absolute; /* Posicionamento absoluto */
-    margin-top: -200px;
+    margin-top: 1px;
     margin-left: 250px;
 }

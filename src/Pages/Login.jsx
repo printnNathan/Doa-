@@ -1,12 +1,10 @@
-import Cadastro from '../components/CadastroDeUsuario/Cadastro'
+import CadastroDdeUsuario from '../components/CadastroDeUsuario/Cadastro'
 import React from 'react'
 
-const Login = () => {
+export default function Login() {
   return (
     <div>
-      <Cadastro/>
+      <CadastroDdeUsuario/>
     </div>
   )
 }
-
-export default Login
