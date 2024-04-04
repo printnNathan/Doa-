@@ -1,14 +1,28 @@
 *{
-    padding: 1.3px;
+    padding: 1.5px;
 }
 
-
-
 .SearchButton {
-    background-color: #7900f94c;
-    color: black;
+    background-color: #7900f94c; /* Cor de fundo do botão de busca */
+    color: black; /* Cor do texto do botão de busca */
+    padding: 10px 20px; /* Adicione padding para melhorar a usabilidade do botão */
+    border: none; /* Remova a borda padrão do botão */
+    cursor: pointer; /* Altere o cursor para indicar que é clicável */
 }
 
 .SearchButton:hover {
-    background-color: #7800f99a; /* Cor de fundo quando o mouse passa por cima */
+    background-color: #7b00ff9a; /* Cor de fundo quando o mouse passa por cima */
 }
+
+/* Estilos para os itens do navbar */
+.navLink {
+    color: #000000; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    margin: 0 50px; /* Margem entre os itens */
+    text-decoration: none; /* Remova o sublinhado dos links */
+  }
+  
+  .navLink:hover {
+    color: #00f; /* Cor do texto quando o mouse passa por cima */
+  }
+  
