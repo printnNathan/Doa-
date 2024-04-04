@@ -27,7 +27,6 @@ const CadastroDeUsuario = () => {
                     <button className={styles.BotãoDeEntrar}>Salvar alterações</button>
                     </div>
                     
-                    <span>Cadastre-se Gratuitamente</span>
 
                 </form>
                
@@ -38,7 +37,13 @@ const CadastroDeUsuario = () => {
                     <div>
                         <h3 className={styles.TextoLogin}>E-mail:Esperando o back-end</h3>
                         <hr></hr>
-                        <h3 className={styles.TextoLogin}>Telefone::Esperando o back-end</h3>
+                        <h3 className={styles.TextoLogin}>Telefone:Esperando o back-end</h3>
+                        <hr></hr>
+                        <h3 className={styles.TextoLogin}>Conectado com rede social:Esperando o back-end</h3>
+                        <hr></hr>
+                        <img src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil"width={50} height={60}/>
+                        <span>Fotode perfil</span> 
+                        <p>compartilhamento via redde social: Esperando o back</p>
                     </div>
                 </form>
             </div>

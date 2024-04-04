@@ -13,11 +13,11 @@ import CadastrarUsuario from "./Pages/CadastrarUsuario"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <EscolherCategoria />,
+    element: <CadastrarUsuario />,
   },
   {
     path: "/",
-    element: <CadastrarUsuario />,
+    element: <EscolherCategoria />,
   },
   {
     path: "contact",
