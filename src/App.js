@@ -8,22 +8,27 @@ import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProv
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
+import CadastrarUsuario from "./Pages/CadastrarUsuario"
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <EscolherCategoria/>,
-    }, 
-    {
-      path: "contact",
-      element: <Home/>,
-    }
+  {
+    path: "/",
+    element: <EscolherCategoria />,
+  },
+  {
+    path: "/",
+    element: <CadastrarUsuario />,
+  },
+  {
+    path: "contact",
+    element: <Home />,
+  }
 ]);
 
 function App() {
   return (
     <React.StrictMode>
-    <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </React.StrictMode>
   );
 }
