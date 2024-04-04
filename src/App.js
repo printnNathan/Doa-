@@ -7,12 +7,12 @@ import Anuncios from '../src/components/Anuncios/Anuncios';
 import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Login from "./Pages/Login"
-
-const router = createBrowserRouter([
-    {
+import CadastrarUsuario from "./Pages/CadastrarUsuario"
+const router = createBrowserRouter([  
+  {
       path: "/",
-      element: <Login/>,
-    }, 
+      element: <CadastrarUsuario/>,
+    },
     {
       path: "contact",
       element: <Home/>,
