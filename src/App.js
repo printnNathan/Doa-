@@ -6,12 +6,13 @@ import Footer from '../src/components/Footer/footer';
 import Anuncios from '../src/components/Anuncios/Anuncios';
 import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./Pages/Home";
-import Login from "./Pages/Login"
+import Login from "./Pages/Login";
+import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Login/>,
+      element: <EscolherCategoria/>,
     }, 
     {
       path: "contact",
