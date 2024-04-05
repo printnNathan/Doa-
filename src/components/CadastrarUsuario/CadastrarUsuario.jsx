@@ -36,18 +36,26 @@ const CadastroDeUsuario = () => {
                  
                     <div>
                         <h3 className={styles.TextoLogin}>E-mail:Esperando o back-end</h3>
-                        <hr></hr>
+                        <hr className={styles.Hr}></hr>
                         <h3 className={styles.TextoLogin}>Telefone:Esperando o back-end</h3>
-                        <hr></hr>
+                        <hr className={styles.Hr}></hr>
                         <h3 className={styles.TextoLogin}>Conectado com rede social:Esperando o back-end</h3>
-                        <hr></hr>
-                        <img src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil"width={50} height={60}/>
-                        <span>Fotode perfil</span> 
-                        <p>compartilhamento via redde social: Esperando o back</p>
+                        <hr className={styles.Hr}></hr>
+                        <h5>Fotode perfil</h5>
+                        <img className={styles.img} src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil"width={70} height={70} />
+                        <span>compartilhamento via redde social: Esperando o back</span>
                     </div>
                 </form>
             </div>
-
+            <div className={styles.CardPrincipal}>
+                    <div><h6 className={styles.CardPrincipal2}>Adicionar endereço +</h6></div>
+            </div>
+            <div className={styles.CardPrincipal}>
+                    <h3>Desativar minha conta</h3>
+                <img src='https://img.freepik.com/vetores-premium/sinais-de-aviso-de-perigo-de-alta-tensao-isolado-em-um-fundo-branco_68708-427.jpg' alt="Alerta"width={80} height={90}/>
+                  <span>Seu perfil será desabilitado e anúncios excluídos.Ative a conta quando quiser</span>
+                  
+            </div>
         </div>
            
     )
