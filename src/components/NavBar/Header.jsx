@@ -36,7 +36,7 @@ function Header() {
               className={`me-2 ${styles.SearchInput}`}
               aria-label="Search"
             />
-            <Button variant="outline-success" className={styles.SearchButton}>
+            <Button variant="outline-success" className={`${styles.SearchButton} btn`}>
             <FontAwesomeIcon icon={faSearch} />
             </Button>
           </Form>

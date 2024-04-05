@@ -7,11 +7,21 @@ import Anuncios from '../src/components/Anuncios/Anuncios';
 import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Login from "./Pages/Login"
+import CadastroDeUsuario from './components/CadastroDeUsuario/Cadastro';
+import PublicadosPanel from './components/Anuncios/PublicadosPanel';
+
+
+
+
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Login/>,
+      element: <Home/>,
+    }, 
+    {
+      path: "/",
+      element: <CadastroDeUsuario/>,
     }, 
     {
       path: "contact",

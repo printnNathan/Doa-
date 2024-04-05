@@ -23,6 +23,6 @@
   }
   
   .navLink:hover {
-    color: #00f; /* Cor do texto quando o mouse passa por cima */
+    color: rgb(54, 50, 50); /* Cor do texto quando o mouse passa por cima */
   }
   
