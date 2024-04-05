@@ -7,8 +7,8 @@ export default function CadastrarUsuario2() {
   return (
     <div>
         <Navbar/>
-        <Footer/>
         <CadastrarUsuario/>
+        <Footer/>
     </div>
   )
 }
