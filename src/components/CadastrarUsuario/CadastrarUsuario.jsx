@@ -4,7 +4,7 @@ import styles from  './CadastrarUsuario.module.css';
 
 
 
-const CadastroDeUsuario = () => {
+const CadastrarUsuario = () => {
     return (
         <div>
            <div className={styles.CardPrincipal}>
@@ -26,7 +26,6 @@ const CadastroDeUsuario = () => {
                     <div>
                     <button className={styles.BotãoDeEntrar}>Salvar alterações</button>
                     </div>
-                    
 
                 </form>
                
@@ -60,4 +59,4 @@ const CadastroDeUsuario = () => {
            
     )
 }
-export default CadastroDeUsuario;
+export default CadastrarUsuario;
