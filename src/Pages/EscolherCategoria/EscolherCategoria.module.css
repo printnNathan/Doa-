@@ -2,33 +2,49 @@ body{
     background-color: rgb(255, 255, 255);
 }
 
-.Bola {
-    width: 200px; /* Largura da bola */
-    height: 200px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
-    margin-top: 1px;
-    margin-left: 250px;
-}
-
-.TextoCategorias {
-    padding-bottom: 14px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.TextoPronto {
+.Texto1 {
     padding-bottom: 11px;
     padding-top: 10px;
     text-align: center;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+.Texto2 {
+    padding-bottom: 14px;
+    padding-top: 10px;
+    text-align: center;
+    margin-top: 45px;
+    font-size: 30px;
 }
 
 .Categorias {
     width: 200px;
     height: 200px;
-    padding: 7px;
     border-radius: 10px;
     background-color: #7979796b;
-    color: white;
+    color: black;
+    margin: 0 50px; /* Espaçamento horizontal entre os botões */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: larger;
 }
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* % da altura da tela */
+}
+  
+  .TopButtons,
+  .BottomButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px; /* Espaçamento entre os grupos de botões */
+}
+
+.Icons {
+    width: 50px; /* Largura do ícone */
+    height: 50px; /* Altura do ícone */
+  }

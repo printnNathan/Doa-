@@ -11,11 +11,12 @@ import CadastrarUsuario from './components/CadastrarUsuario/CadastrarUsuario';
 import CadastroDeUsuario from './components/CadastroDeUsuario/Cadastro';
 import PublicadosPanel from './components/Anuncios/PublicadosPanel';
 import Requisiçãodeserviço from './components/Requisiçãodeserviço/Requisiçãodeserviço';
+import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Requisiçãodeserviço/>,
+      element: <EscolherCategoria/>,
     }, 
     {
       path: "contact",
