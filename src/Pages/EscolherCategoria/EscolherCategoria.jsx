@@ -8,17 +8,41 @@ export default function EscolherCategoria() {
       <NavBar/>
 
       <div>
-        <h1 className={styles.TextoPronto}>Pronto para fazer a diferença?</h1>
+        <h1 className={styles.Texto1}>Pronto para fazer a diferença?</h1>
       </div>
   
       <div>
-        <h1 className={styles.TextoCategorias}>Categorias</h1>
+        <h1 className={styles.Texto2}>Categorias</h1>
       </div>
 
-      <input type="button" placeholder="Móveis" className={styles.Categorias} />
+<div className={styles.Container}>
+        <div className={styles.TopButtons}>
+          <button type="button" className={styles.Categorias}>
+          <img src={"./images/Moveis.png"} className={styles.Icons} alt="" />
+          <p></p>
+            Móveis
+          </button>
+          <button type="button" className={styles.Categorias}>
+          <img src={"./images/Servicos.png"} className={styles.Icons} alt="" />
+          <p></p>
+            Serviços
+          </button>
+        </div>
+
+        <div className={styles.BottomButtons}>
+          <button type="button" className={styles.Categorias}>
+          <img src={"./images/Alimentos.png"} className={styles.Icons} alt="" />
+          <p></p>
+            Alimentos
+          </button>
+          <button type="button" className={styles.Categorias}>
+          <img src={"./images/Roupas.png"} className={styles.Icons} alt="" />
+          <p></p>
+            Roupas
+          </button>
+        </div>
     </div>
-  
+</div>
+
   )
 }
-
-
