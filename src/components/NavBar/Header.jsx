@@ -16,29 +16,31 @@ function Header() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto">
             <Nav.Link href="#action1" className={styles.navLink}>
-            <FontAwesomeIcon icon={faHome} /> Home
+              <FontAwesomeIcon icon={faHome} /> Home
             </Nav.Link>
             <Nav.Link href="#action2" className={styles.navLink}>
-            <FontAwesomeIcon icon={faList} /> Meus Anúncios
+              <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Nav.Link>
-            <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Link</span>} id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Something else here</NavDropdown.Item>
+            <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Quem somos</span>} id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Sobre</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Contatos</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#" className={styles.navLink}>
-            <FontAwesomeIcon icon={faComments} /> Chat
+              <FontAwesomeIcon icon={faComments} /> Chat
             </Nav.Link>
           </Nav>
           <Form className="d-flex ms-auto">
             <Form.Control
-              type="search"
-              placeholder="Search"
+              type="pesquise"
+              placeholder="Pesquise"
               className={`me-2 ${styles.SearchInput}`}
-              aria-label="Search"
+              aria-label="Pesquise"
             />
-            <Button variant="outline-success" className={`${styles.SearchButton} btn`}>
-            <FontAwesomeIcon icon={faSearch} />
-            </Button>
+            <div>
+              <Button variant="outline-success" className={`btn ${styles.SearchButton}`}>
+                <FontAwesomeIcon icon={faSearch} />
+              </Button>
+            </div>
           </Form>
         </Navbar.Collapse>
       </Container>

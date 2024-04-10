@@ -14,6 +14,10 @@ import Requisiçãodeserviço from './components/Requisiçãodeserviço/Requisi�
 
 const router = createBrowserRouter([
     {
+    path: "/",
+    element: <CadastrarUsuario/>,
+    },
+    {
       path: "/",
       element: <Requisiçãodeserviço/>,
     }, 
