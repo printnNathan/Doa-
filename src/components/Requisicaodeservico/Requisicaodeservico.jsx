@@ -1,8 +1,12 @@
 import React from "react";
-import styles from './Requisiçãodeserviço.module.css';
+import styles from './Requisicaodeservico.module.css';
+import Footer from '../Footer/footer';
+import NavBar from '../NavBar/Header'
 
-const Requisiçãodeserviço = () => {
+const Requisiçãodeservico = () => {
     return(
+        <div>
+        <NavBar />
         <form>
             <h1 className={styles.TextoLogin}>Agora, compartilhe algumas informações sobre seu produto</h1>
             <div className={styles.CardEmail}>
@@ -22,6 +26,10 @@ const Requisiçãodeserviço = () => {
                 <span className={styles.font1}>CONTATO</span>
             </div> 
         </form>
+        <Footer /> {/* Renderiza o Footer */}
+
+    </div>
+    
     )
 }
-export default Requisiçãodeserviço;
+export default Requisiçãodeservico;

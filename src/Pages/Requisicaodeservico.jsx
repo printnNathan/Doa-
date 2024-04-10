@@ -1,14 +1,14 @@
 import React from 'react';
 import Footer from '../components/Footer/footer';
 import Navbar from '../components/NavBar/Header';
-import Requisiçãodeserviço from '../components/Requisiçãodeserviço/Requisiçãodeserviço';
+import Requisiçãodeservico from '../components/Requisiçãodeservico/Requisiçãodeservico';
 
-export default function Requisiçãodeserviço () {
+export default function Requisiçãodeservico () {
   return (
     <div>
         <Navbar/>
         <Footer/>
-        <Requisiçãodeserviço/>
+        <Requisiçãodeservico/>
     </div>
   )
 }
