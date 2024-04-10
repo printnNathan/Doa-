@@ -6,12 +6,20 @@ import Footer from '../src/components/Footer/footer';
 import Anuncios from '../src/components/Anuncios/Anuncios';
 import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./Pages/Home";
-import Login from './Pages/Login';
+import Login from "./Pages/Login"
+import CadastrarUsuario from './components/CadastrarUsuario/CadastrarUsuario';
+import CadastroDeUsuario from './components/CadastroDeUsuario/Cadastro';
+import PublicadosPanel from './components/Anuncios/PublicadosPanel';
+import Requisiçãodeserviço from './components/Requisiçãodeserviço/Requisiçãodeserviço';
 
 const router = createBrowserRouter([
     {
+    path: "/",
+    element: <CadastrarUsuario/>,
+    },
+    {
       path: "/",
-      element: <Login/>,
+      element: <Requisiçãodeserviço/>,
     }, 
     {
       path: "contact",
