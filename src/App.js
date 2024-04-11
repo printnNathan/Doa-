@@ -6,13 +6,14 @@ import CadastrarUsuario from './components/CadastrarUsuario/CadastrarUsuario';
 import Login from './Pages/Login/Login';
 import Home from './Pages/PaginaHome/Home';
 import { ToastContainer } from 'react-toastify';
+import Anuncios from './components/Anuncios/Anuncios';
 
 
 const router = createBrowserRouter([
 
   {
     path: "/",
-    element: <Login/>,
+    element: <Anuncios/>,
   },
   {
     path: "/",

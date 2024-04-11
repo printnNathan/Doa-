@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from  './CadastrarUsuario.module.css';
-import Footer from '../Footer/footer2';
+import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
 
 const CadastrarUsuario = () => {

@@ -9,8 +9,11 @@ import PendentesPanel from './PendentesPanel';
 import InativosPanel from './InativosPanel';
 import ExpiradosPanel from './ExpiradosPanel';
 import Styles from '../Anuncios/Anuncios.module.css';
+import Footer from '../Footer/Footer';
+import NavBar from '../NavBar/Header'
 
 function Anuncios() {
+
   const [tabSelecionada, setTabSelecionada] = useState('1');
 
   const handleChange = (event, newValue) => {
@@ -36,6 +39,7 @@ function Anuncios() {
             <TabPanel value="2"><PendentesPanel /></TabPanel>
             <TabPanel value="3"><InativosPanel /></TabPanel>
             <TabPanel value="4"><ExpiradosPanel /></TabPanel>
+
           </Box>
         </TabContext>
       </Box>
