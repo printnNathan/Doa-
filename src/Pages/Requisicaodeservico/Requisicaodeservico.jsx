@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styles from './Requisicaodeservico.module.css';
-import Footer from '../../components/Footer/footer';
+import Footer from './components/Footer/footer';
 import NavBar from '../../components/NavBar/Header'
 
 const Requisiçãodeservico = () => {
+
     return(
         <div>
             <NavBar />
@@ -32,7 +33,4 @@ const Requisiçãodeservico = () => {
         </div>
     )
 }
-export default Requisiçãodeservico;
-
-
-
+export default RequisicaoDeServico;
