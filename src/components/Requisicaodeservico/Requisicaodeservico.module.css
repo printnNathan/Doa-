@@ -33,8 +33,42 @@ body{
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 100%;
+    width: 50%;
     height: 40px ;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.Apelido2 {
+    background-color: rgba(128, 128, 128, 0.396);
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    height: 40px ;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.Apelido3 {
+    background-color: rgba(128, 128, 128, 0.396);
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    height: 40px ;
+
+
+}
+.font1{
+    font-size: 14px;
+}
+.font2{
+    font-size: 14px;
+}
+.font3{
+    font-size: 14px;
 }
 .CardEmail{
     margin-bottom: 10px;
@@ -65,11 +99,6 @@ body{
     font-size: 12px;
     top: 50%;
 }
-
-.font1{
-    font-size: 14px;
-}
-
 .BotãoDeEntrar {
     width: 100%;
     padding: 7px;
@@ -90,3 +119,45 @@ body{
 .Hr {
     border: 1.5px solid #000;
 }
+/* Requisicaodeservico.module.css */
+
+.neumorphicButton {
+    position: relative;
+    background-color: #e70c0c;
+    border: none;
+    border-radius: 50px;
+    width: 60px;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 0.5%;
+  }
+  
+  .innerButton {
+    position: absolute;
+    background-color: #e0e0e0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .neumorphicButton.active .innerButton {
+    transform: translateX(30px);
+    background-color: #ffffff;
+    box-shadow: -5px -5px 10px #bebebe, 5px 5px 10px #ffffff;
+  }
+  
+  .neumorphicButton.active {
+    box-shadow: inset -5px -5px 10px #17f707, inset 5px 5px 10px #17f707;
+  }
+  .neumorphicButton.active {
+    background-color: #00ff00; /* Verde */
+  }
+  .ExibirTelefone {
+    margin-left: 2%;
+}
+
+  
