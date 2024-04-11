@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from './Requisicaodeservico.module.css';
-import Footer from '../Footer/footer';
+import styles from './RequisicaoDeServico.module.css';
+import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
 
-const Requisiçãodeservico = () => {
+const RequisicaoDeServico = () => {
     const [alternancia, setAlternancia] = useState(false);
 
     const handleAlternancia = (event) => {
@@ -43,7 +43,7 @@ const Requisiçãodeservico = () => {
         </div>
     )
 }
-export default Requisiçãodeservico;
+export default RequisicaoDeServico;
 
 
 
