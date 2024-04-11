@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from  './CadastrarUsuario.module.css';
+<<<<<<< HEAD:src/components/CadastrarUsuario/CadastrarUsuario.jsx
 import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
+=======
+import Footer from '../../components/Footer/footer2';
+import NavBar from '../../components/NavBar/Header'
+>>>>>>> 0774166d743f171e8f36733d7584546ed6c805b2:src/Pages/CadastrarUsuario/CadastrarUsuario.jsx
 
 const CadastrarUsuario = () => {
     return (
         <div>
-        <NavBar /> {/* Renderiza o NavBar */}
+        <NavBar /> 
         <div className={styles.CardPrincipal}>
             <form>
                 <h1 className={styles.TextoLogin}>Meu cadastro</h1>
@@ -49,7 +54,7 @@ const CadastrarUsuario = () => {
             <img src='https://img.freepik.com/vetores-premium/sinais-de-aviso-de-perigo-de-alta-tensao-isolado-em-um-fundo-branco_68708-427.jpg' alt="Alerta" width={80} height={90} />
             <span>Seu perfil será desabilitado e anúncios excluídos. Ative a conta quando quiser.</span>
         </div>
-        <Footer /> {/* Renderiza o Footer */}
+        <Footer />
     </div>
 );
 }
