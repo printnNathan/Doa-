@@ -44,7 +44,7 @@ body{
     margin-bottom: 60px; /* Espaçamento entre os grupos de botões */
 }
 
-.Icons {
-    width: 50px; /* Largura do ícone */
-    height: 50px; /* Altura do ícone */
+.Categorias img {
+    width: 100%; /* Largura do ícone */
+    height: 100%; /* Altura do ícone */
   }
