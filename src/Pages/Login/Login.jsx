@@ -3,7 +3,9 @@ import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
 import { useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
-import ModalCadastroUsuario from '../../components/ModalCadastro/ModalCadastroUsuario';
+import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from '../PaginaHome/Home';
 
 export default function Cadastro() {
 
