@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../components/Footer/footer';
+import Footer from '../components/Footer/Footer';
 import CadastrarUsuario from '../components/CadastrarUsuario/CadastrarUsuario';
 import Navbar from '../components/NavBar/Header';
 
