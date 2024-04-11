@@ -7,10 +7,10 @@ import Anuncios from './components/Anuncios/Anuncios';
 import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Login from "./Pages/Login"
-import CadastrarUsuario from './components/CadastrarUsuario/CadastrarUsuario';
+import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
 import CadastroDeUsuario from './components/CadastroDeUsuario/Cadastro';
 import PublicadosPanel from './components/Anuncios/PublicadosPanel';
-import Requisicaodeservico from './components/Requisicaodeservico/Requisicaodeservico';
+import Requisicaodeservico from './Pages/Requisicaodeservico/Requisicaodeservico';
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 
 

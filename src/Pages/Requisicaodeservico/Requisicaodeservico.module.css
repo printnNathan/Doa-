@@ -29,46 +29,21 @@ body{
     width: 100%;
     height: 40px ;
 }
-.Apelido {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-    width: 50%;
-    height: 40px ;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
 .Apelido2 {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 50%;
-    height: 40px ;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    width: 300%;    
+    height: 100px;
+    text-align: inherit;
 }
-.Apelido3 {
+
+.Apelido {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 50%;
-    height: 40px ;
-
-
-}
-.font1{
-    font-size: 14px;
-}
-.font2{
-    font-size: 14px;
-}
-.font3{
-    font-size: 14px;
+    width: 300%;
+    
 }
 .CardEmail{
     margin-bottom: 10px;
@@ -99,6 +74,11 @@ body{
     font-size: 12px;
     top: 50%;
 }
+
+.font1{
+    font-size: 14px;
+}
+
 .BotãoDeEntrar {
     width: 100%;
     padding: 7px;
@@ -159,5 +139,9 @@ body{
   .ExibirTelefone {
     margin-left: 2%;
 }
-
-  
+.form{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
