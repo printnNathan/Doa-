@@ -1,33 +1,33 @@
 import axios from "axios";
-import AuthServices from "./AuthServices";
+import AuthService from "./AuthService";
 
 function createHeader() {
-    const jwt = AuthServices.PegarToken();
+    const jwt = AuthService.PegarToken();
     if (jwt) {
         return {
             headers: {
-                Authorzition: 'Bearer ' + jwt
+                Authorization: 'Bearer ' + jwt
             }
         }
     }
 }
 
-const baseUrl = "https://locahost:7007/api"
+const baseUrl = "https://localhost:7007/api"
 const ApiService = {
+
     async get(endpoint) {
-        const headers = createHeader();
-
-        const response = await axios.get(baseUrl + endpoint, headers)
-        return response;
-    },
-
-    async post(endpoint, body) {
         const headers = createHeader();
 
         const response = await axios.get(baseUrl + endpoint, headers);
         return response;
-    }
-}
+    },
 
+    async post(endpoint, body) {
+        const header = createHeader();
+
+        const response = await axios.post(baseUrl + endpoint, body, header);
+        return response;
+    }
+};
 
 export default ApiService;
