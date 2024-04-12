@@ -45,9 +45,9 @@ export default function Cadastro() {
             ToastService.Success("Seja bem vindo, " + email);
            
             navigate("/Home");
-            setTimeout(() => {
-             window.location.reload();
-            }, 1000);
+            //setTimeout(() => {
+            //window.location.reload();
+            //}, 1000);
         }
         catch (error) {
             if (error.response?.status === 401) {
