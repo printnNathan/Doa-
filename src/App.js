@@ -1,24 +1,29 @@
 import React from 'react';
 import { View, StyleSheet } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Anuncios from './components/Anuncios/Anuncios';
 import Login from './Pages/Login/Login'
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Anuncios/>,
-  }
-]);
+import Home from './Pages/PaginaHome/Home';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/Home",
+      element: <Home />,
+    },
+  ]);
+
   return (
-    <React.StrictMode>
-    <RouterProvider router={router}/>
-    </React.StrictMode>
+    <>
+      <ToastContainer />
+      <RouterProvider router={router} />
+    </>
   );
 }
 

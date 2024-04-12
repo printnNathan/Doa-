@@ -4,7 +4,7 @@ const ToastService = {
     Error(message) {
         toast.error(message, {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 50,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -17,7 +17,7 @@ const ToastService = {
     Success(message) {
         toast.success(message, {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 50,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

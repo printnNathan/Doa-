@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from '../PaginaHome/Home';
+
 
 export default function Cadastro() {
 
@@ -22,7 +22,7 @@ export default function Cadastro() {
     function VerificarLogin() {
         const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
         if (usuarioEstaLogado) {
-            navigate("/");
+            navigate("/login");
         }
     }
 
@@ -43,8 +43,11 @@ export default function Cadastro() {
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem vindo, " + email);
-
-            navigate("/");
+           
+            navigate("/Home");
+            setTimeout(() => {
+             window.location.reload();
+            }, 1000);
         }
         catch (error) {
             if (error.response?.status === 401) {
