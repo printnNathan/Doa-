@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import styles from './Login.module.css';
 
 
 export default function Cadastro() {
@@ -64,25 +65,26 @@ export default function Cadastro() {
                 modalAberto={modalAberto}
                 setModalAberto={setModalAberto}
             />
-            <div>
+            
+            <div className={styles.CardPrincipal}>
                 <span>Login</span>
-                <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder='E-mail' />
+                <span className={styles.font1}>Email:</span>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
 
-                <input
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
-                    placeholder='Senha'
-                    type='Password' />
+                <span className={styles.font1}>Senha</span>
+                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
+                <div className={styles.EsqueceuSenha}>Esqueceu a Senha</div>
 
                 <button onClick={Login}>Login</button>
-            </div>
-            <div>
+
+                <div>
                 <button onClick={AbrirModal}>Novo por aqui? Cadastre-se</button>
+                </div>
             </div>
+
 
         </div>
     )
 }
+
+

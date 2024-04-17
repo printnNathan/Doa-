@@ -9,7 +9,6 @@ import PendentesPanel from './PendentesPanel';
 import InativosPanel from './InativosPanel';
 import ExpiradosPanel from './ExpiradosPanel';
 import Styles from '../Anuncios/Anuncios.module.css';
-import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
 
 function Anuncios() {
