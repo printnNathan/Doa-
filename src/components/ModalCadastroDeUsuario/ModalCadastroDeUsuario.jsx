@@ -15,7 +15,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
         },
     };
     Modal.setAppElement('#root');
-
+    
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 

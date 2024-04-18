@@ -8,8 +8,12 @@ import PublicadosPanel from './PublicadosPanel';
 import PendentesPanel from './PendentesPanel';
 import InativosPanel from './InativosPanel';
 import ExpiradosPanel from './ExpiradosPanel';
+<<<<<<< HEAD
 import styles from '../Anuncios/Anuncios.module.css';
 import Footer from '../Footer/Footer';
+=======
+import Styles from '../Anuncios/Anuncios.module.css';
+>>>>>>> 58d64b80db709cf0b7218ab2d3c387a8490605a7
 import NavBar from '../NavBar/Header'
 
 function Anuncios() {
