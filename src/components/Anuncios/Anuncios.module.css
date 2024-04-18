@@ -3,12 +3,11 @@
     background-color: #d7c5c5;
 }
 
- /*.Painel {
-    margin-left: 30%;
-}*/
-
 .Painel {
     display: flex;
     justify-content: center;
   }
   
+  .QuadroDeAnuncios{
+    margin-bottom: 90px;
+  }
