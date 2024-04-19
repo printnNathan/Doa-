@@ -12,7 +12,7 @@ function createHeader() {
     }
 }
 
-const baseUrl = "https://localhost:7284/api"
+const baseUrl = "https://localhost:44321/api"
 const ApiService = {
 
     async get(endpoint) {

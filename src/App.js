@@ -7,10 +7,12 @@ import Login from './Pages/Login/Login'
 import Home from './Pages/HomePage/Home';
 import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 
+
+
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/login",
+      path: "/",
       element: <Login />,
     },
     {
