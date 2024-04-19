@@ -4,6 +4,8 @@ HEAD:src/components/CadastrarUsuario/CadastrarUsuario.jsx
 import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
 src/Pages/CadastrarUsuario/CadastrarUsuario.jsx
+import Footer from '../Footer/Footer';
+import NavBar from '../NavBar/Header'
 
 const CadastrarUsuario = () => {
     return (

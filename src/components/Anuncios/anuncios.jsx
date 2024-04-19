@@ -8,7 +8,8 @@ import PublicadosPanel from './PublicadosPanel';
 import PendentesPanel from './PendentesPanel';
 import InativosPanel from './InativosPanel';
 import ExpiradosPanel from './ExpiradosPanel';
-import Styles from '../Anuncios/Anuncios.module.css';
+import styles from '../Anuncios/Anuncios.module.css';
+import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
 
 function Anuncios() {
@@ -19,12 +20,17 @@ function Anuncios() {
     setTabSelecionada(newValue);
   };
 
+
+
   return (
     <div>
-      <div className={Styles.TituloPrincipal}><h1>Anúncios</h1></div>
+
+      <div className={styles.QuadroDeAnuncios}>
+      </div>
+
       <Box sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={tabSelecionada}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={Styles.Painel}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={styles.Painel}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               <Tab label="Publicados" value="1" />
               <Tab label="Pendentes" value="2" />
@@ -32,7 +38,7 @@ function Anuncios() {
               <Tab label="Expirados" value="4" />
             </TabList>
           </Box>
-          <Box sx={{ backgroundColor: "#FF0000", paddingLeft: "20%", paddingRight: "20%"  }} >
+          <Box sx={{ paddingLeft: "20%", paddingRight: "20%"  }} >
 
             <TabPanel value="1"><PublicadosPanel /></TabPanel>
             <TabPanel value="2"><PendentesPanel /></TabPanel>

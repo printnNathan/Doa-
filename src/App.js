@@ -5,19 +5,24 @@ import { ToastContainer } from 'react-toastify';
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Login from './Pages/Login/Login'
 import Home from './Pages/HomePage/Home';
-import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 
 
 
 function App() {
   const router = createBrowserRouter([
     {
+
       path: "/",
       element: <Login />,
     },
     {
+
       path: "/Home",
       element: <Home />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 
