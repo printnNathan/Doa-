@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from  './CadastrarUsuario.module.css';
-<<<<<<< HEAD:src/components/CadastrarUsuario/CadastrarUsuario.jsx
 import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
-=======
-import Footer from '../../components/Footer/footer2';
-import NavBar from '../../components/NavBar/Header'
->>>>>>> 0774166d743f171e8f36733d7584546ed6c805b2:src/Pages/CadastrarUsuario/CadastrarUsuario.jsx
 
 const CadastrarUsuario = () => {
     return (
