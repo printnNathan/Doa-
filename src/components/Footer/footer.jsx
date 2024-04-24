@@ -1,12 +1,12 @@
 import React from 'react';
-import './footer.modules.css'; // Importando o arquivo CSS para estilização
+import './Footer.modules.css'; // Importando o arquivo CSS para estilização
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faMap, faEnvelope, faPhone, faInfo } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faPhoenixFramework, faPhoenixSquadron, faEvernote } from '@fortawesome/free-brands-svg-icons';
 
-function Footer2() {
+function Footer() {
   return (
-    <footer className="footer2">
+    <footer className="Footer">
       <div>
         <h2>Links Úteis</h2>
         <ul>
@@ -35,4 +35,4 @@ function Footer2() {
   );
 }
 
-export default Footer2;
+export default Footer;
