@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from './Requisicaodeservico.module.css';
-import Footer from './components/Footer/footer';
-import NavBar from '../../components/NavBar/Header'
+import NavBar from '../../components/NavBar/Header';
+import Footer from '../../components/Footer/Footer';
 
-const Requisiçãodeservico = () => {
+const RequisicaoDeServico = () => {
 
     return(
         <div>
@@ -28,7 +28,7 @@ const Requisiçãodeservico = () => {
                     <span className={styles.font1}>(11)9914423541</span>
                 </div>
             </form>
-          <Footer/>
+            <Footer />
 
         </div>
     )
