@@ -48,3 +48,8 @@ body{
     width: 100%; /* Largura do ícone */
     height: 100%; /* Altura do ícone */
   }
+
+.Opcoes {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -26,6 +26,10 @@ function App() {
       path: "/login",
       element: <Login />,
     },
+    {
+      path: "/requisicao",
+      element: <RequisicaoDeServico />
+    },
   ]);
 
   return (
