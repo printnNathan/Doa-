@@ -32,9 +32,13 @@ const Home = () => {
     return (
         <div>
 
-            <Navbar/>
-            <Anuncios/>
-            <Footer/>
+            {usuario && (
+                <>
+                    <Navbar />
+                    <Anuncios />
+                    <Footer />
+                </>
+            )}
         </div>
     );
 }
