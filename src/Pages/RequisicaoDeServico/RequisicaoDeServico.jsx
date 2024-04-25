@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar/Header';
 
 
 const RequisicaoDeServico = () => {
-    
+
 
     return(
         <div>
@@ -32,6 +32,7 @@ const RequisicaoDeServico = () => {
                     <span className={styles.font1}>(11)9914423541</span>
                 </div>
             </form>
+
             <div className={styles.Foto}>
                     <button>Fotos</button>
                 </div>

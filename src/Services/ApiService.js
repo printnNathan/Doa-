@@ -1,6 +1,7 @@
 import axios from "axios";
 import AuthService from "./AuthService";
 
+
 function createHeader() {
     const jwt = AuthService.PegarToken();
     if (jwt) {
@@ -12,13 +13,14 @@ function createHeader() {
     }
 }
 
-const baseUrl = "https://localhost:44321/api"
+
+const baseUrl = "https://localhost:7284/api"
 const ApiService = {
 
     async get(endpoint) {
         const headers = createHeader();
 
-        const response = await axios.get(baseUrl + endpoint, headers);
+        const response = await axios.get(baseUrl + endpoint, );
         return response;
     },
 

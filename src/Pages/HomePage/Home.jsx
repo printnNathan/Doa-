@@ -32,11 +32,14 @@ const Home = () => {
 
     return (
         <div>
-            <div>Home</div>
-            <div>{usuario.id}</div>
-               <Navbar/>
-              <Anuncios/>
-              <Footer/>
+
+            {usuario && (
+                <>
+                    <Navbar />
+                    <Anuncios />
+                    <Footer />
+                </>
+            )}
         </div>
     );
 }
