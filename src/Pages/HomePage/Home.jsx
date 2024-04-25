@@ -1,10 +1,11 @@
-import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/NavBar/Header';
 import Anuncios from '../../components/Anuncios/Anuncios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../../Services/AuthService';
 import ApiService from '../../Services/ApiService';
+import Footer from '../../components/Footer/Footer';
+
 const Home = () => {
     const navigate = useNavigate();
     const [usuario, setUsuario] = useState({});
@@ -31,12 +32,12 @@ const Home = () => {
 
     return (
         <div>
-
-            <Navbar/>
-            <Anuncios/>
-            <Footer/>
+            <div>Home</div>
+            <div>{usuario.id}</div>
+               <Navbar/>
+              <Anuncios/>
+              <Footer/>
         </div>
     );
 }
-
 export default Home

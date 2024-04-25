@@ -6,7 +6,7 @@ import { faFacebook, faTwitter, faInstagram, faPhoenixFramework, faPhoenixSquadr
 
 function Footer2() {
   return (
-    <footer className="footer">
+    <footer className="footer2">
       <div>
         <h2>Links Úteis</h2>
         <ul>

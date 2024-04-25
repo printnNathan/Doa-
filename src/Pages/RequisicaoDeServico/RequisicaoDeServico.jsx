@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import styles from './Requisicaodeservico.module.css';
-import Footer from './components/Footer/footer';
-import NavBar from '../../components/NavBar/Header'
+import Footer from '../../components/Footer/Footer';
+import NavBar from '../../components/NavBar/Header';
 
-const Requisiçãodeservico = () => {
+
+const RequisicaoDeServico = () => {
+    
 
     return(
         <div>
             <NavBar />
+
             <h1 className={styles.TextoLogin}>Agora, compartilhe algumas informações sobre seu produto</h1>
             <form className={styles.form}>
                 <div className={styles.CardEmail}>
@@ -18,6 +21,7 @@ const Requisiçãodeservico = () => {
                     <span className={styles.font1}>DESCRIÇÃO</span>
                     <input type="text" name="Senha" placeholder="SERVIÇO DOMÉSTICO" className={styles.Apelido2} />
                 </div> 
+              
                 <div className={styles.Cardapelido}>
                     <span className={styles.font1}>LOCALIZAÇÃO</span>
                     <input type="text" name="Senha" placeholder="CEP" className={styles.Apelido} />
@@ -28,9 +32,13 @@ const Requisiçãodeservico = () => {
                     <span className={styles.font1}>(11)9914423541</span>
                 </div>
             </form>
+            <div className={styles.Foto}>
+                    <button>Fotos</button>
+                </div>
           <Footer/>
 
         </div>
+        
     )
 }
 export default RequisicaoDeServico;

@@ -1,11 +1,7 @@
 import React from 'react';
 import styles from  './CadastrarUsuario.module.css';
-HEAD:src/components/CadastrarUsuario/CadastrarUsuario.jsx
-import Footer from '../Footer/Footer';
-import NavBar from '../NavBar/Header'
-src/Pages/CadastrarUsuario/CadastrarUsuario.jsx
-import Footer from '../Footer/Footer';
-import NavBar from '../NavBar/Header'
+import Footer from '../../components/Footer/Footer2';
+import NavBar from '../../components/NavBar/Header';
 
 const CadastrarUsuario = () => {
     return (
@@ -37,11 +33,9 @@ const CadastrarUsuario = () => {
                     <hr className={styles.Hr}></hr>
                     <h3 className={styles.TextoLogin}>Telefone: Esperando o back-end</h3>
                     <hr className={styles.Hr}></hr>
-                    <h3 className={styles.TextoLogin}>Conectado com rede social: Esperando o back-end</h3>
-                    <hr className={styles.Hr}></hr>
                     <h5>Fotode perfil</h5>
                     <img className={styles.img} src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil" width={70} height={70} />
-                    <span>compartilhamento via redde social: Esperando o back</span>
+                    <span>Esperando o back</span>
                 </div>
             </form>
         </div>
@@ -50,6 +44,9 @@ const CadastrarUsuario = () => {
         </div>
         <div className={styles.CardPrincipal}>
             <h3>Desativar minha conta</h3>
+
+            <button>Desativat</button>
+            
             <img src='https://img.freepik.com/vetores-premium/sinais-de-aviso-de-perigo-de-alta-tensao-isolado-em-um-fundo-branco_68708-427.jpg' alt="Alerta" width={80} height={90} />
             <span>Seu perfil será desabilitado e anúncios excluídos. Ative a conta quando quiser.</span>
         </div>

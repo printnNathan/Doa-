@@ -2,6 +2,13 @@ body{
     background-color: rgb(255, 255, 255);
 }
 
+.Foto {
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .CardPrincipal {
     border: 1.5px solid #000;
     border-radius: 10px;
@@ -35,8 +42,9 @@ body{
     display: block;
     width: 300%;    
     height: 100px;
-    text-align: inherit;
+    text-align: left;
 }
+
 
 .Apelido {
     background-color: rgba(128, 128, 128, 0.396);
