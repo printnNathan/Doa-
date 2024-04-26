@@ -19,14 +19,14 @@ export default function EscolherCategoria() {
 
 <div className={styles.Container}>
         <div className={styles.TopButtons}>
-        <Link to="/requisicao">
+        <Link to="/Requisicao">
           <button type="button" className={styles.Categorias}>
           <img src={"https://cdn-icons-png.flaticon.com/512/864/864595.png"} />
           <p></p>
           <p className={styles.Opcoes}>Móveis</p>
           </button>
           </Link>
-          <Link to="/requisicao">
+          <Link to="/Requisicao">
           <button type="button" className={styles.Categorias}>
           <img src={"https://cdn-icons-png.flaticon.com/512/1086/1086581.png"} />
           <p></p>
@@ -36,14 +36,14 @@ export default function EscolherCategoria() {
         </div>
 
         <div className={styles.BottomButtons}>
-          <Link to="/requisicao">
+          <Link to="/Requisicao">
           <button type="button" className={styles.Categorias}>
           <img src={"https://cdn-icons-png.flaticon.com/512/2940/2940816.png"} />
           <p></p>
           <p className={styles.Opcoes}>Alimentos</p>
           </button>
           </Link>
-          <Link to="/requisicao">
+          <Link to="/Requisicao">
           <button type="button" className={styles.Categorias}>
           <img src={"https://cdn-icons-png.flaticon.com/512/130/130302.png"} />
           <p></p>
