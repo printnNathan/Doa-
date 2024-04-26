@@ -6,6 +6,7 @@ import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from './Login.module.css';
+import Bolas from  '../../components/Bolas/Bolas';
 
 
 export default function Cadastro() {
@@ -75,13 +76,13 @@ export default function Cadastro() {
                 <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
                 <div className={styles.EsqueceuSenha}>Esqueceu a Senha</div>
 
-                <button onClick={Login}>Login</button>
+                <button className={styles.Botao} onClick={Login}>Login</button>
 
                 <div>
-                <button onClick={AbrirModal}>Novo por aqui? Cadastre-se</button>
+                <button className={styles.Botao2} onClick={AbrirModal}>Novo por aqui? Cadastre-se</button>
                 </div>
             </div>
-
+            <Bolas/>
 
         </div>
     )

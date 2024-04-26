@@ -1,0 +1,22 @@
+.Bola {
+    width: 150px; /* Largura da bola */
+    height: 150px; /* Altura da bola (igual à largura para torná-la redonda) */
+    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
+    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
+    position: absolute; /* Posicionamento absoluto */
+    top: 5px;
+    margin-top: 1px;
+    margin-left: 160px;
+    z-index: -1;
+}
+.Bola2 {
+    width: 150px; /* Largura da bola */
+    height: 150px; /* Altura da bola (igual à largura para torná-la redonda) */
+    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
+    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
+    position: absolute; /* Posicionamento absoluto */
+    top: 5px;
+    margin-top: 1px;
+    margin-left: 160px;
+    z-index: -1;
+}

@@ -13,11 +13,23 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <EscolherC />,
+    },
+    {
+      path: "/requisicao",
+      element: <RequisicaoDeServico />,
     },
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/Home",
+      element: <Home />,
+    },
+    {
+      path: "/Perfil",
+      element: <CadastrarUsuario />,
     },
   ]);
 

@@ -1,8 +1,8 @@
 body{
     background-color: rgb(255, 255, 255);
 }
-
 .CardPrincipal {
+    position: relative;
     border: 1.5px solid #000;
     border-radius: 10px;
     width: 45%;
@@ -12,6 +12,20 @@ body{
     margin-top:  1%;
     background-color: rgb(255, 255, 255)
 }
+.Desativar {
+    position: absolute;
+    top: 10px; /* ajuste conforme necessário */
+    left: 600px; /* ajuste conforme necessário */
+    background-color: transparent;
+    border: none; /* remove a borda */
+    color: #3b245375; /* herda a cor do texto */
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  }
+  .Desativar:hover {
+    color: #f01313; /* cor do texto quando o mouse está em cima */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* sombra quando o mouse está em cima */
+  }
 .CardPrincipal2 {
     border: 1.5px solid #000;
     border-radius: 50px;

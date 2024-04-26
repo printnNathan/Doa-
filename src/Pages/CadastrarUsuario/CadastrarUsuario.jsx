@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from  './CadastrarUsuario.module.css';
-import Footer from '../../components/Footer/Footer2';
+import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
 
 const CadastrarUsuario = () => {
@@ -45,7 +45,7 @@ const CadastrarUsuario = () => {
         <div className={styles.CardPrincipal}>
             <h3>Desativar minha conta</h3>
 
-            <button>Desativat</button>
+            <button className={styles.Desativar} >Desativar</button>
             
             <img src='https://img.freepik.com/vetores-premium/sinais-de-aviso-de-perigo-de-alta-tensao-isolado-em-um-fundo-branco_68708-427.jpg' alt="Alerta" width={80} height={90} />
             <span>Seu perfil será desabilitado e anúncios excluídos. Ative a conta quando quiser.</span>
