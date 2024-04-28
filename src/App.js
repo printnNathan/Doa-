@@ -16,20 +16,21 @@ function App() {
       element: <EscolherC />,
     },
     {
-      path: "/requisicao",
-      element: <RequisicaoDeServico />,
-    },
-    {
       path: "/login",
       element: <Login />,
     },
     {
+
       path: "/Home",
       element: <Home />,
     },
     {
       path: "/Perfil",
       element: <CadastrarUsuario />,
+    },
+    {
+      path: "/Requisicao",
+      element: <RequisicaoDeServico />,
     },
   ]);
 
