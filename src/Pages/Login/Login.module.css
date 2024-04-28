@@ -8,8 +8,7 @@ body{
     color: #777;
   }
   
-  .Botao,
-  .Botao2 {
+  .Botao {
     width: 100%;
     padding: 12px;
     border: none;
@@ -21,42 +20,39 @@ body{
     transition: background-color 0.3s ease;
   }
   
-  .Botao:hover,
-  .Botao2:hover {
+  .Botao:hover{
     background: linear-gradient(45deg, #692CAB, #fd3a6b);
   }
 
 .CardPrincipal {
     border: 1.5px solid #000;
-    border-radius: 12px;
-    width: 35%;
+    border-radius: 20px;
+    width: 30%;
     height: 60%;
     padding: 4%;
     margin: auto;
+    border: none; 
     margin-top:  6%;
-    background-color: rgba(255, 255, 255, 0.97)
+    background-color: rgba(255, 255, 255, 0.6);
 }
 .Email {
+    margin-bottom: 20px;
+    margin-top: 5px; /* Aproxima da borda superior */
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 100%;
-    height: 40px ;
-}
-.Senha {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    height: 40px ;
-}
-.CardEmail{
-    margin-bottom: 10px;
-}
-.CardSenha {
-    margin-bottom: 10px;
+    width: 100%; /* Muda a largura para ocupar toda a largura da div */
+    height: 40px;
 }
 
+.Senha {
+    margin-bottom: 20px; /* Ajusta o espaçamento inferior */
+    background-color: rgba(128, 128, 128, 0.396);
+    border-radius: 5px;
+    display: block;
+    width: 100%; /* Muda a largura para ocupar toda a largura da div */
+    height: 40px;
+}
 .Icons {
    width: 9%;
    height: 9%;
@@ -72,12 +68,11 @@ body{
 
 
 .TextoLogin {
-    padding-bottom: 14px;
+    padding-bottom: 4px;
 }
 
 .EsqueceuSenha{
     font-size: 12px;
-    top: 50%;
 }
 
 .font1{
@@ -91,5 +86,21 @@ body{
     background-color: #625959ce;
     color: white;
 }
-
+.Modal{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+    transition: background-color 0.3s ease;
+} 
+.Modal:hover{
+ color: #692CAB;
+  }
+.Titulo
+{
+ font-size: 40px;
+}
 

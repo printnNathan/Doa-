@@ -6,7 +6,7 @@ import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from './Login.module.css';
-import Bolas from  '../../components/Bolas/Bolas';
+import Esferas from  '../../components/Esferas/Esferas';
 
 
 export default function Cadastro() {
@@ -59,6 +59,7 @@ export default function Cadastro() {
             ToastService.Error("Houve um erro no servidor ao realizar o seu login\r\nTente novamente mais tarde.");
         }
     }
+    // TRansforma O texto de do modal em botão e mexer no css
 
     return (
         <div>
@@ -68,21 +69,21 @@ export default function Cadastro() {
             />
             
             <div className={styles.CardPrincipal}>
-                <span>Login</span>
+                <div className={styles.Titulo}> Login</div>
                 <span className={styles.font1}>Email:</span>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
 
                 <span className={styles.font1}>Senha</span>
                 <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
-                <div className={styles.EsqueceuSenha}>Esqueceu a Senha</div>
+                <span className={styles.Modal}>Esqueceu a Senha</span>
 
                 <button className={styles.Botao} onClick={Login}>Login</button>
 
                 <div>
-                <button className={styles.Botao2} onClick={AbrirModal}>Novo por aqui? Cadastre-se</button>
+                <span onClick={AbrirModal} className={styles.Modal}>Novo por aqui? Cadastre-se</span> 
                 </div>
             </div>
-            <Bolas/>
+            <Esferas/>
 
         </div>
     )
