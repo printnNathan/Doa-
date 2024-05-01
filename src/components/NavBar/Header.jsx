@@ -7,6 +7,8 @@ import { faHome, faList, faLink, faComments, faSearch } from '@fortawesome/free-
 import { FaSearch } from 'react-icons/fa';
 import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
+import Anuncios from '../Anuncios/Anuncios';
+import EscolherC from '../../Pages/EscolherCategoria/EscolherCategoria';
 
 function Header() {
   return (
@@ -18,7 +20,7 @@ function Header() {
             <Link to="/home" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/meus-anuncios" className={styles.navLink}>
+            <Link to="/Anuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Quem somos</span>} id="navbarScrollingDropdown">
@@ -29,6 +31,9 @@ function Header() {
               <FontAwesomeIcon icon={faComments} /> Chat
             </Link>
           </Nav>
+          <Link to="/EscolherC">
+            <button type="button" className={styles.anunciar}>Anunciar</button>
+          </Link>
           <Form className="d-flex ms-auto">
             <Form.Control
               type="pesquise"

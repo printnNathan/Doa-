@@ -7,6 +7,7 @@ import Home from './Pages/HomePage/Home';
 import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico';
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
+import Anuncios from './components/Anuncios/Anuncios';
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
     {
       path: "/Requisicao",
       element: <RequisicaoDeServico />,
+    },
+    {
+      path: "/Anuncios",
+      element: <Anuncios />,
     },
   ]);
 

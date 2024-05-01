@@ -1,4 +1,5 @@
 import NavBar from '../../components/NavBar/Header';
+import Esferas from  '../../components/Esferas/Esferas2';
 import styles from './EscolherCategoria.module.css';
 import { Link } from 'react-router-dom';
 import React from 'react';
@@ -52,6 +53,7 @@ export default function EscolherCategoria() {
           </Link>
         </div>
     </div>
+    <Esferas/>
 </div>
 
   )

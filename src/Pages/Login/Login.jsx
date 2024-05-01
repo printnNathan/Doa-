@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from './Login.module.css';
 import Esferas from  '../../components/Esferas/Esferas';
+import Anuncios from '../../components/Anuncios/Anuncios';
 
 
 export default function Cadastro() {
@@ -76,9 +77,9 @@ export default function Cadastro() {
                 <span className={styles.font1}>Senha</span>
                 <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
                 <span className={styles.Modal}>Esqueceu a Senha</span>
-
+                <Link to="/Anuncios">
                 <button className={styles.Botao} onClick={Login}>Login</button>
-
+                </Link>
                 <div>
                 <span onClick={AbrirModal} className={styles.Modal}>Novo por aqui? Cadastre-se</span> 
                 </div>

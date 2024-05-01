@@ -24,7 +24,8 @@ function Anuncios() {
 
   return (
     <div>
-      <div className={Styles.TituloPrincipal}><h1>Anúncios</h1></div>
+      <NavBar />
+      <div className={Styles.TituloPrincipal}><h1>Meus Anúncios</h1></div>
       <Box sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={tabSelecionada}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={Styles.Painel}>
@@ -35,7 +36,7 @@ function Anuncios() {
               <Tab label="Expirados" value="4" />
             </TabList>
           </Box>
-          <Box sx={{ backgroundColor: "#FF0000", paddingLeft: "20%", paddingRight: "20%"  }} >
+          <Box sx={{ backgroundColor: "#a1a1a1", paddingLeft: "20%", paddingRight: "20%"  }} >
 
             <TabPanel value="1"><PublicadosPanel /></TabPanel>
             <TabPanel value="2"><PendentesPanel /></TabPanel>

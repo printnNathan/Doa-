@@ -25,4 +25,21 @@
   .navLink:hover {
     color: rgb(54, 50, 50); /* Cor do texto quando o mouse passa por cima */
   }
+
+  .anunciar {
+    background-color: #7900f94c;
+    color: black;
+    width: auto;
+    height: auto;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Arial, sans-serif';
+    border-radius: 15%; /* torna o botão redondo */
+  }
+
+  .anunciar:hover {
+    background-color: #7b00ff9a;
+  }
   
