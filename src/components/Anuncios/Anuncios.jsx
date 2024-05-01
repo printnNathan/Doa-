@@ -9,6 +9,7 @@ import PendentesPanel from './PendentesPanel';
 import InativosPanel from './InativosPanel';
 import ExpiradosPanel from './ExpiradosPanel';
 import Styles from '../Anuncios/Anuncios.module.css';
+import Esferas from  '../../components/Esferas/Esferas2';
 import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/Header'
 import { useNavigate } from 'react-router-dom';
@@ -36,7 +37,7 @@ function Anuncios() {
               <Tab label="Expirados" value="4" />
             </TabList>
           </Box>
-          <Box sx={{ backgroundColor: "#a1a1a1", paddingLeft: "20%", paddingRight: "20%"  }} >
+          <Box sx={{ backgroundColor: "#d9d9d9", paddingLeft: "20%", paddingRight: "20%"  }} >
 
             <TabPanel value="1"><PublicadosPanel /></TabPanel>
             <TabPanel value="2"><PendentesPanel /></TabPanel>
@@ -46,6 +47,7 @@ function Anuncios() {
           </Box>
         </TabContext>
       </Box>
+      <Esferas />
     </div>
   );
 }

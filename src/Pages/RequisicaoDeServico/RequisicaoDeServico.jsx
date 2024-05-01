@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import styles from './Requisicaodeservico.module.css';
+import Esferas from "../../components/Esferas/Esferas2";
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
 
@@ -33,9 +35,14 @@ const RequisicaoDeServico = () => {
                 </div>
             </form>
 
-            <div className={styles.Foto}>
+                <div className={styles.Foto}>
                     <button>Fotos</button>
-                </div>
+                    <p></p>
+                <Link to="/Anuncios">
+                    <button>Concluir</button> 
+                </Link>          
+                </div>               
+          <Esferas />      
           <Footer/>
 
         </div>

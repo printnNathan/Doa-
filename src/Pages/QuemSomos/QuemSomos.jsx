@@ -1,12 +1,17 @@
-import React from 'react';
-import Home from './components/Home';
-import QuemSomos from './components/QuemSomos';
+import React, { useState } from 'react';
+import Home from '../HomePage/Home';
 import styles from  './QuemSomos.module.css';
 import NavBar from '../../components/NavBar/Header';
 import { Link } from 'react-router-dom';
 
-export default QuemSomos(); {
-    return(
+export default function QuemSomos() {
+    const [texto, setTexto] = useState('');
+
+    const handleChange = (event) => {
+        setTexto(event.target.value);
+    };
+
+    return (
         <div>
             <NavBar/>
 

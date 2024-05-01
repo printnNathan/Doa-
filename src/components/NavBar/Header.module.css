@@ -30,13 +30,15 @@
     background-color: #7900f94c;
     color: black;
     width: auto;
-    height: auto;
+    height: 40px;
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
-    font-family: 'Arial, sans-serif';
-    border-radius: 15%; /* torna o botão redondo */
+    font-family: 'Arial, Helvetica, sans-serif';
+    border-radius: 5px; /* torna o botão redondo */
+    text-align: center;
+    line-height: 20px; /* Altura da linha para alinhamento vertical, ajuste conforme necessário */
   }
 
   .anunciar:hover {
