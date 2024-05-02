@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from  './CadastrarUsuario.module.css';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer2';
 import NavBar from '../../components/NavBar/Header';
+import Esferas from '../../components/Esferas/Esferas';
 
 const CadastrarUsuario = () => {
     return (
@@ -51,6 +52,7 @@ const CadastrarUsuario = () => {
             <span>Seu perfil será desabilitado e anúncios excluídos. Ative a conta quando quiser.</span>
         </div>
         <Footer />
+        <Esferas/>
     </div>
 );
 }

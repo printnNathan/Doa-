@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import styles from './Login.module.css';
-import Esferas from  '../../components/Esferas/Esferas';
-import Anuncios from '../../components/Anuncios/Anuncios';
-
+import Home from '../PaginaHome/Home';
 
 export default function Cadastro() {
 
@@ -25,7 +22,7 @@ export default function Cadastro() {
     function VerificarLogin() {
         const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
         if (usuarioEstaLogado) {
-            navigate("/login");
+            navigate("/");
         }
     }
 
@@ -40,17 +37,14 @@ export default function Cadastro() {
                 senha,
             });
 
-            const response = await ApiService.post("/CadastrarONG/Loginong", body);
+            const response = await ApiService.post("/Usuarios/Login", body);
             const token = response.data.token;
 
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem vindo, " + email);
-           
-            navigate("/Home");
-            //setTimeout(() => {
-            //window.location.reload();
-            //}, 1000);
+
+            navigate("/");
         }
         catch (error) {
             if (error.response?.status === 401) {
@@ -60,7 +54,6 @@ export default function Cadastro() {
             ToastService.Error("Houve um erro no servidor ao realizar o seu login\r\nTente novamente mais tarde.");
         }
     }
-    // TRansforma O texto de do modal em botão e mexer no css
 
     return (
         <div>
@@ -68,24 +61,26 @@ export default function Cadastro() {
                 modalAberto={modalAberto}
                 setModalAberto={setModalAberto}
             />
-            
-            <div className={styles.CardPrincipal}>
-                <div className={styles.Titulo}> Login</div>
-                <span className={styles.font1}>Email:</span>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
+            <div>
+                <span>Login</span>
+                <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder='E-mail' />
 
-                <span className={styles.font1}>Senha</span>
-                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
-                <span className={styles.Modal}>Esqueceu a Senha</span>
-                <button className={styles.Botao} onClick={Login}>Login</button>
-                <div>
-                <span onClick={AbrirModal} className={styles.Modal}>Novo por aqui? Cadastre-se</span> 
-                </div>
+                <input
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    placeholder='Senha'
+                    type='Password' />
+
+                <button onClick={Login}>Login</button>
             </div>
-            <Esferas/>
+            <div>
+                <button onClick={AbrirModal}>Novo por aqui? Cadastre-se</button>
+            </div>
 
         </div>
     )
 }
-
 
