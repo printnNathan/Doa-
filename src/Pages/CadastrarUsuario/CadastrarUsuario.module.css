@@ -14,17 +14,17 @@ body{
 }
 .Desativar {
     position: absolute;
-    top: 10px; /* ajuste conforme necessário */
-    left: 600px; /* ajuste conforme necessário */
+    top: 10px; 
+    left: 600px; 
     background-color: transparent;
-    border: none; /* remove a borda */
-    color: #3b245375; /* herda a cor do texto */
+    border: none; 
+    color: #3b245375;
     cursor: pointer;
     transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   }
   .Desativar:hover {
-    color: #f01313; /* cor do texto quando o mouse está em cima */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* sombra quando o mouse está em cima */
+    color: #f01313;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 .CardPrincipal2 {
     border: 1.5px solid #000;
@@ -93,11 +93,11 @@ body{
 }
 
 .Bola {
-    width: 200px; /* Largura da bola */
-    height: 200px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
+    width: 200px; 
+    height: 200px; 
+    background-color: #692cab6b;
+    border-radius: 50%; 
+    position: absolute; 
     margin-top: 1px;
     margin-left: 250px;
 }
@@ -108,3 +108,14 @@ body{
     width: 200px;
     height: 200px;
 }
+.DesativarContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .DesativarTexto {
+    margin-left: 10px;
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #333; 
+  }

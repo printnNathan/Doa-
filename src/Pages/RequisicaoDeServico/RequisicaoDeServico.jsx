@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import styles from './Requisicaodeservico.module.css';
-import Esferas from "../../components/Esferas/Esferas2";
+import Esferas from "../../components/Esferas/Esferas";
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
 

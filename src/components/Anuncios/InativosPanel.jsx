@@ -14,7 +14,7 @@ function InativosPanel() {
 
   async function ListarProdutos() {
     try {
-      const response = await ApiService.get("/Panel/listarinativosPanel");
+      const response = await ApiService.get("/CadastrarONG");
 
       if (response.status !== 200) {
         alert('Erro ao listar produtos');

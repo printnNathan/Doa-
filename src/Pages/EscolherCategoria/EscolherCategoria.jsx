@@ -1,5 +1,5 @@
 import NavBar from '../../components/NavBar/Header';
-import Esferas from  '../../components/Esferas/Esferas2';
+import Esferas from  '../../components/Esferas/Esferas';
 import styles from './EscolherCategoria.module.css';
 import { Link } from 'react-router-dom';
 import React from 'react';
