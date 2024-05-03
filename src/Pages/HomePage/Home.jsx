@@ -24,7 +24,7 @@ const Home = () => {
 
     async function BuscarDadosUsuario() {
         debugger;
-        const response = await ApiService.get('/Usuarios/getuserdata');
+        const response = await ApiService.get('/CadastrarONG/CadastrarONG');
         if (response.status == 200) {
             setUsuario(response.data);
         }

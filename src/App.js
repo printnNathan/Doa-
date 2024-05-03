@@ -13,8 +13,8 @@ import Anuncios from './components/Anuncios/Anuncios';
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Home />,
+      path: "/Perfil",
+      element: <CadastrarUsuario />,
     },
     {
       path: "/login",
@@ -24,10 +24,6 @@ function App() {
 
       path: "/Home",
       element: <Home />,
-    },
-    {
-      path: "/Perfil",
-      element: <CadastrarUsuario />,
     },
     {
       path: "/EscolherC",
