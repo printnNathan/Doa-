@@ -7,9 +7,6 @@ import { faHome, faList, faLink, faComments, faSearch } from '@fortawesome/free-
 import { FaSearch } from 'react-icons/fa';
 import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
-import Home from '../../Pages/HomePage/Home';
-import Anuncios from '../Anuncios/Anuncios';
-import EscolherC from '../../Pages/EscolherCategoria/EscolherCategoria';
 
 function Header() {
   return (
@@ -18,20 +15,23 @@ function Header() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto">
+          <Link to="/Perfil" className={styles.navLink}>
+              <FontAwesomeIcon icon={faHome} /> Perfil
+            </Link>
             <Link to="/Home" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/Anuncios" className={styles.navLink}>
+            <Link to="/meus-anuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Quem somos</span>} id="navbarScrollingDropdown">
               <NavDropdown.Item as="/sobre">Sobre</NavDropdown.Item>
               <NavDropdown.Item as="/contatos">Contatos</NavDropdown.Item>
             </NavDropdown>
+            <Link to="/chat" className={styles.navLink}>
+              <FontAwesomeIcon icon={faComments} /> Chat
+            </Link>
           </Nav>
-          <Link to="/EscolherC">
-            <button type="button" className={styles.anunciar}>Anunciar</button>
-          </Link>
           <Form className="d-flex ms-auto">
             <Form.Control
               type="pesquise"

@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
-import { Link, useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from './Login.module.css';
-import Esferas from  '../../components/Esferas/Esferas';
-import Anuncios from '../../components/Anuncios/Anuncios';
-
+import Esferas from '../../components/Esferas/Esferas';
 
 export default function Cadastro() {
-
     const navigate = useNavigate();
-
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [modalAberto, setModalAberto] = useState(false);
@@ -46,13 +41,9 @@ export default function Cadastro() {
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem vindo, " + email);
-           
-            navigate("/Home");
-            //setTimeout(() => {
-            //window.location.reload();
-            //}, 1000);
-        }
-        catch (error) {
+            navigate('/Perfil', { state: { email } });
+            navigate('/')
+        } catch (error) {
             if (error.response?.status === 401) {
                 ToastService.Error("E-mail e/ou senha inválidos!");
                 return;
@@ -60,7 +51,6 @@ export default function Cadastro() {
             ToastService.Error("Houve um erro no servidor ao realizar o seu login\r\nTente novamente mais tarde.");
         }
     }
-    // TRansforma O texto de do modal em botão e mexer no css
 
     return (
         <div>
@@ -68,22 +58,19 @@ export default function Cadastro() {
                 modalAberto={modalAberto}
                 setModalAberto={setModalAberto}
             />
-            
             <div className={styles.CardPrincipal}>
                 <div className={styles.Titulo}> Login</div>
                 <span className={styles.font1}>Email:</span>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
-
                 <span className={styles.font1}>Senha</span>
                 <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
                 <span className={styles.Modal}>Esqueceu a Senha</span>
                 <button className={styles.Botao} onClick={Login}>Login</button>
                 <div>
-                <span onClick={AbrirModal} className={styles.Modal}>Novo por aqui? Cadastre-se</span> 
+                    <span onClick={AbrirModal} className={styles.Modal}>Novo por aqui? Cadastre-se</span>
                 </div>
             </div>
-            <Esferas/>
-
+            <Esferas />
         </div>
     )
 }

@@ -1,26 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom'; // Importando useLocation
 import styles from './CadastrarUsuario.module.css';
 import Footer from '../../components/Footer/Footer2';
 import NavBar from '../../components/NavBar/Header';
 import Esferas from '../../components/Esferas/Esferas';
+import ApiService from '../../Services/ApiService';
+import AuthService from '../../Services/AuthService';
 
 function CadastrarUsuario() {
   const [telefone, setTelefone] = useState('');
-  const [email, setEmail] = useState('');
-
-  useEffect(() => {
-    // Simulando uma chamada de API para obter o email do usuário
-    // Aqui você deve substituir isso pela lógica real de chamada da API
-    setTimeout(() => {
-      const emailDaApi = email;
-      setEmail(emailDaApi);
-    }, 1000); // Simulando um tempo de resposta da API de 1 segundo
-  }, []); // Este efeito só será executado uma vez, quando o componente for montado
+  const location = useLocation(); // Usando useLocation
+  const email = location.state ? location.state.email : '';
 
   const handleChange = (e) => {
-    let inputTelefone = e.target.value.replace(/\D/g, ''); // Remove todos os caracteres que não sejam números
+    let inputTelefone = e.target.value.replace(/\D/g, '');
 
-    // Adiciona parênteses após os dois primeiros dígitos
     if (inputTelefone.length >= 2) {
       inputTelefone = `(${inputTelefone.slice(0, 2)})${inputTelefone.slice(2)}`;
     }
@@ -57,7 +51,7 @@ function CadastrarUsuario() {
             <div className={styles.Hr}></div>
             <div>
               <img className={styles.img} src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil" width={70} height={70} />
-              <span className={styles.DesativarTexto}>Fotode perfil</span>
+              <span className={styles.DesativarTexto}>Foto de perfil</span>
             </div>
           </div>
         </form>

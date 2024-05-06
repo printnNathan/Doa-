@@ -22,7 +22,7 @@ function App() {
     },
     {
 
-      path: "/Home",
+      path: "/",
       element: <Home />,
     },
     {

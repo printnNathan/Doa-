@@ -26,7 +26,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
                 senha
             };
 
-            await ApiService.post("/usuarios/cadastrar", body);
+            await ApiService.post("/CadastrarONG/CadastrarONG", body);
             ToastService.Success("Usuário cadastrado com sucesso!");
             setModalAberto(false);
 
