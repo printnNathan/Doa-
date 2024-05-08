@@ -8,13 +8,13 @@ import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico';
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
 import Anuncios from './components/Anuncios/Anuncios';
-
+import HomePageOFC from './Pages/HomePageOFC/HomePageOFC';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/Perfil",
-      element: <CadastrarUsuario />,
+      path: "/",
+      element: <HomePageOFC />,
     },
     {
       path: "/login",
@@ -22,7 +22,7 @@ function App() {
     },
     {
 
-      path: "/",
+      path: "/h",
       element: <Home />,
     },
     {
