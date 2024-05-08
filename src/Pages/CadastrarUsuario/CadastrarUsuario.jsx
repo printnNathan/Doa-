@@ -9,7 +9,7 @@ import AuthService from '../../Services/AuthService';
 
 function CadastrarUsuario() {
   const [telefone, setTelefone] = useState('');
-  const location = useLocation(); // Usando useLocation
+  const location = useLocation();
   const email = location.state ? location.state.email : '';
 
   const handleChange = (e) => {

@@ -1,4 +1,4 @@
-/* Estilos para a tela Home */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -10,8 +10,7 @@
     font-weight: bold;
     margin-bottom: 20px;
   }
-  
-  /* Estilização para o layout da tela */
+
   .homeLayout {
     display: flex;
     flex-direction: column;

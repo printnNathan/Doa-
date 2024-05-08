@@ -22,7 +22,7 @@ function App() {
     },
     {
 
-      path: "/h",
+      path: "/home",
       element: <Home />,
     },
     {
@@ -32,11 +32,7 @@ function App() {
     {
       path: "/Requisicao",
       element: <RequisicaoDeServico />,
-    },
-    {
-      path: "/Anuncios",
-      element: <Anuncios />,
-    },
+    }
   ]);
 
   return (
