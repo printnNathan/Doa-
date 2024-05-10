@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import styles from './Requisicaodeservico.module.css';
 import Esferas from "../../components/Esferas/Esferas";
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer2';
 import NavBar from '../../components/NavBar/Header';
 import ApiService from '../../Services/ApiService';
 import ToastService from '../../Services/ToastService';
@@ -95,8 +95,7 @@ const RequisicaoDeServico = () => {
                 </div>   
                 </div>  
             </div>
-
-            <Esferas />   
+             
             <Footer style={{ marginTop: "1000px" }}/>  
         </div>
     )

@@ -7,6 +7,7 @@ import { faHome, faList, faLink, faComments, faSearch } from '@fortawesome/free-
 import { FaSearch } from 'react-icons/fa';
 import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
+import { faPortrait } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   return (
@@ -16,12 +17,12 @@ function Header() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto">
           <Link to="/Perfil" className={styles.navLink}>
-              <FontAwesomeIcon icon={faHome} /> Perfil
+              <FontAwesomeIcon icon={faPortrait} /> Perfil
             </Link>
-            <Link to="/Home" className={styles.navLink}>
+            <Link to="/HomePageOFC" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/meus-anuncios" className={styles.navLink}>
+            <Link to="/Anuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Quem somos</span>} id="navbarScrollingDropdown">

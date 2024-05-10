@@ -1,14 +1,21 @@
 import React from 'react';
+import NavBar from '../../components/NavBar/Header';
+import Footer from '../../components/Footer/Footer2';
 import './HomePageOFC.module.css';
+import { Link } from 'react-router-dom';
+import EscolherC from '../EscolherCategoria/EscolherCategoria';
 
 const HomePageOFC = () => {
   return (
     <div className="homepage">
+      <NavBar />
       <header>
         <h1>Gerenciador de Doações</h1>
         <nav>
           <ul>
+          <Link to="/EscolherC">
             <li><a href="#">Doar</a></li>
+          </Link>
             <li><a href="#">Projetos</a></li>
             <li><a href="#">Sobre nós</a></li>
             <li><a href="#">Contato</a></li>
@@ -50,6 +57,7 @@ const HomePageOFC = () => {
       <footer>
         <p>&copy; 2024 Gerenciador de Doações</p>
       </footer>
+      <Footer />
     </div>
   );
 };
