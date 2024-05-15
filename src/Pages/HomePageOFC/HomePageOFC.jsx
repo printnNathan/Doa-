@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer2';
 import './HomePageOFC.module.css';
 import { Link } from 'react-router-dom';
 import EscolherC from '../EscolherCategoria/EscolherCategoria';
+import QuemSomos from '../QuemSomos/QuemSomos';
 
 const HomePageOFC = () => {
   return (
@@ -13,9 +14,7 @@ const HomePageOFC = () => {
         <h1>Gerenciador de Doações</h1>
         <nav>
           <ul>
-          <Link to="/EscolherC">
             <li><a href="#">Doar</a></li>
-          </Link>
             <li><a href="#">Projetos</a></li>
             <li><a href="#">Sobre nós</a></li>
             <li><a href="#">Contato</a></li>
@@ -31,7 +30,9 @@ const HomePageOFC = () => {
           <div className="hero-text">
             <h2>Faça a diferença na vida de alguém!</h2>
             <p>Doe para o Gerenciador de Doações e ajude a transformar a vida de pessoas necessitadas.</p>
+            <Link to="/EscolherC">
             <button>Doar agora</button>
+            </Link>
           </div>
         </section>
 
@@ -50,7 +51,9 @@ const HomePageOFC = () => {
         <section className="call-to-action">
           <h2>Junte-se a nós!</h2>
           <p>Doe, seja voluntário ou divulgue o Gerenciador de Doações para seus amigos e familiares. Cada contribuição faz a diferença!</p>
+          <Link to="/QuemSomos">
           <button>Saiba mais</button>
+          </Link>
         </section>
       </main>
 

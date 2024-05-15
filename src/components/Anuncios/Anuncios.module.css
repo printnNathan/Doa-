@@ -11,3 +11,39 @@
   .QuadroDeAnuncios{
     margin-bottom: 90px;
   }
+
+  .anuncio {
+    margin-top: 20px;
+}
+
+.anuncio img {
+    max-width: 25%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+    margin-top: 10px;
+}
+
+.anuncio h2 {
+    font-size: 18px;
+    color: black;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.anuncio h3 {
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 90px;
+}
+
+.anuncio h1 {
+  font-size: 25px;
+  margin-right: 20px; /* Espaço entre o h1 e o conteúdo */
+  margin-left: 5px;
+}
+
+.anuncio .conteudo {
+  display: flex;
+  align-items: center;
+}

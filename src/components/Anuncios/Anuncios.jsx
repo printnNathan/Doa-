@@ -11,6 +11,8 @@ import Esferas from  '../../components/Esferas/Esferas';
 import Footer from '../Footer/Footer2';
 import NavBar from '../NavBar/Header'
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 
 function Anuncios() {
 
@@ -34,8 +36,36 @@ function Anuncios() {
           </Box>
           <Box sx={{ backgroundColor: "#d9d9d9", paddingLeft: "20%", paddingRight: "20%"  }} >
 
-            <TabPanel value="1"><PublicadosPanel /></TabPanel>
-            <TabPanel value="3"><InativosPanel /></TabPanel>
+            <TabPanel value="1">
+              <div className={Styles.anuncio}>
+                <h1>Pendente
+                <FontAwesomeIcon icon={faClock} />
+                </h1>
+               <div className={Styles.conteudo}>
+                <img src="https://i0.wp.com/www.clickguarulhos.com.br/wp-content/uploads/2021/04/20210423-doacaoalimentos.jpg?fit=790%2C552&ssl=1" />
+               <div>
+                <h2>Doação de Alimento</h2>
+                <h3>Publicado em 01/06/2024</h3>
+                  </div>
+                </div>
+              </div>
+              <PublicadosPanel />
+            </TabPanel>
+            <TabPanel value="3">
+              <div className={Styles.anuncio}>
+                <h1>Inativo
+                <FontAwesomeIcon icon={faMinusCircle} />
+                </h1>
+               <div className={Styles.conteudo}>
+                <img src="https://www.rateio.com/wp-content/uploads/2020/09/vazamento-condominio.jpg" />
+               <div>
+                <h2>Conserto de encanamento</h2>
+                <h3>Publicado em 01/05/2024</h3>
+                  </div>
+                </div>
+              </div>
+              <InativosPanel />
+            </TabPanel>
 
           </Box>
         </TabContext>
