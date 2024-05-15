@@ -4,7 +4,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faList, faLink, faComments, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FaSearch } from 'react-icons/fa';
 import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
 import { faPortrait } from '@fortawesome/free-solid-svg-icons';
@@ -22,15 +21,11 @@ function Header() {
             <Link to="/HomePageOFC" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/Anuncios" className={styles.navLink}>
+            <Link to="/Meus Anúncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
-            <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Quem somos</span>} id="navbarScrollingDropdown">
-              <NavDropdown.Item as="/sobre">Sobre</NavDropdown.Item>
-              <NavDropdown.Item as="/contatos">Contatos</NavDropdown.Item>
-            </NavDropdown>
-            <Link to="/chat" className={styles.navLink}>
-              <FontAwesomeIcon icon={faComments} /> Chat
+            <Link to="/QuemSomos" className={styles.navLink}>
+            <FontAwesomeIcon icon={faLink} /> Quem somos
             </Link>
           </Nav>
           <Form className="d-flex ms-auto">
