@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/Footer2';
 const Home = () => {
     const navigate = useNavigate();
     const [usuario, setUsuario] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchData() {
@@ -25,11 +26,32 @@ const Home = () => {
                 }
             } catch (error) {
                 console.error("Erro ao buscar dados do usuário:", error);
+                // Adicione tratamento de erro aqui, como exibir uma mensagem para o usuário
+            } finally {
+                setLoading(false);
             }
         }
 
         fetchData();
     }, [navigate]);
+    useEffect(() => {
+        fetch("https://localhost:7284/api/CadastrarONG", {
+            method: "GET",
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                setUsuario(json);
+            })
+            .catch((error) => {
+                console.log(error);
+                alert("Erro ao buscar usuários");
+            });
+    }, []);
+
+    if (loading) {
+      
+        return <div>Carregando...</div>;
+    }
 
     return (
         <div>
@@ -41,4 +63,5 @@ const Home = () => {
 }
 
 export default Home;
+
 

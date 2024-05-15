@@ -30,7 +30,10 @@ function App() {
       element: <RequisicaoDeServico />,
     },
     {
+
       path: "/Meus Anúncios",
+
+      path: "/Home",
       element: <Home />,
     },
     {
