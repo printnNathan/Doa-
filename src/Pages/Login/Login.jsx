@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
@@ -6,49 +6,39 @@ import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
 import styles from './Login.module.css';
 import Esferas from '../../components/Esferas/Esferas';
+import axios from 'axios';
 
 export default function Cadastro() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [modalAberto, setModalAberto] = useState(false);
-
-    useEffect(() => {
-        VerificarLogin();
-    }, []);
-
-    function VerificarLogin() {
-        const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-        if (usuarioEstaLogado) {
-            navigate("/login");
-        }
-    }
-
-    function AbrirModal() {
-        setModalAberto(true);
-    }
+    const [loading, setLoading] = useState(false);
 
     async function Login() {
         try {
+            setLoading(true);
+
             const body = new URLSearchParams({
                 email,
                 senha,
             });
 
-            const response = await ApiService.post("/CadastrarONG/Loginong", body);
+            const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
             const token = response.data.token;
 
             AuthService.SalvarToken(token);
 
-            ToastService.Success("Seja bem vindo, " + email);
-            navigate('/Perfil', { state: { email } });
-            navigate('/')
+            ToastService.Success("Seja bem-vindo, " + email);
+            navigate('/Home');
         } catch (error) {
             if (error.response?.status === 401) {
                 ToastService.Error("E-mail e/ou senha inválidos!");
-                return;
+            } else {
+                ToastService.Error("Houve um erro ao realizar o login. Tente novamente mais tarde.");
             }
-            ToastService.Error("Houve um erro no servidor ao realizar o seu login\r\nTente novamente mais tarde.");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -59,20 +49,23 @@ export default function Cadastro() {
                 setModalAberto={setModalAberto}
             />
             <div className={styles.CardPrincipal}>
-                <div className={styles.Titulo}> Login</div>
+                <div className={styles.Titulo}>Login</div>
                 <span className={styles.font1}>Email:</span>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
-                <span className={styles.font1}>Senha</span>
-                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
+                <span className={styles.font1}>Senha:</span>
+                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha' type='password' className={styles.Senha} />
                 <span className={styles.Modal}>Esqueceu a Senha</span>
-                <button className={styles.Botao} onClick={Login}>Login</button>
+                <button className={styles.Botao} onClick={Login} disabled={loading}>
+                    {loading ? 'Carregando...' : 'Login'}
+                </button>
                 <div>
-                    <span onClick={AbrirModal} className={styles.Modal}>Novo por aqui? Cadastre-se</span>
+                    <span onClick={() => setModalAberto(true)} className={styles.Modal}>Novo por aqui? Cadastre-se</span>
                 </div>
             </div>
             <Esferas />
         </div>
-    )
+    );
 }
+
 
 

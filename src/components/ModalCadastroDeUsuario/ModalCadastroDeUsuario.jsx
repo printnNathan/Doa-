@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal';
 import ApiService from '../../Services/ApiService';
 import ToastService from '../../Services/ToastService';

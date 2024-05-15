@@ -4,7 +4,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faList, faLink, faComments, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FaSearch } from 'react-icons/fa';
 import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
 import { faPortrait } from '@fortawesome/free-solid-svg-icons';

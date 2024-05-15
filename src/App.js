@@ -8,6 +8,8 @@ import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico';
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
 import Anuncios from './components/Anuncios/Anuncios';
+import Home from './Pages/HomePage/Home';
+import HomePageOFC from './Pages/HomePageOFC/HomePageOFC';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
 
 function App() {
@@ -33,12 +35,16 @@ function App() {
       element: <RequisicaoDeServico />,
     },
     {
-      path: "/Anuncios",
-      element: <Anuncios />,
+      path: "/Home",
+      element: <Home />,
     },
     {
       path: "/QuemSomos",
       element: <QuemSomos />,
+    },
+    {
+      path: "/Perfil",
+      element: <CadastrarUsuario />,
     }
   ]);
 
