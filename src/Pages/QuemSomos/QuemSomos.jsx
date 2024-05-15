@@ -30,6 +30,9 @@ const QuemSomos = () => {
              placeholder="Digite a Biografia..." 
             />
 
+
+
+
             <button className={styles.botao} ><h5>Atualizar</h5></button>
             
             <Footer2/>
