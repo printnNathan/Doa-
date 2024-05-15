@@ -3,7 +3,7 @@ import NavBar from '../../components/NavBar/Header';
 import Footer from '../../components/Footer/Footer2';
 import './HomePageOFC.module.css';
 import { Link } from 'react-router-dom';
-import EscolherC from '../EscolherCategoria/EscolherCategoria';
+import EscolherCategoria from '../EscolherCategoria/EscolherCategoria';
 import QuemSomos from '../QuemSomos/QuemSomos';
 
 const HomePageOFC = () => {
@@ -30,7 +30,7 @@ const HomePageOFC = () => {
           <div className="hero-text">
             <h2>Faça a diferença na vida de alguém!</h2>
             <p>Doe para o Gerenciador de Doações e ajude a transformar a vida de pessoas necessitadas.</p>
-            <Link to="/EscolherC">
+            <Link to="/EscolherCategoria">
             <button>Doar agora</button>
             </Link>
           </div>

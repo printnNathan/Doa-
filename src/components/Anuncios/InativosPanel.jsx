@@ -29,7 +29,6 @@ function InativosPanel() {
 
   return (
     <div>
-      <h2>Produtos Inativos</h2>
       <ul>
         {inativosPanel.map(doacao => (
           <li key={doacao.id}>

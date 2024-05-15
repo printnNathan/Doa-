@@ -4,7 +4,6 @@ import NavBar from '../../components/NavBar/Header';
 import Footer2 from '../../components/Footer/Footer2';
 import Esferas from '../../components/Esferas/Esferas';
 import React, { useEffect, useState } from 'react';
-import NavBar from '../../components/NavBar/Header';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
 import { useNavigate } from 'react-router-dom';
