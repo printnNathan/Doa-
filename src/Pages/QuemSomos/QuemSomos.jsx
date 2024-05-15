@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Home from '../HomePage/Home';
 import styles from  './QuemSomos.module.css';
 import NavBar from '../../components/NavBar/Header';
-import { Link } from 'react-router-dom';
+import Footer2 from '../../components/Footer/Footer2';
+import Esferas from '../../components/Esferas/Esferas';
 
-export default function QuemSomos() {
+const QuemSomos = () => {
+
     const [texto, setTexto] = useState('');
 
     const handleChange = (event) => {
@@ -13,26 +14,30 @@ export default function QuemSomos() {
 
     return (
         <div>
+            
             <NavBar/>
 
             <div><h1 className={styles.Texto1}>Quem Somos</h1></div>
-            <div><h1 className={styles.Texto2}>Abrale - Associação Brasileira de Linfoma e Leucemia</h1></div>
+            
+            <center><div><h1 className={styles.Texto2}> Abrale - Associação Brasileira de Linfoma e Leucemia</h1></div></center>
 
-            <input
+            
+
+            <input class=".Digite"
              type="text"
              value={texto}
              onChange={handleChange}
              placeholder="Digite a Biografia..." 
             />
-            <p>{texto}</p>
 
-            <div className="quem-somos-container">              
-                <img src="https://abrale.org.br/wp-content/uploads/2020/10/logo-abrale.png"
-                 alt=""//Descrição da imagem
-                 className="img1"
-                />
-            </div>
+            <button className={styles.botao} ><h5>Atualizar</h5></button>
+            
+            <Footer2/>
+            <Esferas/>
 
         </div>
     )
+
 }
+
+export default QuemSomos; 
