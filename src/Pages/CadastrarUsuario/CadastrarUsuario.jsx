@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom'; // Importando useLocation
 import styles from './CadastrarUsuario.module.css';
 import Footer from '../../components/Footer/Footer2';
@@ -6,6 +6,7 @@ import NavBar from '../../components/NavBar/Header';
 import Esferas from '../../components/Esferas/Esferas';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
+import { useNavigate } from 'react-router-dom';
 
 function CadastrarUsuario() {
   const [telefone, setTelefone] = useState('');
@@ -21,6 +22,31 @@ function CadastrarUsuario() {
 
     setTelefone(inputTelefone);
   };
+
+  const navigate = useNavigate();
+  const [usuario, setUsuario] = useState(null);
+
+  useEffect(() => {
+      async function fetchData() {
+          try {
+                const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
+                if (!usuarioEstaLogado) {
+                    navigate("/login");
+                    return;
+                }
+                
+                const response = await ApiService.get('/CadastrarONG/CadastrarONG');
+                if (response.status === 200) {
+                    setUsuario(response.data);
+                }
+          } catch (error) {
+                console.error("Erro ao buscar dados do usuário:", error);
+            }
+        }
+
+        fetchData();
+    }, [navigate]);
+
 
   return (
     <div>
