@@ -23,7 +23,7 @@ export default function QuemSomos() {
             try {
                 const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
                 if (!usuarioEstaLogado) {
-                    navigate("/login");
+                    navigate("/QuemSomos");
                     return;
                 }
 
