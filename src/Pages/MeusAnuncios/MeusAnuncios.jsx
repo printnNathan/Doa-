@@ -4,7 +4,7 @@ import AuthService from '../../Services/AuthService';
 import ApiService from '../../Services/ApiService';
 import Navbar from '../../components/NavBar/Header';
 import Anuncios from '../../components/Anuncios/Anuncios';
-import Footer from '../../components/Footer/Footer2';
+import Footer from '../../components/Footer/Footer';
 import styles from './MeusAnuncios.module.css'
 
 const Home = () => {

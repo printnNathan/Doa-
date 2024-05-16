@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import styles from './Requisicaodeservico.module.css';
 import Esferas from "../../components/Esferas/Esferas";
-import Footer from '../../components/Footer/Footer2';
+import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
 import ApiService from '../../Services/ApiService';
 import ToastService from '../../Services/ToastService';
@@ -59,22 +59,6 @@ const RequisicaoDeServico = () => {
                 <div className={styles.Cardapelido}>
                     <span className={styles.font1}>LOCALIZAÇÃO</span>
                     <input type="text" value={cep} onChange={(e) => setCep(e.target.value)}  className={styles.Apelido}/>
-                </div> 
-                <div className={styles.Cardapelido}>
-                    <label>ID do Tipo de Doação:</label>
-                    <input type="text" value={idTipoDoacao} onChange={(e) => setIdTipoDoacao(e.target.value)}  className={styles.Apelido}/>
-                    <label>Nome do Tipo de Doação:</label>
-                    <input type="text" value={nomeTipoDoacao} onChange={(e) => setNomeTipoDoacao(e.target.value)}  className={styles.Apelido}/>
-                </div> 
-                <div className={styles.Cardapelido}>
-                    <label>ID da ONG:</label>
-                    <input type="text" value={idONG} onChange={(e) => setIdONG(e.target.value)}  className={styles.Apelido}/>
-                    <label>Nome da ONG:</label>
-                    <input type="text" value={nomeONG} onChange={(e) => setNomeONG(e.target.value)}  className={styles.Apelido}/>
-                    <label>Email da ONG:</label>
-                    <input type="text" value={emailONG} onChange={(e) => setEmailONG(e.target.value)}  className={styles.Apelido}/>
-                    <label>Senha da ONG:</label>
-                    <input type="password" value={senhaONG} onChange={(e) => setSenhaONG(e.target.value)}  className={styles.Apelido}/>
                 </div> 
                 <div className={styles.Foto}>
                     <button>Fotos</button>

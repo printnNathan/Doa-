@@ -1,6 +1,6 @@
 import NavBar from '../../components/NavBar/Header';
 import styles from './QuemSomos.module.css';
-import Footer2 from '../../components/Footer/Footer2';
+import Footer2 from '../../components/Footer/Footer';
 import Esferas from '../../components/Esferas/Esferas';
 import React, { useEffect, useState } from 'react';
 import ApiService from '../../Services/ApiService';

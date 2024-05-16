@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './CadastrarUsuario.module.css';
-import Footer from '../../components/Footer/Footer2';
+import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
 import Esferas from '../../components/Esferas/Esferas';
 import ApiService from '../../Services/ApiService';
