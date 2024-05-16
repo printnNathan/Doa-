@@ -1,4 +1,4 @@
-// Anuncios.jsx
+import NavBar from '../../components/NavBar/Header';
 import { Box, Tab } from '@mui/material';
 import React, { useState } from 'react';
 import TabContext from '@mui/lab/TabContext';
@@ -22,7 +22,6 @@ function Anuncios() {
 
   return (
     <div>
-      <NavBar />
       <div className={Styles.TituloPrincipal}><h1>Meus Anúncios</h1></div>
       <Box sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={tabSelecionada}>

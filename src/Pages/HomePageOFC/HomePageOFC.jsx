@@ -31,7 +31,7 @@ const HomePageOFC = () => {
             <h2>Faça a diferença na vida de alguém!</h2>
             <p>Doe para o Gerenciador de Doações e ajude a transformar a vida de pessoas necessitadas.</p>
             <Link to="/EscolherCategoria">
-            <button>Doar agora</button>
+            <button>Entrar</button>
             </Link>
           </div>
         </section>

@@ -1,4 +1,4 @@
-
+import NavBar from '../../components/NavBar/Header';
 import styles from './QuemSomos.module.css';
 import Footer2 from '../../components/Footer/Footer2';
 import Esferas from '../../components/Esferas/Esferas';

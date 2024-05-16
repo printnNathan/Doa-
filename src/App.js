@@ -8,6 +8,7 @@ import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
+import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 
 function App() {
   const router = createBrowserRouter([
@@ -20,7 +21,7 @@ function App() {
       element: <Login />,
     },
     {
-      path: "/Meus anuncios",
+      path: "/MeusAnuncios",
       element: <MeusAnuncios />,
     },
     {
