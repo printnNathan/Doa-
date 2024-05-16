@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom'; // Importando useLocation
 import styles from './CadastrarUsuario.module.css';
 import Footer from '../../components/Footer/Footer2';
 import NavBar from '../../components/NavBar/Header';
@@ -7,12 +6,37 @@ import Esferas from '../../components/Esferas/Esferas';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
 import { useNavigate } from 'react-router-dom';
+import ToastService from '../../Services/ToastService';
 
 function CadastrarUsuario() {
   const [telefone, setTelefone] = useState('');
-  const location = useLocation();
-  const email = location.state ? location.state.email : '';
+  const [nomeONG, setNomeONG] = useState('');
+  const [emailONG, setEmailONG] = useState('');
+  const [senhaONG, setSenhaONG] = useState('');
+  const [senhaVisivel, setSenhaVisivel] = useState(false);
 
+
+  
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+        const response = await ApiService.post('/PedidosDoacao/CadastrarPedidos', {
+                nome: nomeONG,
+                email: emailONG,
+                senha: senhaONG
+        });
+        console.log('Pedido enviado com sucesso:', response.data);
+        ToastService.Success("Pedido enviado com sucesso!");
+    } catch (error) {
+        console.error('Erro ao enviar pedido:', error);
+        ToastService.Error("Erro ao enviar pedido. Por favor, tente novamente.");
+    }
+};
+ 
+
+const toggleSenhaVisivel = () => {
+  setSenhaVisivel(!senhaVisivel);
+};
   const handleChange = (e) => {
     let inputTelefone = e.target.value.replace(/\D/g, '');
 
@@ -25,6 +49,7 @@ function CadastrarUsuario() {
 
   const navigate = useNavigate();
   const [usuario, setUsuario] = useState(null);
+
 
   useEffect(() => {
       async function fetchData() {
@@ -47,18 +72,28 @@ function CadastrarUsuario() {
         fetchData();
     }, [navigate]);
 
+ 
 
   return (
+    
     <div>
       <NavBar />
       <div className={styles.CardPrincipal}>
         <form>
           <span className={styles.DesativarTexto}>Meu cadastro</span>
-          <div className={styles.CardEmail}>
-            <span className={styles.font1}>Nome completo:</span>
-            <input type="text" name="usuario" placeholder="Nome" className={styles.Email} />
-          </div>
+
           <div className={styles.Cardapelido}>
+          <label>Nome da ONG:</label>
+           <input type="text" value={nomeONG} onChange={(e) => setNomeONG(e.target.value)}  className={styles.Apelido}/>
+            <label>Email da ONG:</label>
+            <input type="text" value={emailONG} onChange={(e) => setEmailONG(e.target.value)}  className={styles.Apelido}/>
+            <label>Senha da ONG:</label>
+            <div className={styles.SenhaContainer}>
+              <input type={senhaVisivel ? "text" : "password"} value={senhaONG} onChange={(e) => setSenhaONG(e.target.value)} className={styles.Apelido} />
+              <button type="button" onClick={toggleSenhaVisivel} className={styles.ToggleSenha}>
+              {senhaVisivel ? "Ocultar" : "Mostrar"}
+              </button>
+              </div>
             <span className={styles.font1}>Celular</span>
             <input type="text" name="Telefone" placeholder="Celular" value={telefone} onChange={handleChange} className={styles.Apelido}/>
             <div>
@@ -73,7 +108,8 @@ function CadastrarUsuario() {
       <div className={styles.CardPrincipal}>
         <form>
           <div>
-            <span className={styles.DesativarTexto}>E-mail: {email}</span>
+            
+            <span className={styles.DesativarTexto}>E-mail: {emailONG}</span>
             <div className={styles.Hr}></div>
             <div>
               <img className={styles.img} src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil" width={70} height={70} />

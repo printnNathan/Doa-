@@ -1,6 +1,5 @@
 
 import styles from './QuemSomos.module.css';
-import NavBar from '../../components/NavBar/Header';
 import Footer2 from '../../components/Footer/Footer2';
 import Esferas from '../../components/Esferas/Esferas';
 import React, { useEffect, useState } from 'react';
@@ -57,23 +56,6 @@ export default function QuemSomos() {
                 value={texto}
                 onChange={handleChange}
                 placeholder="Digite a Biografia..." ></input>
-
-            <NavBar />
-
-            <div className={styles.Texto1}>Quem Somos</div>
-            <div className={styles.Texto2}>Abrale - Associação Brasileira de Linfoma e Leucemia</div>
-
-            <input
-                type="text"
-                value={texto}
-                onChange={handleChange}
-                placeholder="Digite a Biografia..."
-
-            />
-
-
-
-
 
             <button className={styles.botao} ><h5>Atualizar</h5></button>
 

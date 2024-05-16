@@ -7,9 +7,7 @@ import HomePageOFC from './Pages/HomePageOFC/HomePageOFC';
 import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico';
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
-import Anuncios from './components/Anuncios/Anuncios';
-import Home from './Pages/HomePage/Home';
-import HomePageOFC from './Pages/HomePageOFC/HomePageOFC';
+import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 
@@ -24,8 +22,8 @@ function App() {
       element: <Login />,
     },
     {
-      path: "/HomePageOFC",
-      element: <HomePageOFC />,
+      path: "/Meus anuncios",
+      element: <MeusAnuncios />,
     },
     {
       path: "/EscolherC",
@@ -34,13 +32,6 @@ function App() {
     {
       path: "/Requisicao",
       element: <RequisicaoDeServico />,
-    },
-    {
-
-      path: "/Meus Anúncios",
-
-      path: "/Home",
-      element: <HomePageOFC />,
     },
     {
       path: "/QuemSomos",

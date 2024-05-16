@@ -18,7 +18,7 @@
     top: 50px;
     margin-top: 200px;
     margin-left: 920px;
-    z-index: -1;
+    z-index: -100;
 }
 .Bola3 {
     width: 150px; /* Largura da bola */
@@ -29,7 +29,7 @@
     top: 50px;
     margin-top: 350px;
     margin-left: 460px;
-    z-index: -1;
+    z-index: -100;
 }
 .Bola4 {
     width: 200px; /* Largura da bola */
@@ -39,7 +39,7 @@
     position: fixed; /* Posicionamento absoluto */
     right: -90px; /* Empurra a bola para fora da tela na direção direita */
     top: 550px; /* Posiciona a bola 550px do topo da tela */
-    z-index: -1;
+    z-index: -100;
 }
 
 .Bola5 {

@@ -5,6 +5,7 @@ import ApiService from '../../Services/ApiService';
 import Navbar from '../../components/NavBar/Header';
 import Anuncios from '../../components/Anuncios/Anuncios';
 import Footer from '../../components/Footer/Footer2';
+import styles from './MeusAnuncios.module.css'
 
 const Home = () => {
     const navigate = useNavigate();
@@ -49,9 +50,12 @@ const Home = () => {
     }, []);
 
     if (loading) {
-      
-        return <div>Carregando...</div>;
-    }
+        return (
+          <div className={styles.loading2}>
+            <div className={styles.loading}></div>
+          </div>
+        );
+      }
 
     return (
         <div>

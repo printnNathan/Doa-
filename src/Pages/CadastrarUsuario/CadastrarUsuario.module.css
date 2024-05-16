@@ -1,7 +1,9 @@
-body{
+/* CadastrarUsuario.module.css */
+body {
     background-color: rgb(255, 255, 255);
-}
-.CardPrincipal {
+  }
+  
+  .CardPrincipal {
     position: relative;
     border: 1.5px solid #000;
     border-radius: 10px;
@@ -9,10 +11,11 @@ body{
     height: 60%;
     padding: 5%;
     margin: auto;
-    margin-top:  1%;
-    background-color: rgb(255, 255, 255)
-}
-.Desativar {
+    margin-top: 1%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .Desativar {
     position: absolute;
     top: 10px; 
     left: 600px; 
@@ -22,77 +25,81 @@ body{
     cursor: pointer;
     transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   }
+  
   .Desativar:hover {
     color: #f01313;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
-.CardPrincipal2 {
+  
+  .CardPrincipal2 {
     border: 1.5px solid #000;
     border-radius: 50px;
     width: 100%;
     height: 60%;
     padding: 4%;
     margin: auto;
-    margin-top:  1%;
-    background-color: rgb(255, 255, 255)
-}
-.Email {
+    margin-top: 1%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .Email {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
     width: 100%;
-    height: 40px ;
-}
-.Apelido {
+    height: 40px;
+  }
+  
+  .Apelido {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
     width: 100%;
-    height: 40px ;
-}
-.CardEmail{
+    height: 40px;
+  }
+  
+  .CardEmail {
     margin-bottom: 10px;
-}
-.Cardapalido {
+  }
+  
+  .Cardapelido {
     margin-bottom: 10px;
-}
-
-.Icons {
-   width: 9%;
-   height: 9%;
-}
-
-.Icons2{
+  }
+  
+  .Icons {
+    width: 9%;
+    height: 9%;
+  }
+  
+  .Icons2 {
     display: flex;
     flex-direction: space-between;
     justify-content: center;
     padding: 10px;
-    
-}
-
-
-.TextoLogin {
+  }
+  
+  .TextoLogin {
     padding-bottom: 14px;
-}
-
-.Comoaparecerápublicamente{
+  }
+  
+  .Comoaparecerápublicamente {
     font-size: 12px;
     top: 50%;
-}
-
-.font1{
+  }
+  
+  .font1 {
     font-size: 14px;
-}
-
-.BotãoDeEntrar {
+  }
+  
+  .BotãoDeEntrar {
     width: 100%;
     padding: 7px;
     border-radius: 10px;
     background-color: #625959ce;
     color: white;
-}
-
-.Bola {
+  }
+  
+  .Bola {
     width: 200px; 
     height: 200px; 
     background-color: #692cab6b;
@@ -100,15 +107,18 @@ body{
     position: absolute; 
     margin-top: 1px;
     margin-left: 250px;
-}
-.Hr {
+  }
+  
+  .Hr {
     border: 1.5px solid #000;
-}
-.Span{
+  }
+  
+  .Span {
     width: 200px;
     height: 200px;
-}
-.DesativarContainer {
+  }
+  
+  .DesativarContainer {
     display: flex;
     align-items: center;
   }
@@ -119,3 +129,17 @@ body{
     font-weight: bold; 
     color: #333; 
   }
+  
+  .SenhaContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ToggleSenha {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007BFF;
+  }
+  

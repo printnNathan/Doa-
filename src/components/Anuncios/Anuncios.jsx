@@ -8,9 +8,6 @@ import PublicadosPanel from './PublicadosPanel';
 import InativosPanel from './InativosPanel';
 import Styles from '../Anuncios/Anuncios.module.css';
 import Esferas from  '../../components/Esferas/Esferas';
-import Footer from '../Footer/Footer2';
-import NavBar from '../NavBar/Header'
-import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 

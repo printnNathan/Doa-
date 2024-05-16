@@ -18,10 +18,10 @@ function Header() {
           <Link to="/Perfil" className={styles.navLink}>
               <FontAwesomeIcon icon={faPortrait} /> Perfil
             </Link>
-            <Link to="/HomePageOFC" className={styles.navLink}>
+            <Link to="/EscolherC" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/Meus Anúncios" className={styles.navLink}>
+            <Link to="/Meus Anuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <Link to="/QuemSomos" className={styles.navLink}>
