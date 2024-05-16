@@ -86,8 +86,10 @@ const RequisicaoDeServico = () => {
                     <img className={styles.img} src='https://cdn-icons-png.flaticon.com/512/15/15407.png' alt="Telefone" width={30} height={30} />
                     <span className={styles.font2}>(11)9914423541</span>
                    
+                    <Link to="/MeusAnuncios">
                     <button type="submit">Concluir</button>
-                    <Link to="/Escolherc">
+                    </Link>
+                    <Link to="/EscolherCategoria">
                     <button>Cancelar</button>
                     </Link>
                     </form> 

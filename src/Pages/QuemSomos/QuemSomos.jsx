@@ -3,7 +3,6 @@ import styles from './QuemSomos.module.css';
 import Footer2 from '../../components/Footer/Footer2';
 import Esferas from '../../components/Esferas/Esferas';
 import React, { useEffect, useState } from 'react';
-import NavBar from '../../components/NavBar/Header';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +22,7 @@ export default function QuemSomos() {
             try {
                 const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
                 if (!usuarioEstaLogado) {
-                    navigate("/login");
+                    navigate("/QuemSomos");
                     return;
                 }
 

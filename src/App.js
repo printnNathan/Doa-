@@ -4,10 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from './Pages/Login/Login';
 import HomePageOFC from './Pages/HomePageOFC/HomePageOFC';
-import EscolherC from './Pages/EscolherCategoria/EscolherCategoria';
 import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico';
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
-import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 
@@ -26,8 +24,8 @@ function App() {
       element: <MeusAnuncios />,
     },
     {
-      path: "/EscolherC",
-      element: <EscolherC />,
+      path: "/EscolherCategoria",
+      element: <EscolherCategoria />,
     },
     {
       path: "/Requisicao",

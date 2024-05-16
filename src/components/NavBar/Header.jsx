@@ -21,11 +21,14 @@ function Header() {
             <Link to="/EscolherC" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/Meus Anuncios" className={styles.navLink}>
+            <Link to="/MeusAnuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <Link to="/QuemSomos" className={styles.navLink}>
             <FontAwesomeIcon icon={faLink} /> Quem somos
+            </Link>
+            <Link to="/EscolherCategoria">
+              <button className={styles.anunciar}>Anunciar</button>
             </Link>
           </Nav>
           <Form className="d-flex ms-auto">

@@ -22,6 +22,7 @@ function Anuncios() {
 
   return (
     <div>
+      <NavBar />
       <div className={Styles.TituloPrincipal}><h1>Meus Anúncios</h1></div>
       <Box sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={tabSelecionada}>
@@ -54,7 +55,7 @@ function Anuncios() {
                 <FontAwesomeIcon icon={faMinusCircle} />
                 </h1>
                <div className={Styles.conteudo}>
-                <img src="https://www.rateio.com/wp-content/uploads/2020/09/vazamento-condominio.jpg" />
+                <img src="https://www.rateio.com/wp-content/uploads/2020/09/vazamento-condominio.jpg" style={{filter: 'grayscale(100%)'}}/>
                <div>
                 <h2>Conserto de encanamento</h2>
                 <h3>Publicado em 01/05/2024</h3>

@@ -3,7 +3,7 @@ import NavBar from '../../components/NavBar/Header';
 import Footer from '../../components/Footer/Footer2';
 import './HomePageOFC.module.css';
 import { Link } from 'react-router-dom';
-import EscolherC from '../EscolherCategoria/EscolherCategoria';
+import EscolherCategoria from '../EscolherCategoria/EscolherCategoria';
 import QuemSomos from '../QuemSomos/QuemSomos';
 
 const HomePageOFC = () => {
@@ -24,13 +24,13 @@ const HomePageOFC = () => {
 
       <main>
         <section className="hero">
-          <div className="hero-image">
-            <img src="hero-image.jpg" alt="Imagem de herói" />
+          <div>
+            <img src="https://t3.ftcdn.net/jpg/02/42/98/84/240_F_242988419_2L1US1Q9rcSttTGIteNw3n3skghgQyDJ.jpg" alt="Imagem de herói" />
           </div>
           <div className="hero-text">
             <h2>Faça a diferença na vida de alguém!</h2>
             <p>Doe para o Gerenciador de Doações e ajude a transformar a vida de pessoas necessitadas.</p>
-            <Link to="/EscolherC">
+            <Link to="/EscolherCategoria">
             <button>Doar agora</button>
             </Link>
           </div>
@@ -48,7 +48,7 @@ const HomePageOFC = () => {
           </div>
         </section>
 
-        <section className="call-to-action">
+        <section>
           <h2>Junte-se a nós!</h2>
           <p>Doe, seja voluntário ou divulgue o Gerenciador de Doações para seus amigos e familiares. Cada contribuição faz a diferença!</p>
           <Link to="/QuemSomos">

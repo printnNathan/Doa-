@@ -56,7 +56,7 @@ const toggleSenhaVisivel = () => {
           try {
                 const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
                 if (!usuarioEstaLogado) {
-                    navigate("/login");
+                    navigate("/Perfil");
                     return;
                 }
                 
