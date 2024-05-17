@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal';
 import ApiService from '../../Services/ApiService';
 import ToastService from '../../Services/ToastService';
@@ -56,7 +56,11 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
                 base64 : fotodeperfil 
             };
 
+<<<<<<< HEAD
             await ApiService.post("/CadastrarONG/cadastrarONG", body);
+=======
+            await ApiService.post("/CadastrarONG/CadastrarONG", body);
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49
             ToastService.Success("Usuário cadastrado com sucesso!");
             setModalAberto(false);
 

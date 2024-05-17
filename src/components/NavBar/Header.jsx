@@ -4,9 +4,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faList, faLink, faComments, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FaSearch } from 'react-icons/fa';
 import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
+import { faPortrait } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   return (
@@ -15,18 +15,20 @@ function Header() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto">
-            <Link to="/home" className={styles.navLink}>
+          <Link to="/Perfil" className={styles.navLink}>
+              <FontAwesomeIcon icon={faPortrait} /> Perfil
+            </Link>
+            <Link to="/EscolherCategoria" className={styles.navLink}>
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/meus-anuncios" className={styles.navLink}>
+            <Link to="/MeusAnuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
-            <NavDropdown title={<span><FontAwesomeIcon icon={faLink} /> Quem somos</span>} id="navbarScrollingDropdown">
-              <NavDropdown.Item as="/sobre">Sobre</NavDropdown.Item>
-              <NavDropdown.Item as="/contatos">Contatos</NavDropdown.Item>
-            </NavDropdown>
-            <Link to="/chat" className={styles.navLink}>
-              <FontAwesomeIcon icon={faComments} /> Chat
+            <Link to="/QuemSomos" className={styles.navLink}>
+            <FontAwesomeIcon icon={faLink} /> Quem somos
+            </Link>
+            <Link to="/EscolherCategoria">
+              <button className={styles.anunciar}>Anunciar</button>
             </Link>
           </Nav>
           <Form className="d-flex ms-auto">

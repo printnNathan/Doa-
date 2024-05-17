@@ -2,27 +2,51 @@
     padding: 1.5px;
 }
 
+/* Estilos para o botão de busca */
 .SearchButton {
-    background-color: #7900f94c; /* Cor de fundo do botão de busca */
-    color: black; /* Cor do texto do botão de busca */
-    padding: 10px 20px; /* Adicione padding para melhorar a usabilidade do botão */
-    border: none; /* Remova a borda padrão do botão */
-    cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  background-color: #7900f94c; /* Cor de fundo do botão de busca */
+  color: black; /* Cor do texto do botão de busca */
+  padding: 10px 20px; /* Adicione padding para melhorar a usabilidade do botão */
+  border: none; /* Remova a borda padrão do botão */
+  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  font-family: Arial, Helvetica, sans-serif; /* Defina a mesma fonte para o botão de busca */
+  font-size: 16px; /* Defina o mesmo tamanho de fonte para o botão de busca */
 }
 
 .SearchButton:hover {
-    background-color: #7b00ff9a; /* Cor de fundo quando o mouse passa por cima */
+  background-color: #7b00ff9a; /* Cor de fundo quando o mouse passa por cima */
 }
 
 /* Estilos para os itens do navbar */
-.navLink {
-    color: #000000; /* Cor do texto */
-    font-weight: bold; /* Negrito */
-    margin: 0 50px; /* Margem entre os itens */
-    text-decoration: none; /* Remova o sublinhado dos links */
-  }
+.navLink, .nav-link, .nav-dropdown-item {
+  color: #000000; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  margin: 0 50px; /* Margem entre os itens */
+  text-decoration: none; /* Remova o sublinhado dos links */
+  font-family: Arial, Helvetica, sans-serif; /* Defina a mesma fonte para todos os itens */
+  font-size: 16px; /* Defina o mesmo tamanho de fonte para todos os itens */
+}
   
-  .navLink:hover {
+  .navLink:hover, .nav-link:hover, .nav-dropdown-item:hover {
     color: rgb(54, 50, 50); /* Cor do texto quando o mouse passa por cima */
+}
+
+  .anunciar {
+    background-color: #7900f94c;
+    color: black;
+    width: auto;
+    height: 40px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Arial, Helvetica, sans-serif';
+    font-weight: bold;
+    border-radius: 5px; /* torna o botão redondo */
+    text-align: center;
+    line-height: 20px; /* Altura da linha para alinhamento vertical, ajuste conforme necessário */
   }
-  
+
+  .anunciar:hover {
+    background-color: #7b00ff9a;
+  }

@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
-import { useNavigate } from "react-router-dom";
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from './Login.module.css';
-
+import Esferas from '../../components/Esferas/Esferas';
+import axios from 'axios';
 
 export default function Cadastro() {
-
     const navigate = useNavigate();
-
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [modalAberto, setModalAberto] = useState(false);
+<<<<<<< HEAD
 
     useEffect(() => {
         VerificarLogin();
@@ -30,19 +29,29 @@ export default function Cadastro() {
     function AbrirModal() {
         setModalAberto(true);
     }
+=======
+    const [loading, setLoading] = useState(false);
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49
 
     async function Login() {
         try {
+            setLoading(true);
+
             const body = new URLSearchParams({
                 email,
                 senha,
             });
 
+<<<<<<< HEAD
             const response = await ApiService.post("/CadastrarONG/Loginong", body);
+=======
+            const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49
             const token = response.data.token;
 
             AuthService.SalvarToken(token);
 
+<<<<<<< HEAD
             ToastService.Success("Seja bem vindo, " + email);
            
             navigate("/CadastrarUsuario");
@@ -51,11 +60,18 @@ export default function Cadastro() {
             //}, 1000);
         }
         catch (error) {
+=======
+            ToastService.Success("Seja bem-vindo, " + email);
+            navigate('/Meus anuncios');
+        } catch (error) {
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49
             if (error.response?.status === 401) {
                 ToastService.Error("E-mail e/ou senha inválidos!");
-                return;
+            } else {
+                ToastService.Error("Houve um erro ao realizar o login. Tente novamente mais tarde.");
             }
-            ToastService.Error("Houve um erro no servidor ao realizar o seu login\r\nTente novamente mais tarde.");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -65,24 +81,29 @@ export default function Cadastro() {
                 modalAberto={modalAberto}
                 setModalAberto={setModalAberto}
             />
-            
             <div className={styles.CardPrincipal}>
-                <span>Login</span>
+                <div className={styles.Titulo}>Login</div>
                 <span className={styles.font1}>Email:</span>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
-
-                <span className={styles.font1}>Senha</span>
-                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha'type='Password' className={styles.Senha} />
-                <div className={styles.EsqueceuSenha}>Esqueceu a Senha</div>
-
-                <button onClick={Login}>Login</button>
-
+                <span className={styles.font1}>Senha:</span>
+                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha' type='password' className={styles.Senha} />
+                <span className={styles.Modal}>Esqueceu a Senha</span>
+                <button className={styles.Botao} onClick={Login} disabled={loading}>
+                    {loading ? 'Carregando...' : 'Login'}
+                </button>
                 <div>
-                <button onClick={AbrirModal}>Novo por aqui? Cadastre-se</button>
+                    <span onClick={() => setModalAberto(true)} className={styles.Modal}>Novo por aqui? Cadastre-se</span>
                 </div>
             </div>
-
-
+            <Esferas />
         </div>
+<<<<<<< HEAD
     )
 }
+=======
+    );
+}
+
+
+
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49

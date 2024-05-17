@@ -40,7 +40,7 @@ body{
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 300%;    
+    width: 50%;    
     height: 100px;
     text-align: left;
 }
@@ -50,7 +50,7 @@ body{
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 300%;
+    width: 50%;
     
 }
 .CardEmail{
@@ -87,6 +87,10 @@ body{
     font-size: 14px;
 }
 
+.font1{
+    font-size: 14px;
+}
+
 .BotãoDeEntrar {
     width: 100%;
     padding: 7px;
@@ -96,18 +100,18 @@ body{
 }
 
 .Bola {
-    width: 200px; /* Largura da bola */
-    height: 200px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
+    width: 200px;
+    height: 200px; 
+    background-color: #692cab6b;
+    border-radius: 50%;
+    position: absolute; 
     margin-top: 1px;
     margin-left: 250px;
 }
 .Hr {
     border: 1.5px solid #000;
 }
-/* Requisicaodeservico.module.css */
+
 
 .neumorphicButton {
     position: relative;
@@ -142,19 +146,27 @@ body{
     box-shadow: inset -5px -5px 10px #17f707, inset 5px 5px 10px #17f707;
   }
   .neumorphicButton.active {
-    background-color: #00ff00; /* Verde */
+    background-color: #00ff00; 
   }
   .ExibirTelefone {
     margin-left: 2%;
 }
 .form{
     position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 10%;
 }
+<<<<<<< HEAD
 
 .imagem {
     width: 100px;
     height: 100px;
 }
+=======
+.barra
+{
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    margin-bottom: 56%;
+}
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49

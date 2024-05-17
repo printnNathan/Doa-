@@ -1,55 +1,72 @@
-body{
-    background-color: rgb(255, 255, 255);
-}
-
-.Texto1 {
+/* EscolherCategoria.module.css */
+body {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .Texto1 {
     padding-bottom: 11px;
     padding-top: 10px;
     text-align: center;
     margin-top: 10px;
     font-size: 40px;
-}
-
-.Texto2 {
+  }
+  
+  .Texto2 {
     padding-bottom: 14px;
     padding-top: 10px;
     text-align: center;
     margin-top: 45px;
     font-size: 30px;
-}
-
-.Categorias {
+  }
+  
+  .Categorias {
     width: 200px;
     height: 200px;
     border-radius: 10px;
     background-color: #7979796b;
     color: black;
-    margin: 0 50px; /* Espaçamento horizontal entre os botões */
-    padding: 10px 20px; /* Espaçamento interno do botão */
+    margin: 0 50px;
+    padding: 10px 20px;
     font-size: larger;
-}
-
-.Container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh; /* % da altura da tela */
-}
+  }
+  
+
+  .Categorias:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.966);
+  }
+  
+  .Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+  }
   
   .TopButtons,
   .BottomButtons {
     display: flex;
     justify-content: center;
-    margin-bottom: 60px; /* Espaçamento entre os grupos de botões */
-}
-
-.Categorias img {
-    width: 100%; /* Largura do ícone */
-    height: 100%; /* Altura do ícone */
+    margin-bottom: 60px;
   }
-
-.Opcoes {
+  
+  .Categorias img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .Opcoes {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-}
+    margin-top: 10px;
+    text-align: center;
+  }
+  

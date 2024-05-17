@@ -3,32 +3,40 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from './Pages/Login/Login';
-import Home from './Pages/Home/Home';
-import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico';
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
-
+import QuemSomos from './Pages/QuemSomos/QuemSomos';
+import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
+import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/Requisicao",
-      element: <RequisicaoDeServico />,
-    },
-    {
-      path: "/login",
+      path: "/",
       element: <Login />,
     },
     
     
     {
-      path: "/CadastrarUsuario",
-      element: <CadastrarUsuario />,
+      path: "/MeusAnuncios",
+      element: <MeusAnuncios />,
     },
     {
-      path: "/",
-      element: <Home />,
+      path: "/EscolherCategoria",
+      element: <EscolherCategoria />,
     },
+    {
+      path: "/Requisicao",
+      element: <RequisicaoDeServico />,
+    },
+    {
+      path: "/QuemSomos",
+      element: <QuemSomos />,
+    },
+    {
+      path: "/Perfil",
+      element: <CadastrarUsuario />,
+    }
   ]);
 
   return (

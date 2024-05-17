@@ -1,96 +1,161 @@
-body{
+/* CadastrarUsuario.module.css */
+body {
     background-color: rgb(255, 255, 255);
-}
-
-.CardPrincipal {
+  }
+  
+  .CardPrincipal {
+    position: relative;
     border: 1.5px solid #000;
     border-radius: 10px;
     width: 45%;
     height: 60%;
     padding: 5%;
     margin: auto;
+<<<<<<< HEAD
     margin-top:  1%;
     background-color: rgb(255, 255, 255)
 }
 .CardPrincipal2 {
     border: 1.5px solid #000000;
+=======
+    margin-top: 1%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .Desativar {
+    position: absolute;
+    top: 10px; 
+    left: 600px; 
+    background-color: transparent;
+    border: none; 
+    color: #3b245375;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .Desativar:hover {
+    color: #f01313;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .CardPrincipal2 {
+    border: 1.5px solid #000;
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49
     border-radius: 50px;
     width: 100%;
     height: 60%;
     padding: 4%;
     margin: auto;
-    margin-top:  1%;
-    background-color: rgb(255, 255, 255)
-}
-.Email {
+    margin-top: 1%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .Email {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
     width: 100%;
-    height: 40px ;
-}
-.Apelido {
+    height: 40px;
+  }
+  
+  .Apelido {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
     width: 100%;
-    height: 40px ;
-}
-.CardEmail{
+    height: 40px;
+  }
+  
+  .CardEmail {
     margin-bottom: 10px;
-}
-.Cardapalido {
+  }
+  
+  .Cardapelido {
     margin-bottom: 10px;
-}
-
-.Icons {
-   width: 9%;
-   height: 9%;
-}
-
-.Icons2{
+  }
+  
+  .Icons {
+    width: 9%;
+    height: 9%;
+  }
+  
+  .Icons2 {
     display: flex;
     flex-direction: space-between;
     justify-content: center;
     padding: 10px;
-    
-}
-
-
-.TextoLogin {
+  }
+  
+  .TextoLogin {
     padding-bottom: 14px;
-}
-
-.Comoaparecerápublicamente{
+  }
+  
+  .Comoaparecerápublicamente {
     font-size: 12px;
     top: 50%;
-}
-
-.font1{
+  }
+  
+  .font1 {
     font-size: 14px;
-}
-
-.BotãoDeEntrar {
+  }
+  
+  .BotãoDeEntrar {
     width: 100%;
     padding: 7px;
     border-radius: 10px;
     background-color: #625959ce;
     color: white;
-}
-
-.Bola {
-    width: 200px; /* Largura da bola */
-    height: 200px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
+  }
+  
+  .Bola {
+    width: 200px; 
+    height: 200px; 
+    background-color: #692cab6b;
+    border-radius: 50%; 
+    position: absolute; 
     margin-top: 1px;
     margin-left: 250px;
+<<<<<<< HEAD
 }
 .Hr {
     border-bottom: black;
 }
 .Span{
+=======
+  }
+  
+  .Hr {
+    border: 1.5px solid #000;
+  }
+  
+  .Span {
+>>>>>>> 74ee5a982b175917b1e5a6c767196a7f19589a49
     width: 200px;
     height: 200px;
-}
+  }
+  
+  .DesativarContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .DesativarTexto {
+    margin-left: 10px;
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #333; 
+  }
+  
+  .SenhaContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ToggleSenha {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007BFF;
+  }
+  
