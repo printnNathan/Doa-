@@ -3,6 +3,7 @@ import styles from './PublicadosPanel.module.css';
 import axios from 'axios';
 
 function PublicadosPanel() {
+  const [publicadosPanel, setPublicadosPanel] = useState([]);
   const [doacoes, setDoacoes] = useState([]);
 
   useEffect(() => {
@@ -19,7 +20,9 @@ function PublicadosPanel() {
 
   async function listarDoacoes() {
     try {
+
      const response = await axios.get('https://localhost:7284/api/PedidosDoacao');
+
 
       if (response.status !== 200) {
         throw new Error('Erro ao listar doações');
@@ -39,6 +42,7 @@ function PublicadosPanel() {
   return (
     <div>
       <ul>
+
         {doacoes.map(doacao => (
           <li key={doacao.id}>
             <h2 className={styles.h2}>{doacao.titulo ? doacao.titulo : 'Título não disponível'}</h2>

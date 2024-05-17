@@ -15,6 +15,8 @@ function App() {
       path: "/",
       element: <Login />,
     },
+    
+    
     {
       path: "/MeusAnuncios",
       element: <MeusAnuncios />,

@@ -17,6 +17,7 @@ const baseUrl = "https://localhost:7284/api";
 const ApiService = {
     async get(endpoint) {
         const headers = createHeader();
+
         try {
             const response = await axios.get(baseUrl + endpoint, headers);
             return response.data;

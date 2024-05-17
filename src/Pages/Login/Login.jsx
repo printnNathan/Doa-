@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
@@ -15,10 +15,20 @@ export default function Cadastro() {
     const [modalAberto, setModalAberto] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    async function Login() {
+    useEffect(() => {
+        verificarLogin();
+    }, []);
+
+    function verificarLogin() {
+        const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
+        if (usuarioEstaLogado) {
+            navigate("/MeusAnuncios");
+        }
+    }
+
+    async function login() {
         try {
             setLoading(true);
-
             const body = new URLSearchParams({
                 email,
                 senha,
@@ -26,7 +36,6 @@ export default function Cadastro() {
 
             const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
             const token = response.data.token;
-
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem-vindo, " + email);
@@ -51,21 +60,40 @@ export default function Cadastro() {
             <div className={styles.CardPrincipal}>
                 <div className={styles.Titulo}>Login</div>
                 <span className={styles.font1}>Email:</span>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' className={styles.Email} />
+                <input 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    placeholder='E-mail' 
+                    className={styles.Email} 
+                />
                 <span className={styles.font1}>Senha:</span>
-                <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder='Senha' type='password' className={styles.Senha} />
+                <input 
+                    value={senha} 
+                    onChange={(e) => setSenha(e.target.value)} 
+                    placeholder='Senha' 
+                    type='password' 
+                    className={styles.Senha} 
+                />
                 <span className={styles.Modal}>Esqueceu a Senha</span>
-                <button className={styles.Botao} onClick={Login} disabled={loading}>
+                <button 
+                    className={styles.Botao} 
+                    onClick={login} 
+                    disabled={loading}
+                >
                     {loading ? 'Carregando...' : 'Login'}
                 </button>
                 <div>
-                    <span onClick={() => setModalAberto(true)} className={styles.Modal}>Novo por aqui? Cadastre-se</span>
+                    <span 
+                        onClick={() => setModalAberto(true)} 
+                        className={styles.Modal}
+                    >
+                        Novo por aqui? Cadastre-se
+                    </span>
                 </div>
             </div>
             <Esferas />
         </div>
     );
 }
-
 
 

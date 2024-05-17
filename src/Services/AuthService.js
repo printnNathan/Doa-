@@ -3,6 +3,8 @@ import { jwtDecode } from "jwt-decode";
 const AuthService = {
     SalvarToken(token) {
         localStorage.setItem("jwt", token);
+       // const userData = jwtDecode(token); {/*Eu que fiz essa alteralção: Nathan */}
+        //localStorage.setItem("userId", userData.id); {/*Eu que fiz essa alteração: Nathan*/}
     },
     PegarToken() {
         return localStorage.getItem("jwt");

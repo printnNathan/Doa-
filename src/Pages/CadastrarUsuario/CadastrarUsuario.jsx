@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './CadastrarUsuario.module.css';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
@@ -9,109 +9,115 @@ import { useNavigate } from 'react-router-dom';
 import ToastService from '../../Services/ToastService';
 import axios from 'axios';
 
-
-function CadastrarUsuario() {
-  const [telefone, setTelefone] = useState('');
-  const [nomeONG, setNomeONG] = useState('');
-  const [emailONG, setEmailONG] = useState('');
-  const [senhaONG, setSenhaONG] = useState('');
+const CadastrarUsuario = () => {
+  const [nome, setNome] = useState("");
+  const [celular, setCelular] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [cep, setCep] = useState("");
+  const [logradouro, setLogradouro] = useState("");
+  const [numero, setNumero] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [complemento, setComplento] = useState("");
+  const [estado, setEstado] = useState("");
+  const [biografia, setBiografia] = useState("");
   const [senhaVisivel, setSenhaVisivel] = useState(false);
   const [emailConfirmado, setEmailConfirmado] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function ListarInformacoesONG() {
+      try {
+        const response = await ApiService.get("/ONGs/listarPorID");
+        setNome(response.data.nome);
+        setEmail(response.data.email);
+      } catch (error) {
+        ToastService.Error('Erro ao listar informações da ONG');
+      }
+    }
+
+    ListarInformacoesONG();
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const body = new URLSearchParams({
-        nome: nomeONG,
-        email: emailONG,
-        senha: senhaONG
-    });
+        nome: nome,
+        email: email,
+        senha: senha
+      });
 
-    const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
-    const token = response.data.token;
-    AuthService.SalvarToken(token);
+      const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
+      const token = response.data.token;
+      AuthService.SalvarToken(token);
 
-      console.log('Pedido enviado com sucesso:', response.data);
-      ToastService.Success("Pedido enviado com sucesso!" + emailONG);
-      setEmailConfirmado(true); // Defina como verdadeiro após o envio bem-sucedido
+      ToastService.Success("Cadastro realizado com sucesso!");
+      setEmailConfirmado(true);
     } catch (error) {
       console.error('Erro ao enviar pedido:', error);
       ToastService.Error("Erro ao enviar pedido. Por favor, tente novamente.");
     }
   };
+
   const toggleSenhaVisivel = () => {
     setSenhaVisivel(!senhaVisivel);
   };
 
-  const handleChange = (e) => {
-    let inputTelefone = e.target.value.replace(/\D/g, '');
-
-    if (inputTelefone.length >= 2) {
-      inputTelefone = `(${inputTelefone.slice(0, 2)})${inputTelefone.slice(2)}`;
+  const handleChangeCelular = (e) => {
+    let inputCelular = e.target.value.replace(/\D/g, '');
+    if (inputCelular.length >= 2) {
+      inputCelular = `(${inputCelular.slice(0, 2)})${inputCelular.slice(2)}`;
     }
-
-    setTelefone(inputTelefone);
+    setCelular(inputCelular);
   };
-
-  const navigate = useNavigate();
-  const [usuario, setUsuario] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-        if (!usuarioEstaLogado) {
-          navigate("/Perfil");
-          return;
-        }
-
-        const response = await ApiService.get('/CadastrarONG/CadastrarONG');
-        if (response.status === 200) {
-          setUsuario(response.data);
-        }
-      } catch (error) {
-        console.error("Erro ao buscar dados do usuário:", error);
-      }
-    }
-
-    fetchData();
-  }, [navigate]);
 
   return (
     <div>
       <NavBar />
       <div className={styles.CardPrincipal}>
         <form onSubmit={handleSubmit}>
-          <span className={styles.DesativarTexto}>Meu cadastro</span>
-
+          <h1 className={styles.TextoLogin}>Meu cadastro</h1>
+          <div className={styles.CardEmail}>
+            <span className={styles.font1}>Nome completo:</span>
+            <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} className={styles.Email} />
+          </div>
           <div className={styles.Cardapelido}>
-            <label>Nome da ONG:</label>
-            <input type="text" value={nomeONG} onChange={(e) => setNomeONG(e.target.value)} className={styles.Apelido} />
-            <label>Email da ONG:</label>
-            <input type="text" value={emailONG} onChange={(e) => setEmailONG(e.target.value)} className={styles.Apelido} />
-            <label>Senha da ONG:</label>
-            <div className={styles.SenhaContainer}>
-              <input type={senhaVisivel ? "text" : "password"} value={senhaONG} onChange={(e) => setSenhaONG(e.target.value)} className={styles.Apelido} />
-              <button type="button" onClick={toggleSenhaVisivel} className={styles.ToggleSenha}>
-                {senhaVisivel ? "Ocultar" : "Mostrar"}
-              </button>
-            </div>
-            <span className={styles.font1}>Celular</span>
-            <input type="text" name="Telefone" placeholder="Celular" value={telefone} onChange={handleChange} className={styles.Apelido} />
+            <span className={styles.font1}>Apelido:</span>
+            <input type="text" name="apelido" placeholder="Apelido" className={styles.Apelido} />
             <div>
               <span className={styles.EsqueceuSenha}>(como aparecerá publicamente)</span>
             </div>
           </div>
+          <div className={styles.CardEmail}>
+            <span className={styles.font1}>E-mail:</span>
+            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.Email} />
+          </div>
+          <div className={styles.CardEmail}>
+            <span className={styles.font1}>Celular:</span>
+            <input type="text" name="celular" value={celular} onChange={handleChangeCelular} className={styles.Email} />
+          </div>
+          <div className={styles.CardEmail}>
+            <span className={styles.font1}>Senha:</span>
+            <div className={styles.SenhaContainer}>
+              <input type={senhaVisivel ? "text" : "password"} value={senha} onChange={(e) => setSenha(e.target.value)} className={styles.Email} />
+              <button type="button" onClick={toggleSenhaVisivel} className={styles.ToggleSenha}>
+                {senhaVisivel ? "Ocultar" : "Mostrar"}
+              </button>
+            </div>
+          </div>
           <div>
-            <button className={styles.BotãoDeEntrar} onClick={handleSubmit}>Salvar alterações</button>
+            <button type="submit" className={styles.BotaoDeEntrar}>Salvar alterações</button>
           </div>
         </form>
       </div>
       <div className={styles.CardPrincipal}>
         {emailConfirmado && (
-          <span className={styles.DesativarTexto}>E-mail: {emailONG}</span>
+          <span className={styles.DesativarTexto}>E-mail: {email}</span>
         )}
-        <div className={styles.Hr}></div>
+        <hr className={styles.Hr}></hr>
         <div>
           <img className={styles.img} src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil" width={70} height={70} />
           <span className={styles.DesativarTexto}>Foto de perfil</span>
@@ -135,4 +141,6 @@ function CadastrarUsuario() {
 }
 
 export default CadastrarUsuario;
+
+
 

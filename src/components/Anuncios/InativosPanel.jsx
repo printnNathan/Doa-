@@ -1,7 +1,6 @@
-import ApiService from '../../Services/ApiService';
 import React, { useState, useEffect } from 'react';
+import ApiService from '../../Services/ApiService';
 import styles from './PublicadosPanel.module.css';
-import axios from 'axios';
 
 function InativosPanel() {
   const [inativosPanel, setInativosPanel] = useState([]);
@@ -12,13 +11,12 @@ function InativosPanel() {
 
   async function listarProdutosInativos() {
     try {
-      const response = await axios.get('https://localhost:7284/api/PedidosDoacao');
-
+      const response = await ApiService.get('/PedidosDoacao');
       if (response.status !== 200) {
         alert('Erro ao listar produtos');
         return;
       }
-      
+
       const produtosInativos = response.data.filter(produto => !produto.ativo);
       setInativosPanel(produtosInativos);
     } catch (error) {
@@ -30,11 +28,11 @@ function InativosPanel() {
   return (
     <div>
       <ul>
-        {inativosPanel.map(doacao => (
-          <li key={doacao.id}>
-            <h2 className={styles.h2}>{doacao.titulo ? doacao.titulo : 'Título não disponível'}</h2>
-            <p>{doacao.descricao ? doacao.descricao : 'Descrição não disponível'}</p>
-            {doacao.ong ? <p>ONG: {doacao.ong.nome}</p> : <p>ONG não disponível</p>}
+        {inativosPanel.map(produto => (
+          <li key={produto.id}>
+            <h2 className={styles.h2}>{produto.titulo ? produto.titulo : 'Título não disponível'}</h2>
+            <p>{produto.descricao ? produto.descricao : 'Descrição não disponível'}</p>
+            {produto.ong ? <p>ONG: {produto.ong.nome}</p> : <p>ONG não disponível</p>}
             {/* Adicione outras verificações e campos conforme necessário */}
           </li>
         ))}
@@ -44,4 +42,5 @@ function InativosPanel() {
 }
 
 export default InativosPanel;
+
 

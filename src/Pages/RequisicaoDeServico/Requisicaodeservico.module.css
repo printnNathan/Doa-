@@ -1,4 +1,4 @@
-body{
+body {
     background-color: rgb(255, 255, 255);
 }
 
@@ -9,86 +9,68 @@ body{
     transform: translate(-50%, -50%);
 }
 
-.CardPrincipal {
+.CardPrincipal,
+.CardPrincipal2 {
     border: 1.5px solid #000;
     border-radius: 10px;
     width: 45%;
-    height: 60%;
     padding: 5%;
     margin: auto;
-    margin-top:  1%;
-    background-color: rgb(255, 255, 255)
+    margin-top: 1%;
+    background-color: rgb(255, 255, 255);
 }
+
 .CardPrincipal2 {
-    border: 1.5px solid #000;
     border-radius: 50px;
     width: 100%;
-    height: 60%;
-    padding: 4%;
-    margin: auto;
-    margin-top:  1%;
-    background-color: rgb(255, 255, 255)
 }
-.Email {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    height: 40px ;
-}
+
+.Email,
+.Apelido,
 .Apelido2 {
     background-color: rgba(128, 128, 128, 0.396);
     border-radius: 5px;
     display: block;
-    width: 50%;    
+}
+
+.Email,
+.Apelido {
+    width: 100%;
+    height: 40px;
+}
+
+.Apelido2 {
+    width: 50%;
     height: 100px;
     text-align: left;
 }
 
-
-.Apelido {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-    width: 50%;
-    
-}
-.CardEmail{
+.CardEmail {
     margin-bottom: 10px;
 }
-.Cardapalido {
+
+.Cardapelido {
     margin-bottom: 1px;
 }
 
 .Icons {
-   width: 9%;
-   height: 9%;
+    width: 9%;
+    height: 9%;
 }
 
-.Icons2{
+.Icons2 {
     display: flex;
-    flex-direction: space-between;
     justify-content: center;
     padding: 10px;
-    
 }
-
 
 .TextoLogin {
     padding-bottom: 14px;
 }
 
-.Comoaparecerápublicamente{
+.Comoaparecerápublicamente,
+.font1 {
     font-size: 12px;
-    top: 50%;
-}
-
-.font1{
-    font-size: 14px;
-}
-
-.font1{
-    font-size: 14px;
 }
 
 .BotãoDeEntrar {
@@ -101,17 +83,17 @@ body{
 
 .Bola {
     width: 200px;
-    height: 200px; 
+    height: 200px;
     background-color: #692cab6b;
     border-radius: 50%;
-    position: absolute; 
+    position: absolute;
     margin-top: 1px;
     margin-left: 250px;
 }
+
 .Hr {
     border: 1.5px solid #000;
 }
-
 
 .neumorphicButton {
     position: relative;
@@ -123,9 +105,9 @@ body{
     overflow: hidden;
     cursor: pointer;
     margin-left: 0.5%;
-  }
-  
-  .innerButton {
+}
+
+.innerButton {
     position: absolute;
     background-color: #e0e0e0;
     width: 30px;
@@ -134,30 +116,35 @@ body{
     top: 0;
     left: 0;
     transition: transform 0.3s ease;
-  }
-  
-  .neumorphicButton.active .innerButton {
+}
+
+.neumorphicButton.active .innerButton {
     transform: translateX(30px);
     background-color: #ffffff;
     box-shadow: -5px -5px 10px #bebebe, 5px 5px 10px #ffffff;
-  }
-  
-  .neumorphicButton.active {
+}
+
+.neumorphicButton.active {
     box-shadow: inset -5px -5px 10px #17f707, inset 5px 5px 10px #17f707;
-  }
-  .neumorphicButton.active {
-    background-color: #00ff00; 
-  }
-  .ExibirTelefone {
+    background-color: #00ff00;
+}
+
+.ExibirTelefone {
     margin-left: 2%;
 }
-.form{
+
+.form {
     position: absolute;
     top: 12%;
     left: 12%;
 }
-.barra
-{
+
+.imagem {
+    width: 100px;
+    height: 100px;
+}
+
+.barra {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     margin-bottom: 30%;
