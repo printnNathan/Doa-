@@ -20,7 +20,7 @@ const ApiService = {
     async get(endpoint) {
         const headers = createHeader();
 
-        const response = await axios.get(baseUrl + endpoint, );
+        const response = await axios.get(baseUrl + endpoint, headers);
         return response;
     },
 

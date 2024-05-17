@@ -23,7 +23,7 @@ export default function Cadastro() {
     function VerificarLogin() {
         const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
         if (usuarioEstaLogado) {
-            navigate("/login");
+            navigate("/Login");
         }
     }
 
@@ -38,14 +38,14 @@ export default function Cadastro() {
                 senha,
             });
 
-            const response = await ApiService.post("/Usuarios/Login", body);
+            const response = await ApiService.post("/CadastrarONG/Loginong", body);
             const token = response.data.token;
 
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem vindo, " + email);
            
-            navigate("/Home");
+            navigate("/CadastrarUsuario");
             //setTimeout(() => {
             //window.location.reload();
             //}, 1000);
@@ -86,5 +86,3 @@ export default function Cadastro() {
         </div>
     )
 }
-
-

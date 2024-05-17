@@ -14,7 +14,7 @@ function InativosPanel() {
 
   async function ListarProdutos() {
     try {
-      const response = await ApiService.get("/Panel/listarinativosPanel");
+      const response = await ApiService.get("/PedidosDoacao");
 
       if (response.status !== 200) {
         alert('Erro ao listar produtos');
@@ -34,9 +34,8 @@ function InativosPanel() {
       <ul>
         {InativosPanel.map(produto => (
           <li key={produto.id}>
-            <h2 className={styles.h2}>{produto.nome}</h2>
+            <h2 className={styles.h2}>{produto.titulo}</h2>
             <p>{produto.descricao}</p>
-            <p>{produto.DataDaRequisicao}</p>
           </li>
         ))}
       </ul>

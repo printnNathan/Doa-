@@ -13,7 +13,7 @@ function ExpiradosPanel() {
 
   async function ListarProdutos() {
     try {
-      const response = await ApiService.get("/Panel/Listarprodutospanel");
+      const response = await ApiService.get("/PedidosDoacao");
 
       if (response.status !== 200) {
         alert('Erro ao listar produtos');
@@ -28,13 +28,11 @@ function ExpiradosPanel() {
 
   return (
     <div>
-      <div></div>
       <ul>
         {ExpiradosPanel.map(produto => (
           <li key={produto.id}>
-            <h2 className={styles.h2}>{produto.nome}</h2>
+            <h2 className={styles.h2}>{produto.titulo}</h2>
             <p>{produto.descricao}</p>
-            <p>{produto.DataDaRequisicao}</p>
           </li>
         ))}
       </ul>
