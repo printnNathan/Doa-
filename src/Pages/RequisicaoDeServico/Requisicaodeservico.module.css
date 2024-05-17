@@ -2,146 +2,87 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.Foto {
-    position: absolute;
-    left: 60%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.CardPrincipal,
-.CardPrincipal2 {
-    border: 1.5px solid #000;
-    border-radius: 10px;
-    width: 45%;
-    padding: 5%;
-    margin: auto;
-    margin-top: 1%;
-    background-color: rgb(255, 255, 255);
-}
-
-.CardPrincipal2 {
-    border-radius: 50px;
-    width: 100%;
-}
-
-.Email,
-.Apelido,
-.Apelido2 {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-}
-
-.Email,
-.Apelido {
-    width: 100%;
-    height: 40px;
-}
-
-.Apelido2 {
-    width: 50%;
-    height: 100px;
-    text-align: left;
-}
-
-.CardEmail {
-    margin-bottom: 10px;
-}
-
-.Cardapelido {
-    margin-bottom: 1px;
-}
-
-.Icons {
-    width: 9%;
-    height: 9%;
-}
-
-.Icons2 {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-.TextoLogin {
-    padding-bottom: 14px;
-}
-
-.Comoaparecerápublicamente,
-.font1 {
-    font-size: 12px;
-}
-
-.BotãoDeEntrar {
-    width: 100%;
-    padding: 7px;
-    border-radius: 10px;
-    background-color: #625959ce;
-    color: white;
-}
-
-.Bola {
-    width: 200px;
-    height: 200px;
-    background-color: #692cab6b;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: 1px;
-    margin-left: 250px;
-}
-
-.Hr {
-    border: 1.5px solid #000;
-}
-
-.neumorphicButton {
-    position: relative;
-    background-color: #e70c0c;
-    border: none;
-    border-radius: 10px;
-    width: 60px;
-    height: 30px;
-    overflow: hidden;
-    cursor: pointer;
-    margin-left: 0.5%;
-}
-
-.innerButton {
-    position: absolute;
-    background-color: #e0e0e0;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    transition: transform 0.3s ease;
-}
-
-.neumorphicButton.active .innerButton {
-    transform: translateX(30px);
-    background-color: #ffffff;
-    box-shadow: -5px -5px 10px #bebebe, 5px 5px 10px #ffffff;
-}
-
-.neumorphicButton.active {
-    box-shadow: inset -5px -5px 10px #17f707, inset 5px 5px 10px #17f707;
-    background-color: #00ff00;
-}
-
-.ExibirTelefone {
-    margin-left: 2%;
+.text {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
 }
 
 .form {
-    position: absolute;
-    top: 12%;
-    left: 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.imagem {
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input {
+    background-color: rgba(128, 128, 128, 0.396);
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.icon {
+    display: block;
+    margin: 10px 0;
+}
+
+.contact {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.submitButton, .cancelButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.previewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.previewImage {
     width: 100px;
     height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .barra {

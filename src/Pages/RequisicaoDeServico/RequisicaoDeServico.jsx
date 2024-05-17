@@ -35,7 +35,6 @@ const RequisicaoDeServico = () => {
                     previews.push(URL.createObjectURL(currentFile));
                     images.push({ base64: e.target.result.split(',')[1] });
 
-                    // Se todas as imagens foram carregadas, atualize os estados
                     if (previews.length === selectedFiles.length) {
                         setPrevia(previews);
                         setImagensPedido(images);
@@ -46,17 +45,17 @@ const RequisicaoDeServico = () => {
             }
         } else {
             setImagensPedido([]);
-            setPrevia([]); // Limpa as prévias se nenhum arquivo estiver selecionado
+            setPrevia([]);
         }
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await ApiService.post('/PedidosDoacao/CadastrarPedidos', {
-                titulo: titulo,
-                descricao: descricao,
-                cep: cep,
+            const response = await ApiService.post('/PedidosDoacao/cadastrarpedido', {
+                titulo,
+                descricao,
+                cep,
                 iD_ONG: parseInt(idONG),
                 iD_Tipo: parseInt(idTipoDoacao),
                 ong: { 
@@ -75,76 +74,72 @@ const RequisicaoDeServico = () => {
         }
     };
 
-    async function PegarIdOng() {
-        try {
-            const response = await ApiService.get("/ONGs/listarPorID");
-            return response.data.id;
-        } catch (error) {
-            ToastService.Error("Erro ao obter ID da ONG");
-        }
-    }
-
     return (
         <div>
             <NavBar />
-            <h1 className={styles.TextoLogin}>Agora, compartilhe algumas informações sobre seu produto</h1>
-            <div className={styles.form}>
-                <div className={styles.CardEmail}>
-                    <span className={styles.font1}>TÍTULO:</span>
-                    <input 
-                        type="text" 
-                        placeholder="CONSERTO DE ENCANAMENTO" 
-                        className={styles.Apelido} 
-                        value={titulo} 
-                        onChange={(e) => setTitulo(e.target.value)} 
-                    />
-                </div>
-                <div className={styles.Cardapelido}>
-                    <span className={styles.font1}>DESCRIÇÃO</span>
-                    <input 
-                        type="text" 
-                        placeholder="SERVIÇO DOMÉSTICO" 
-                        className={styles.Apelido2} 
-                        value={descricao} 
-                        onChange={(e) => setDescricao(e.target.value)} 
-                    />
-                </div>
-                <div className={styles.Foto}>
-                    <input 
-                        multiple 
-                        type="file" 
-                        accept="image/jpeg" 
-                        onChange={handleFileChange} 
-                    />
-                </div>
-                <div className={styles.Cardapelido}>
-                    <form onSubmit={handleSubmit}>
-                        <h5 className={styles.font1}>CONTATO</h5>
-                        <img 
-                            className={styles.img} 
-                            src='https://cdn-icons-png.flaticon.com/512/15/15407.png' 
-                            alt="Telefone" 
-                            width={30} 
-                            height={30} 
+            <div className={styles.container}>
+                <h1 className={styles.text}>Agora, compartilhe algumas informações sobre seu produto</h1>
+                <div className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <span className={styles.label}>TÍTULO:</span>
+                        <input 
+                            type="text" 
+                            placeholder="CONSERTO DE ENCANAMENTO" 
+                            className={styles.input} 
+                            value={titulo} 
+                            onChange={(e) => setTitulo(e.target.value)} 
                         />
-                        <span className={styles.font1}>(11)9914423541</span>
-                        <button type="submit">Concluir</button>
-                        <Link to="/EscolherCategoria">
-                            <button type="button">Cancelar</button>
-                        </Link>
-                    </form>
-                </div>
-                <div>
-                    {previa.map((src, index) => (
-                        <img key={index} className={styles.imagem} src={src} alt={`Preview ${index}`} />
-                    ))}
+                    </div>
+                    <div className={styles.formGroup}>
+                        <span className={styles.label}>DESCRIÇÃO:</span>
+                        <input 
+                            type="text" 
+                            placeholder="SERVIÇO DOMÉSTICO" 
+                            className={styles.input} 
+                            value={descricao} 
+                            onChange={(e) => setDescricao(e.target.value)} 
+                        />
+                    </div>
+                    <div className={styles.previewContainer}>
+                        {previa.map((src, index) => (
+                        <img key={index} className={styles.previewImage} src={src} alt={`Preview ${index}`} />
+                        ))}
+                    </div>
+                    <div className={styles.formGroup}>
+                        <input 
+                            multiple 
+                            type="file" 
+                            accept="image/jpeg" 
+                            onChange={handleFileChange} 
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <form onSubmit={handleSubmit}>
+                            <h5 className={styles.label}>CONTATO</h5>
+                            <img 
+                                className={styles.icon} 
+                                src='https://cdn-icons-png.flaticon.com/512/15/15407.png' 
+                                alt="Telefone" 
+                                width={30} 
+                                height={30} 
+                            />
+                            <span className={styles.contact}>(11) 99144-23541</span>
+                            <div className={styles.buttonGroup}>
+                                <button type="submit" className={styles.submitButton}>Concluir</button>
+                                <Link to="/EscolherCategoria">
+                                    <button type="button" className={styles.cancelButton}>Cancelar</button>
+                                </Link>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <Footer style={{ marginTop: "1000px" }} />
+            <Footer />
             <Esferas />
         </div>
     );
 }
 
 export default RequisicaoDeServico;
+
 
