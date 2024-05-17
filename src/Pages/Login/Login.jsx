@@ -30,7 +30,7 @@ export default function Cadastro() {
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem-vindo, " + email);
-            navigate('/Meus anuncios');
+            navigate('/MeusAnuncios');
         } catch (error) {
             if (error.response?.status === 401) {
                 ToastService.Error("E-mail e/ou senha inválidos!");

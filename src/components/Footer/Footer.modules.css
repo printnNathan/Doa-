@@ -1,3 +1,7 @@
+body{
+  background-color: rgb(255, 255, 255);
+}
+
 .footer {
     background-color: #333;
     color: white;
@@ -39,7 +43,7 @@
   a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 12px; /* Reduzindo o tamanho da fonte dos links */
+    font-size: 12px;
   }
   
   a:hover {

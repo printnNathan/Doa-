@@ -57,7 +57,7 @@ body{
     margin-bottom: 10px;
 }
 .Cardapalido {
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 .Icons {
@@ -117,7 +117,7 @@ body{
     position: relative;
     background-color: #e70c0c;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     width: 60px;
     height: 30px;
     overflow: hidden;
@@ -153,12 +153,12 @@ body{
 }
 .form{
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 12%;
+    left: 12%;
 }
 .barra
 {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    margin-bottom: 56%;
+    margin-bottom: 30%;
 }

@@ -6,8 +6,10 @@ import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/Header';
 import ApiService from '../../Services/ApiService';
 import ToastService from '../../Services/ToastService';
+import { useNavigate } from 'react-router-dom';
 
 const RequisicaoDeServico = () => {
+    const navigate = useNavigate();
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [cep, setCep] = useState('');
@@ -36,6 +38,7 @@ const RequisicaoDeServico = () => {
             });
             console.log('Pedido enviado com sucesso:', response.data);
             ToastService.Success("Pedido enviado com sucesso!");
+            navigate('/MeusAnuncios');
         } catch (error) {
             console.error('Erro ao enviar pedido:', error);
             ToastService.Error("Erro ao enviar pedido. Por favor, tente novamente.");
@@ -56,10 +59,6 @@ const RequisicaoDeServico = () => {
                     <span className={styles.font1}>DESCRIÇÃO</span>
                     <input type="text" value={descricao} onChange={(e) => setDescricao(e.target.value)}  className={styles.Apelido2}/>
                 </div> 
-                <div className={styles.Cardapelido}>
-                    <span className={styles.font1}>LOCALIZAÇÃO</span>
-                    <input type="text" value={cep} onChange={(e) => setCep(e.target.value)}  className={styles.Apelido}/>
-                </div> 
                 <div className={styles.Foto}>
                     <button>Fotos</button>
                     <p></p>        
@@ -69,10 +68,7 @@ const RequisicaoDeServico = () => {
                     <h5 className={styles.font1}>CONTATO</h5>
                     <img className={styles.img} src='https://cdn-icons-png.flaticon.com/512/15/15407.png' alt="Telefone" width={30} height={30} />
                     <span className={styles.font2}>(11)9914423541</span>
-                   
-                    <Link to="/MeusAnuncios">
                     <button type="submit">Concluir</button>
-                    </Link>
                     <Link to="/EscolherCategoria">
                     <button>Cancelar</button>
                     </Link>

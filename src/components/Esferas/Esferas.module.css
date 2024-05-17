@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
 .Bola {
     width: 150px; /* Largura da bola */
     height: 150px; /* Altura da bola (igual à largura para torná-la redonda) */

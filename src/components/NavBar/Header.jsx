@@ -18,9 +18,6 @@ function Header() {
           <Link to="/Perfil" className={styles.navLink}>
               <FontAwesomeIcon icon={faPortrait} /> Perfil
             </Link>
-            <Link to="/EscolherCategoria" className={styles.navLink}>
-              <FontAwesomeIcon icon={faHome} /> Home
-            </Link>
             <Link to="/MeusAnuncios" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
