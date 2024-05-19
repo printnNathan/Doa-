@@ -5,7 +5,7 @@ import ApiService from '../../Services/ApiService';
 import Navbar from '../../components/NavBar/Header';
 import Anuncios from '../../components/Anuncios/Anuncios';
 import Footer from '../../components/Footer/Footer';
-import styles from './MeusAnuncios.module.css'
+import styles from './MeusAnuncios.module.css';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -35,37 +35,28 @@ const Home = () => {
 
         fetchData();
     }, [navigate]);
-    useEffect(() => {
-        fetch("https://localhost:7284/api/CadastrarONG", {
-            method: "GET",
-        })
-            .then((response) => response.json())
-            .then((json) => {
-                setUsuario(json);
-            })
-            .catch((error) => {
-                console.log(error);
-                alert("Erro ao buscar usuários");
-            });
-    }, []);
 
     if (loading) {
         return (
-          <div className={styles.loading2}>
-            <div className={styles.loading}></div>
-          </div>
+            <div className={styles.loading2}>
+                <div className={styles.loading}></div>
+            </div>
         );
-      }
+    }
 
     return (
         <div>
-            <Navbar />
-            <Anuncios />
-            <Footer />
+        <div className={styles.homeLayout}>
+            <Navbar className={styles.Navbar} />
+            <Anuncios className={styles.Anuncios} />
+
+        </div>
+        <Footer className={styles.Footer} />
         </div>
     );
-}
+};
 
 export default Home;
+
 
 

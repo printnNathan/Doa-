@@ -12,11 +12,9 @@ import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Login",
       element: <Login />,
     },
-    
-    
     {
       path: "/MeusAnuncios",
       element: <MeusAnuncios />,

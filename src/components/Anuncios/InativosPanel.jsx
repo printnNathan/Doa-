@@ -17,6 +17,7 @@ function InativosPanel() {
         return;
       }
 
+      // Filtrar apenas os produtos inativos
       const produtosInativos = response.data.filter(produto => !produto.ativo);
       setInativosPanel(produtosInativos);
     } catch (error) {
@@ -26,13 +27,14 @@ function InativosPanel() {
   }
 
   return (
-    <div>
+    <div className={styles.panelContainer}>
       <ul>
         {inativosPanel.map(produto => (
-          <li key={produto.id}>
-            <h2 className={styles.h2}>{produto.titulo ? produto.titulo : 'Título não disponível'}</h2>
-            <p>{produto.descricao ? produto.descricao : 'Descrição não disponível'}</p>
-            {produto.ong ? <p>ONG: {produto.ong.nome}</p> : <p>ONG não disponível</p>}
+          <li key={produto.id} className={styles.doacaoItem}>
+            <div>
+              <h2 className={styles.h2}>{produto.titulo ? produto.titulo : 'Título não disponível'}</h2>
+              <p className={styles.descricao}>{produto.descricao ? produto.descricao : 'Descrição não disponível'}</p>
+            </div>
             {/* Adicione outras verificações e campos conforme necessário */}
           </li>
         ))}
@@ -42,5 +44,7 @@ function InativosPanel() {
 }
 
 export default InativosPanel;
+
+
 
 

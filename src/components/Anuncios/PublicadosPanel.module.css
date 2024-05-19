@@ -1,16 +1,55 @@
-body{
+/* Estilos globais */
+body {
     background-color: rgb(255, 255, 255);
-}
-
-span{
+  }
+  
+  span {
     text-align: center;
-}
-
-h2{
+  }
+  
+  h2 {
     color: black;
     font-size: 25px;
-}
-
-RequisicaoDeDoacao{
-    padding: 4px;
-}
+  }
+  
+  /* Estilos específicos do PublicadosPanel */
+  .panelContainer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  .doacaoItem {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    display: flex; /* Adicionado para alinhar a imagem e o conteúdo */
+    align-items: center; /* Adicionado para centralizar verticalmente */
+    margin-bottom: 20px; /* Adicionado para separar os itens de doação */
+  }
+  
+  .doacaoItem:last-child {
+    border-bottom: none;
+  }
+  
+  .h2 {
+    font-size: 18px; /* Mantém a fonte do item de doação menor do que o global */
+    color: black;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  
+  .descricao {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+  }
+  
+  .imagem {
+    max-width: 25%;
+    height: auto;
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+  }
+  
+  

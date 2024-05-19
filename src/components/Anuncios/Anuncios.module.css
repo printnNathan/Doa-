@@ -1,49 +1,79 @@
 .TituloPrincipal {
-    padding: 1.2%;
-    background-color: #d9d9d9;
+  padding: 1.2%;
+  background-color: #d9d9d9;
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 20px; /* Espaço entre o título e o conteúdo abaixo */
 }
 
 .Painel {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .QuadroDeAnuncios{
-    margin-bottom: 90px;
-  }
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Espaço abaixo do painel */
+}
 
-  .anuncio {
-    margin-top: 20px;
+.QuadroDeAnuncios {
+  margin-bottom: 90px;
+}
+
+.anuncio {
+  background-color: #f9f9f9; /* Fundo leve para destaque */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 20px; /* Espaçamento interno */
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
 }
 
 .anuncio img {
-    max-width: 25%;
-    height: auto;
-    margin-bottom: 10px;
-    margin-right: 20px; /* Espaço entre a imagem e o texto */
-    margin-top: 10px;
+  max-width: 25%;
+  height: auto;
+  margin-bottom: 10px;
+  margin-right: 20px; /* Espaço entre a imagem e o texto */
+  margin-top: 10px;
+  border-radius: 4px; /* Bordas arredondadas na imagem */
 }
 
 .anuncio h2 {
-    font-size: 18px;
-    color: black;
-    margin: 0;
-    margin-bottom: 8px;
+  font-size: 18px;
+  color: black;
+  margin: 0;
+  margin-bottom: 8px;
 }
 
 .anuncio h3 {
   font-size: 14px;
+  color: #555; /* Cor de texto mais suave */
   margin: 0;
-  margin-bottom: 90px;
+  margin-bottom: 8px;
 }
 
 .anuncio h1 {
   font-size: 25px;
-  margin-right: 20px; /* Espaço entre o h1 e o conteúdo */
-  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px 0;
+  color: #333; /* Cor de texto mais suave */
+}
+
+.anuncio h1 .faClock,
+.anuncio h1 .faMinusCircle {
+  margin-left: 10px; /* Espaço entre o ícone e o texto */
 }
 
 .anuncio .conteudo {
   display: flex;
   align-items: center;
+  gap: 20px; /* Espaço consistente entre os itens */
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .anuncio {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    text-align: center; /* Centraliza o texto em dispositivos móveis */
+  }
+
+  .anuncio img {
+    max-width: 50%; /* Aumenta a largura da imagem em dispositivos móveis */
+    margin: 0 auto 10px; /* Centraliza a imagem */
+  }
 }

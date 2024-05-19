@@ -35,16 +35,9 @@ function Anuncios() {
 
             <TabPanel value="1">
               <div className={Styles.anuncio}>
-                <h1>Pendente
+                <h1>Publicados
                 <FontAwesomeIcon icon={faClock} />
                 </h1>
-               <div className={Styles.conteudo}>
-                <img src="https://i0.wp.com/www.clickguarulhos.com.br/wp-content/uploads/2021/04/20210423-doacaoalimentos.jpg?fit=790%2C552&ssl=1" />
-               <div>
-                <h2>Doação de Alimento</h2>
-                <h3>Publicado em 01/06/2024</h3>
-                  </div>
-                </div>
               </div>
               <PublicadosPanel />
             </TabPanel>
@@ -53,13 +46,6 @@ function Anuncios() {
                 <h1>Inativo
                 <FontAwesomeIcon icon={faMinusCircle} />
                 </h1>
-               <div className={Styles.conteudo}>
-                <img src="https://www.rateio.com/wp-content/uploads/2020/09/vazamento-condominio.jpg" style={{filter: 'grayscale(100%)'}}/>
-               <div>
-                <h2>Conserto de encanamento</h2>
-                <h3>Publicado em 01/05/2024</h3>
-                  </div>
-                </div>
               </div>
               <InativosPanel />
             </TabPanel>
