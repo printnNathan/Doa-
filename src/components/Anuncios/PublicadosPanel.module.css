@@ -47,9 +47,27 @@ body {
   }
   
   .imagem {
-    max-width: 25%;
-    height: auto;
-    margin-right: 20px; /* Espaço entre a imagem e o texto */
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Manter a proporção original */
+    margin-right: 10px; /* Espaçamento entre a imagem e o conteúdo */
+    border-radius: 4px; /* Borda arredondada, se desejar */
+  }
+  
+  .doacaoItem {
+  position: relative;
+}
+
+.inativarButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* PublicadosPanel.module.css */
+.previewImage {
+    max-width: 100%; /* Defina o tamanho máximo da imagem */
+    max-height: 100%; /* Defina a altura máxima da imagem */
+    margin-right: 10px; /* Espaçamento à direita da imagem */
+    border-radius: 4px; /* Borda arredondada */
   }
   
   

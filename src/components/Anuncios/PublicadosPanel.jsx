@@ -30,16 +30,16 @@ function PublicadosPanel() {
   return (
     <div className={styles.panelContainer}>
       <ul>
-        {doacoes.map(doacao => (
+        {doacoes.map((doacao, index) => ( // Adicionado index como segundo parâmetro da função map
           <li key={doacao.id} className={styles.doacaoItem}>
             {doacao.imagem && (
-              <img src={doacao.imagem} alt={doacao.titulo} className={styles.imagem} />
+              <img key={index} className={styles.previewImage} src={doacao.imagem} alt={`Preview ${index}`} /> 
             )}
             <div>
               <h2 className={styles.h2}>{doacao.titulo || 'Título não disponível'}</h2>
               <p className={styles.descricao}>{doacao.descricao || 'Descrição não disponível'}</p>
             </div>
-            <button onClick={() => removerDoacao(doacao.id)}>Inativar</button>
+            <button onClick={() => removerDoacao(doacao.id)} className={styles.inativarButton}>Inativar</button>
           </li>
         ))}
       </ul>
@@ -48,6 +48,7 @@ function PublicadosPanel() {
 }
 
 export default PublicadosPanel;
+
 
 
 
