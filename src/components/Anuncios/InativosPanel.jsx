@@ -3,7 +3,7 @@ import { DoacaoContext } from './DoacaoContext';
 import styles from './InativosPanel.module.css';
 
 function InativosPanel() {
-  const { inativos } = useContext(DoacaoContext);
+  const { inativos, reativarDoacao } = useContext(DoacaoContext);
 
   return (
     <div className={styles.panelContainer}>
@@ -21,6 +21,7 @@ function InativosPanel() {
               <h2 className={styles.h2}>{produto.titulo || 'Título não disponível'}</h2>
               <p className={styles.descricao}>{produto.descricao || 'Descrição não disponível'}</p>
             </div>
+            <button onClick={() => reativarDoacao(produto.id)} className={styles.reativarButton}>Reativar</button>
           </li>
         ))}
       </ul>
@@ -29,7 +30,3 @@ function InativosPanel() {
 }
 
 export default InativosPanel;
-
-
-
-

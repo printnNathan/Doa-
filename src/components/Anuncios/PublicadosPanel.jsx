@@ -1,33 +1,14 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { DoacaoContext } from './DoacaoContext';
 import styles from './PublicadosPanel.module.css';
-import axios from 'axios';
 
 function PublicadosPanel() {
-  const { doacoes, listarDoacoes, removerDoacao } = useContext(DoacaoContext);
-
-  useEffect(() => {
-    listarDoacoes();
-  }, []);
-
-  const inativarDoacao = async (doacaoId) => {
-    try {
-      const response = await axios.put(`https://localhost:7284/api/PedidosDoacao/${doacaoId}/inativar`);
-      if (response.status === 200) {
-        removerDoacao(doacaoId);
-      } else {
-        throw new Error('Erro ao inativar doação');
-      }
-    } catch (error) {
-      console.error('Erro ao inativar doação:', error);
-      alert('Erro ao inativar doação');
-    }
-  };
+  const { doacoes, inativarDoacao } = useContext(DoacaoContext);
 
   return (
     <div className={styles.panelContainer}>
       <ul>
-        {doacoes.map((doacao) => (
+        {doacoes.map(doacao => (
           <li key={doacao.id} className={styles.doacaoItem}>
             {doacao.imagensPedido && doacao.imagensPedido.length > 0 && (
               <div className={styles.imagensContainer}>
@@ -49,6 +30,7 @@ function PublicadosPanel() {
 }
 
 export default PublicadosPanel;
+
 
 
 

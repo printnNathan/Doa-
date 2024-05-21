@@ -66,13 +66,24 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 /* PublicadosPanel.module.css */
 .previewImage {
-    max-width: 80%; /* Defina o tamanho máximo da imagem */
-    max-height: 80%; /* Defina a altura máxima da imagem */
+    max-width: 40%; /* Defina o tamanho máximo da imagem */
+    max-height: 40%; /* Defina a altura máxima da imagem */
     margin-right: 10px; /* Espaçamento à direita da imagem */
-    border-radius: 10000px; /* Borda arredondada */
+    border-radius: 10px; /* Borda arredondada */
   }
   
   

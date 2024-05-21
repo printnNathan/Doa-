@@ -46,8 +46,28 @@ body {
     margin: 0;
   }
   
+  .reativarButton {
+    background-color: #fc0000; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+
   .imagem {
     max-width: 25%;
     height: auto;
     margin-right: 20px; /* Espaço entre a imagem e o texto */
+  }
+  .previewImage {
+    max-width: 40%; /* Defina o tamanho máximo da imagem */
+    max-height: 40%; /* Defina a altura máxima da imagem */
+    border-radius: 10px; /* Borda arredondada */
   }

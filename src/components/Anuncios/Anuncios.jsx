@@ -16,6 +16,7 @@ import { DoacaoProvider } from './DoacaoContext';
 function Anuncios() {
 
   const [tabSelecionada, setTabSelecionada] = useState('1');
+  const tipoTela = 'MeusAnuncios'; 
 
   const handleChange = (event, newValue) => {
     setTabSelecionada(newValue);
@@ -58,7 +59,7 @@ function Anuncios() {
           </Box>
         </TabContext>
       </Box>
-      <Esferas />
+      <Esferas tipoTela={tipoTela}/>
     </div>
   );
 }
