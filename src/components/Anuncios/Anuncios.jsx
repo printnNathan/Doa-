@@ -23,7 +23,7 @@ function Anuncios() {
   return (
     <div>
       <div className={Styles.TituloPrincipal}><h1>Meus Anúncios</h1></div>
-      <Box sx={{ width: '100%', typography: 'body1' }}>
+      <Box sx={{ width: '50%', typography: 'body1', margin: '0 auto' }}>
         <TabContext value={tabSelecionada}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={Styles.Painel}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
@@ -31,7 +31,7 @@ function Anuncios() {
               <Tab label="Inativos" value="3" />
             </TabList>
           </Box>
-          <Box sx={{ backgroundColor: "#d9d9d9", paddingLeft: "20%", paddingRight: "20%"  }} >
+          <Box sx={{ backgroundColor: "#d9d9d9", paddingLeft: "10%", paddingRight: "10%"  }} >
 
             <TabPanel value="1">
               <div className={Styles.anuncio}>

@@ -5,6 +5,9 @@ import Esferas from '../../components/Esferas/Esferas';
 import styles from './EscolherCategoria.module.css';
 
 export default function EscolherCategoria() {
+  // Variável para determinar qual tipo de tela está sendo exibida
+  const tipoTela = 'escolherCategoria'; // Pode ser 'escolherCategoria' ou outro valor dependendo da tela
+
   return (
     <div>
       <NavBar />
@@ -49,8 +52,9 @@ export default function EscolherCategoria() {
         </div>
       </div>
       
-      <Esferas />
+      <Esferas tipoTela={tipoTela} /> {/* Passando a propriedade 'tipoTela' para o componente Esferas */}
     </div>
   );
 }
+
 

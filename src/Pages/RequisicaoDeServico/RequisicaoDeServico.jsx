@@ -48,6 +48,14 @@ const RequisicaoDeServico = () => {
             setPrevia([]);
         }
     };
+    //Adicionar função para o mensagem de sucesso aparecer e direcionar para outra tela
+
+
+
+
+
+
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -80,6 +88,7 @@ const RequisicaoDeServico = () => {
             <div className={styles.container}>
                 <h1 className={styles.text}>Agora, compartilhe algumas informações sobre seu produto</h1>
                 <div className={styles.form}>
+                    <div  className={styles.barra}>
                     <div className={styles.formGroup}>
                         <span className={styles.label}>TÍTULO:</span>
                         <input 
@@ -130,7 +139,9 @@ const RequisicaoDeServico = () => {
                                     <button type="button" className={styles.cancelButton}>Cancelar</button>
                                 </Link>
                             </div>
+                            
                         </form>
+                    </div>
                     </div>
                 </div>
             </div>

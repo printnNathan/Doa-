@@ -27,6 +27,11 @@ body {
     display: flex; /* Adicionado para alinhar a imagem e o conteúdo */
     align-items: center; /* Adicionado para centralizar verticalmente */
     margin-bottom: 20px; /* Adicionado para separar os itens de doação */
+    
+  }
+  .doacaoItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.966);
   }
   
   .doacaoItem:last-child {
@@ -64,10 +69,10 @@ body {
 }
 /* PublicadosPanel.module.css */
 .previewImage {
-    max-width: 100%; /* Defina o tamanho máximo da imagem */
-    max-height: 100%; /* Defina a altura máxima da imagem */
+    max-width: 80%; /* Defina o tamanho máximo da imagem */
+    max-height: 80%; /* Defina a altura máxima da imagem */
     margin-right: 10px; /* Espaçamento à direita da imagem */
-    border-radius: 4px; /* Borda arredondada */
+    border-radius: 10000px; /* Borda arredondada */
   }
   
   
