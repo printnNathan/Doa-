@@ -10,6 +10,8 @@ import Styles from '../Anuncios/Anuncios.module.css';
 import Esferas from  '../../components/Esferas/Esferas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { DoacaoProvider } from './DoacaoContext';
+
 
 function Anuncios() {
 
@@ -32,9 +34,11 @@ function Anuncios() {
             </TabList>
           </Box>
           <Box sx={{ backgroundColor: "#d9d9d9", paddingLeft: "10%", paddingRight: "10%"  }} >
-
+          <DoacaoProvider>
             <TabPanel value="1">
+              
               <div className={Styles.anuncio}>
+               
                 <h1>Publicados
                 <FontAwesomeIcon icon={faClock} />
                 </h1>
@@ -48,8 +52,9 @@ function Anuncios() {
                 </h1>
               </div>
               <InativosPanel />
+              
             </TabPanel>
-
+            </DoacaoProvider>
           </Box>
         </TabContext>
       </Box>

@@ -1,41 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import ApiService from '../../Services/ApiService';
-import styles from './PublicadosPanel.module.css';
+import React, { useContext } from 'react';
+import { DoacaoContext } from './DoacaoContext';
+import styles from './InativosPanel.module.css';
 
 function InativosPanel() {
-  const [inativosPanel, setInativosPanel] = useState([]);
-
-  useEffect(() => {
-    listarProdutosInativos();
-  }, []);
-
-  async function listarProdutosInativos() {
-    try {
-      const response = await ApiService.get('/PedidosDoacao');
-      if (response.status !== 200) {
-        alert('Erro ao listar produtos');
-        return;
-      }
-
-      // Filtrar apenas os produtos inativos
-      const produtosInativos = response.data.filter(produto => !produto.ativo);
-      setInativosPanel(produtosInativos);
-    } catch (error) {
-      console.error('Erro ao listar produtos inativos:', error);
-      alert('Erro ao listar produtos inativos');
-    }
-  }
+  const { inativos } = useContext(DoacaoContext);
 
   return (
     <div className={styles.panelContainer}>
       <ul>
-        {inativosPanel.map(produto => (
+        {inativos.map((produto) => (
           <li key={produto.id} className={styles.doacaoItem}>
+            {produto.imagensPedido && produto.imagensPedido.length > 0 && (
+              <div className={styles.imagensContainer}>
+                {produto.imagensPedido.map((imagem, imgIndex) => (
+                  <img key={imgIndex} className={styles.previewImage} src={imagem.link} alt={`Imagem ${imgIndex}`} />
+                ))}
+              </div>
+            )}
             <div>
-              <h2 className={styles.h2}>{produto.titulo ? produto.titulo : 'Título não disponível'}</h2>
-              <p className={styles.descricao}>{produto.descricao ? produto.descricao : 'Descrição não disponível'}</p>
+              <h2 className={styles.h2}>{produto.titulo || 'Título não disponível'}</h2>
+              <p className={styles.descricao}>{produto.descricao || 'Descrição não disponível'}</p>
             </div>
-            {/* Adicione outras verificações e campos conforme necessário */}
           </li>
         ))}
       </ul>

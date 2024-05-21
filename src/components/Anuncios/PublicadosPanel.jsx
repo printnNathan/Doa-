@@ -1,36 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { DoacaoContext } from './DoacaoContext';
 import styles from './PublicadosPanel.module.css';
 import axios from 'axios';
 
 function PublicadosPanel() {
-  const [doacoes, setDoacoes] = useState([]);
+  const { doacoes, listarDoacoes, removerDoacao } = useContext(DoacaoContext);
 
   useEffect(() => {
     listarDoacoes();
   }, []);
 
-  async function listarDoacoes() {
+  const inativarDoacao = async (doacaoId) => {
     try {
-      const response = await axios.get('https://localhost:7284/api/PedidosDoacao');
+      const response = await axios.put(`https://localhost:7284/api/PedidosDoacao/${doacaoId}/inativar`);
       if (response.status === 200) {
-        setDoacoes(response.data);
+        removerDoacao(doacaoId);
       } else {
-        throw new Error('Erro ao listar doações');
+        throw new Error('Erro ao inativar doação');
       }
     } catch (error) {
-      console.error('Erro ao listar doações:', error);
-      alert('Erro ao listar doações');
+      console.error('Erro ao inativar doação:', error);
+      alert('Erro ao inativar doação');
     }
-  }
-
-  function removerDoacao(doacaoId) {
-    setDoacoes(prevState => prevState.filter(doacao => doacao.id !== doacaoId));
-  }
+  };
 
   return (
     <div className={styles.panelContainer}>
       <ul>
-        {doacoes.map((doacao, index) => (
+        {doacoes.map((doacao) => (
           <li key={doacao.id} className={styles.doacaoItem}>
             {doacao.imagensPedido && doacao.imagensPedido.length > 0 && (
               <div className={styles.imagensContainer}>
@@ -43,7 +40,7 @@ function PublicadosPanel() {
               <h2 className={styles.h2}>{doacao.titulo || 'Título não disponível'}</h2>
               <p className={styles.descricao}>{doacao.descricao || 'Descrição não disponível'}</p>
             </div>
-            <button onClick={() => removerDoacao(doacao.id)} className={styles.inativarButton}>Inativar</button>
+            <button onClick={() => inativarDoacao(doacao.id)} className={styles.inativarButton}>Inativar</button>
           </li>
         ))}
       </ul>
@@ -52,6 +49,8 @@ function PublicadosPanel() {
 }
 
 export default PublicadosPanel;
+
+
 
 
 
