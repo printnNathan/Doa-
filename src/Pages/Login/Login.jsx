@@ -22,7 +22,7 @@ export default function Cadastro() {
     function verificarLogin() {
         const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
         if (usuarioEstaLogado) {
-            navigate("/MeusAnuncios");
+            navigate("/MesAnuncios");
         }
     }
 
@@ -39,7 +39,7 @@ export default function Cadastro() {
             AuthService.SalvarToken(token);
 
             ToastService.Success("Seja bem-vindo, " + email);
-            navigate('/MeusAnuncios');
+            navigate('/');
         } catch (error) {
             if (error.response?.status === 401) {
                 ToastService.Error("E-mail e/ou senha inválidos!");

@@ -39,23 +39,16 @@ body {
   }
   
   .h2 {
-    font-size: 18px; /* Mantém a fonte do item de doação menor do que o global */
+    font-size: 18px; 
     color: black;
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
   
   .descricao {
     font-size: 14px;
     color: #555;
     margin: 0;
-  }
-  
-  .imagem {
-    width: 100px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Manter a proporção original */
-    margin-right: 10px; /* Espaçamento entre a imagem e o conteúdo */
-    border-radius: 4px; /* Borda arredondada, se desejar */
   }
   
   .doacaoItem {
@@ -78,12 +71,11 @@ body {
   cursor: pointer;
   border-radius: 4px;
 }
-/* PublicadosPanel.module.css */
+
 .previewImage {
-    max-width: 40%; /* Defina o tamanho máximo da imagem */
-    max-height: 40%; /* Defina a altura máxima da imagem */
-    margin-right: 10px; /* Espaçamento à direita da imagem */
-    border-radius: 10px; /* Borda arredondada */
+    max-width: 40%; 
+    max-height: 40%; 
+    border-radius: 10px; 
   }
   
   
