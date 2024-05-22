@@ -41,8 +41,7 @@ body {
   .h2 {
     font-size: 18px; /* Mantém a fonte do item de doação menor do que o global */
     color: black;
-    margin: 0;
-    margin-bottom: 8px;
+   
   }
   
   .descricao {

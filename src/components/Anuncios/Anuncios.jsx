@@ -34,7 +34,7 @@ function Anuncios() {
               <Tab label="Inativos" value="3" />
             </TabList>
           </Box>
-          <Box sx={{ backgroundColor: "#d9d9d9", paddingLeft: "10%", paddingRight: "10%"  }} >
+          
           <DoacaoProvider>
             <TabPanel value="1">
               
@@ -56,7 +56,6 @@ function Anuncios() {
               
             </TabPanel>
             </DoacaoProvider>
-          </Box>
         </TabContext>
       </Box>
       <Esferas tipoTela={tipoTela}/>

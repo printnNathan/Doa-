@@ -28,19 +28,6 @@ function Header() {
               <button className={styles.anunciar}>Anunciar</button>
             </Link>
           </Nav>
-          <Form className="d-flex ms-auto">
-            <Form.Control
-              type="pesquise"
-              placeholder="Pesquise"
-              className={`me-2 ${styles.SearchInput}`}
-              aria-label="Pesquise"
-            />
-            <div>
-              <Button variant="outline-success" className={`btn ${styles.SearchButton}`}>
-                <FontAwesomeIcon icon={faSearch} />
-              </Button>
-            </div>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

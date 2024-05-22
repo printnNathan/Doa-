@@ -30,6 +30,7 @@ body{
 
 
 .botao{
+  margin-top: 20px;
     width: 100px; 
     margin-left: 20px; 
     padding: 2px 1px; 
@@ -37,6 +38,6 @@ body{
     margin-bottom: 29%; 
 }
 
-.Digite{
-    width: 500px;
+.biografia{
+  width: 1830px;
 }

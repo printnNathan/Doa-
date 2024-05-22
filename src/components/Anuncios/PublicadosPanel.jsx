@@ -16,11 +16,9 @@ function PublicadosPanel() {
                   <img key={imgIndex} className={styles.previewImage} src={imagem.link} alt={`Imagem ${imgIndex}`} />
                 ))}
               </div>
-            )}
-            <div>
+            )}           
               <h2 className={styles.h2}>{doacao.titulo || 'Título não disponível'}</h2>
-              <p className={styles.descricao}>{doacao.descricao || 'Descrição não disponível'}</p>
-            </div>
+              <p className={styles.descricao}>{doacao.descricao || 'Descrição não disponível'}</p>           
             <button onClick={() => inativarDoacao(doacao.id)} className={styles.inativarButton}>Inativar</button>
           </li>
         ))}
