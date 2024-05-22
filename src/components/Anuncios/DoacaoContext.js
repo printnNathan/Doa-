@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import AuthService from '../../Services/AuthService';
+
 
 export const DoacaoContext = createContext();
 
@@ -15,9 +17,8 @@ export const DoacaoProvider = ({ children }) => {
   const listarDoacoes = async () => {
     try {
       const response = await axios.get('https://localhost:7284/api/PedidosDoacao');
-      console.log(response.data);
       if (response.status === 200) {
-        const ativos = response.data.filter(doacao => doacao.ativo);
+        const ativos = response.data.filter(doacao => doacao.status);
         setDoacoes(ativos);
       } else {
         throw new Error('Erro ao listar doações');
@@ -73,12 +74,28 @@ export const DoacaoProvider = ({ children }) => {
       alert('Erro ao reativar doação');
     }
   };
+  const listarPedidosDoacaoPorONG = async (ongId) => {
+    try {
+      const response = await axios.get(`https://localhost:7284/api/PedidosDoacao/ong/${ongId}`);
+      if (response.status === 200) {
+        const ativos = response.data.filter(doacao => doacao.status);
+        setDoacoes(ativos);
+      } else {
+        throw new Error('Erro ao listar doações');
+      }
+    } catch (error) {
+      console.error('Erro ao listar doações:', error);
+      alert('Erro ao listar doações');
+    }
+  };
+  
+  
+  
 
   return (
-    <DoacaoContext.Provider value={{ doacoes, inativos, inativarDoacao, reativarDoacao }}>
+    <DoacaoContext.Provider value={{ doacoes, inativos, inativarDoacao, reativarDoacao, listarPedidosDoacaoPorONG }}>
       {children}
     </DoacaoContext.Provider>
   );
 };
-
 

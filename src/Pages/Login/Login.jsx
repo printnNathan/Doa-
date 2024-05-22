@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
 import ToastService from '../../Services/ToastService';
 import ModalCadastroUsuario from '../../components/ModalCadastroDeUsuario/ModalCadastroDeUsuario';
@@ -14,6 +13,7 @@ export default function Cadastro() {
     const [senha, setSenha] = useState("");
     const [modalAberto, setModalAberto] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [ongId, setOngId] = useState(null);
 
     useEffect(() => {
         verificarLogin();
@@ -22,7 +22,7 @@ export default function Cadastro() {
     function verificarLogin() {
         const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
         if (usuarioEstaLogado) {
-            navigate("/MesAnuncios");
+            navigate("/");
         }
     }
 
@@ -37,6 +37,8 @@ export default function Cadastro() {
             const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
             const token = response.data.token;
             AuthService.SalvarToken(token);
+            const ongId = response.data.ongId;
+            setOngId(ongId);
 
             ToastService.Success("Seja bem-vindo, " + email);
             navigate('/');
