@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function QuemSomos() {
     const [texto, setTexto] = useState('');
+    const tipoTela = 'QuemSomos';
 
     const handleChange = (event) => {
         setTexto(event.target.value);
@@ -63,8 +64,7 @@ export default function QuemSomos() {
             <div className={styles.botao}><button><h5>Atualizar</h5></button></div>
 
             <Footer2 />
-            <Esferas />
-
+            <Esferas tipoTela={tipoTela} />
         </div>
     )
 

@@ -6,6 +6,17 @@ body{
   padding: 0%;
 }
 
+/* Estilos para o botão de busca */
+.SearchButton {
+  background-color: #7900f94c; /* Cor de fundo do botão de busca */
+  color: black; /* Cor do texto do botão de busca */
+  padding: 10px 20px; /* Adicione padding para melhorar a usabilidade do botão */
+  border: none; /* Remova a borda padrão do botão */
+  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  font-family: Arial, Helvetica, sans-serif; /* Defina a mesma fonte para o botão de busca */
+  font-size: 16px; /* Defina o mesmo tamanho de fonte para o botão de busca */
+}
+
 .SearchButton:hover {
   background-color: #7b00ff9a; /* Cor de fundo quando o mouse passa por cima */
 }

@@ -9,6 +9,7 @@ export const DoacaoProvider = ({ children }) => {
 
   useEffect(() => {
     listarDoacoes();
+    listarInativos();
   }, []);
 
   const listarDoacoes = async () => {
@@ -16,15 +17,27 @@ export const DoacaoProvider = ({ children }) => {
       const response = await axios.get('https://localhost:7284/api/PedidosDoacao');
       if (response.status === 200) {
         const ativos = response.data.filter(doacao => doacao.ativo);
-        const inativos = response.data.filter(doacao => !doacao.ativo);
         setDoacoes(ativos);
-        setInativos(inativos);
       } else {
         throw new Error('Erro ao listar doações');
       }
     } catch (error) {
       console.error('Erro ao listar doações:', error);
       alert('Erro ao listar doações');
+    }
+  };
+
+  const listarInativos = async () => {
+    try {
+      const response = await axios.get('https://localhost:7284/api/PedidosDoacao/inativos');
+      if (response.status === 200) {
+        setInativos(response.data);
+      } else {
+        throw new Error('Erro ao listar doações inativas');
+      }
+    } catch (error) {
+      console.error('Erro ao listar doações inativas:', error);
+      alert('Erro ao listar doações inativas');
     }
   };
 
@@ -66,4 +79,5 @@ export const DoacaoProvider = ({ children }) => {
     </DoacaoContext.Provider>
   );
 };
+
 

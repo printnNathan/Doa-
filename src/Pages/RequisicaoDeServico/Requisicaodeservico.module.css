@@ -76,7 +76,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .previewImage {
@@ -89,5 +89,5 @@ body {
 .barra {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    margin-bottom: 30%;
+    margin-bottom:30%;
 }

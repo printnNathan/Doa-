@@ -8,11 +8,17 @@ function Esferas({ tipoTela }) {
   if (tipoTela === 'escolherCategoria') {
     esferas = [1, 2, 3, 4, 5];
   }
-  if (tipoTela === 'MeusAnuncios') {
+  else if (tipoTela === 'MeusAnuncios') {
+    esferas = [1, 2, 3, 4, 5]; 
+  }
+  else if (tipoTela === 'QuemSomos') {
+    esferas = [1, 2, 3, 4, 5]; 
+  }
+  else if (tipoTela === 'RequisicaoDeServico') {
     esferas = [1, 2, 3, 4, 5]; 
   }
   else {
-    esferas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Renderiza todas as esferas por padrão
+    esferas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
   }
 
   return (

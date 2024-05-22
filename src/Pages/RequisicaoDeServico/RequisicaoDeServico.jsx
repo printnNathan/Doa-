@@ -20,12 +20,14 @@ const RequisicaoDeServico = () => {
     const [senhaONG, setSenhaONG] = useState('');
     const [imagensPedido, setImagensPedido] = useState([]);
     const [previa, setPrevia] = useState([]);
+    const tipoTela = 'RequisicaoDeServico'; 
 
     function handleFileChange(event) {
         const selectedFiles = event.target.files;
         if (selectedFiles && selectedFiles.length > 0) {
             const previews = [];
             const images = [];
+       
 
             for (let i = 0; i < selectedFiles.length; i++) {
                 const reader = new FileReader();
@@ -146,8 +148,8 @@ const RequisicaoDeServico = () => {
                 </div>
             </div>
             <Footer />
-            <Esferas />
-        </div>
+            <Esferas tipoTela={tipoTela} />
+            </div>
     );
 }
 

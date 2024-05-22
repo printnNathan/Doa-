@@ -18,7 +18,7 @@ function Header() {
           <Link to="/Perfil" className={styles.navLink}>
               <FontAwesomeIcon icon={faPortrait} /> Perfil
             </Link>
-            <Link to="/MeusAnuncios" className={styles.navLink}>
+            <Link to="/" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <Link to="/QuemSomos" className={styles.navLink}>
