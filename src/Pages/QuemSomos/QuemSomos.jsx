@@ -49,15 +49,19 @@ export default function QuemSomos() {
 
             <center><div><h1 className={styles.Texto2}> Abrale - Associação Brasileira de Linfoma e Leucemia</h1></div></center>
 
-
-
-            <input class=".Digite"
+            
+            <center>
+            <input   
+                className={styles.biografia}            
                 type="text"
                 value={texto}
                 onChange={handleChange}
-                placeholder="Digite a Biografia..." ></input>
-
-            <button className={styles.botao} ><h5>Atualizar</h5></button>
+                placeholder="Digite a Biografia..." >
+            </input>
+            </center>
+            
+            
+            <div className={styles.botao}><button><h5>Atualizar</h5></button></div>
 
             <Footer2 />
             <Esferas tipoTela={tipoTela} />

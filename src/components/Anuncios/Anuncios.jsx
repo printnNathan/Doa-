@@ -53,7 +53,7 @@ function Anuncios() {
               </div>
               <InativosPanel />
             </TabPanel>
-            </DoacaoProvider> 
+            </DoacaoProvider>
         </TabContext>
       </Box>
       <Esferas tipoTela={tipoTela}/>
