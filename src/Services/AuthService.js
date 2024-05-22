@@ -9,6 +9,10 @@ const AuthService = {
     PegarToken() {
         return localStorage.getItem("jwt");
     },
+    PegarDadosUsuario() {
+        const token = localStorage.getItem("jwt");
+        return jwtDecode(token);
+    },
     Sair() {
         return localStorage.removeItem("jwt");
     },
