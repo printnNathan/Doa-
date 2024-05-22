@@ -29,6 +29,11 @@ body {
     margin-bottom: 20px; /* Adicionado para separar os itens de doação */
   }
   
+  .doacaoItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.966);
+  }
+  
   .doacaoItem:last-child {
     border-bottom: none;
   }

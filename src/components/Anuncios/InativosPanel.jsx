@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import { DoacaoContext } from './DoacaoContext';
 import styles from './InativosPanel.module.css';
+import CardDoacao from '../CardDoacao/CardDoacao';
 
 function InativosPanel() {
   const { inativos, reativarDoacao } = useContext(DoacaoContext);
 
   return (
     <div className={styles.panelContainer}>
-      <ul>
+      {inativos.map((doacao, key) => (
+        <CardDoacao doacao={doacao} key={key} ativo={false} />
+      ))
+      }
+
+      {/* <ul>
         {inativos.map((produto) => (
           <li key={produto.id} className={styles.doacaoItem}>
             {produto.imagensPedido && produto.imagensPedido.length > 0 && (
@@ -24,9 +30,10 @@ function InativosPanel() {
             <button onClick={() => reativarDoacao(produto.id)} className={styles.reativarButton}>Reativar</button>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
 
 export default InativosPanel;
+

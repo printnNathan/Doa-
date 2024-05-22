@@ -7,10 +7,6 @@ body {
     text-align: center;
   }
   
-  h2 {
-    color: black;
-    font-size: 25px;
-  }
   
   /* Estilos específicos do PublicadosPanel */
   .panelContainer {
@@ -67,7 +63,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 20% 2%;
   cursor: pointer;
   border-radius: 4px;
 }

@@ -15,6 +15,7 @@ export const DoacaoProvider = ({ children }) => {
   const listarDoacoes = async () => {
     try {
       const response = await axios.get('https://localhost:7284/api/PedidosDoacao');
+      console.log(response.data);
       if (response.status === 200) {
         const ativos = response.data.filter(doacao => doacao.ativo);
         setDoacoes(ativos);

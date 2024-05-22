@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import { DoacaoContext } from './DoacaoContext';
 import styles from './PublicadosPanel.module.css';
+import CardDoacao from '../CardDoacao/CardDoacao';
 
 function PublicadosPanel() {
   const { doacoes, inativarDoacao } = useContext(DoacaoContext);
 
   return (
     <div className={styles.panelContainer}>
-      <ul>
+      {doacoes.map((doacao, key) => (
+        <CardDoacao doacao={doacao} key={key} ativo={true} />
+      ))
+      }
+
+      {/* <ul>
         {doacoes.map(doacao => (
           <li key={doacao.id} className={styles.doacaoItem}>
             {doacao.imagensPedido && doacao.imagensPedido.length > 0 && (
@@ -24,7 +30,7 @@ function PublicadosPanel() {
             <button onClick={() => inativarDoacao(doacao.id)} className={styles.inativarButton}>Inativar</button>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
