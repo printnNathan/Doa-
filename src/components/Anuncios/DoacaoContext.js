@@ -74,26 +74,9 @@ export const DoacaoProvider = ({ children }) => {
       alert('Erro ao reativar doação');
     }
   };
-  const listarPedidosDoacaoPorONG = async (ongId) => {
-    try {
-      const response = await axios.get(`https://localhost:7284/api/PedidosDoacao/ong/${ongId}`);
-      if (response.status === 200) {
-        const ativos = response.data.filter(doacao => doacao.status);
-        setDoacoes(ativos);
-      } else {
-        throw new Error('Erro ao listar doações');
-      }
-    } catch (error) {
-      console.error('Erro ao listar doações:', error);
-      alert('Erro ao listar doações');
-    }
-  };
-  
-  
-  
 
   return (
-    <DoacaoContext.Provider value={{ doacoes, inativos, inativarDoacao, reativarDoacao, listarPedidosDoacaoPorONG }}>
+    <DoacaoContext.Provider value={{ doacoes, inativos, inativarDoacao, reativarDoacao }}>
       {children}
     </DoacaoContext.Provider>
   );
