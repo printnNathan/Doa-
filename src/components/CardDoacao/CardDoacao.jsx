@@ -1,5 +1,6 @@
 import Styles from './CardDoacao.module.css';
-export default function CardDoacao({ doacao, ativo }) {
+
+export default function CardDoacao({ doacao, ativo, onToggleStatus }) {
     return (
         <div className={Styles.container}>
             <div className={Styles.imageContainer}>
@@ -11,7 +12,9 @@ export default function CardDoacao({ doacao, ativo }) {
                     <span className={Styles.description}>{doacao.descricao}</span>
                 </div>
                 <div className={Styles.buttonContainer}>
-                    <button className={ativo ? Styles.inactiveButton : Styles.activeButton}>{ativo ? "Inativar" : "Ativar"} </button>
+                    <button className={ativo ? Styles.inactiveButton : Styles.activeButton} onClick={onToggleStatus}>
+                        {ativo ? "Inativar" : "Ativar"}
+                    </button>
                 </div>
             </div>
         </div>

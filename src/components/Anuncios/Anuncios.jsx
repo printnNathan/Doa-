@@ -12,16 +12,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import { DoacaoProvider } from './DoacaoContext';
 
-
 function Anuncios() {
-
   const [tabSelecionada, setTabSelecionada] = useState('1');
   const tipoTela = 'MeusAnuncios'; 
 
   const handleChange = (event, newValue) => {
     setTabSelecionada(newValue);
   };
-  
 
   return (
     <div>
@@ -36,29 +33,24 @@ function Anuncios() {
           </Box>
           <DoacaoProvider>
             <TabPanel value="1">
-              
               <div className={Styles.anuncio}>
-               
-                <h1>Publicados
-                <FontAwesomeIcon icon={faClock} />
-                </h1>
+                <h1>Publicados <FontAwesomeIcon icon={faClock} /></h1>
               </div>
               <PublicadosPanel />
             </TabPanel>
             <TabPanel value="3">
               <div className={Styles.anuncio}>
-                <h1>Inativo
-                <FontAwesomeIcon icon={faMinusCircle} />
-                </h1>
+                <h1>Inativo <FontAwesomeIcon icon={faMinusCircle} /></h1>
               </div>
               <InativosPanel />
             </TabPanel>
-            </DoacaoProvider>
+          </DoacaoProvider>
         </TabContext>
       </Box>
-      <Esferas tipoTela={tipoTela}/>
+      <Esferas tipoTela={tipoTela} />
     </div>
   );
 }
 
 export default Anuncios;
+

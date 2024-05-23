@@ -3,15 +3,17 @@ import { jwtDecode } from "jwt-decode";
 const AuthService = {
     SalvarToken(token) {
         localStorage.setItem("jwt", token);
-       // const userData = jwtDecode(token); {/*Eu que fiz essa alteralção: Nathan */}
-        //localStorage.setItem("userId", userData.id); {/*Eu que fiz essa alteração: Nathan*/}
+        const userData = jwtDecode(token);
+        localStorage.setItem("ongId", userData.id);
     },
     PegarToken() {
         return localStorage.getItem("jwt");
     },
     PegarDadosUsuario() {
         const token = localStorage.getItem("jwt");
-        return jwtDecode(token);
+        const userData = jwtDecode(token);
+
+        return userData;
     },
     Sair() {
         return localStorage.removeItem("jwt");
@@ -21,7 +23,6 @@ const AuthService = {
         if (token == null) { return false }
 
         const dataAtual = Date.parse(new Date()) / 1000;
-
         const userData = jwtDecode(token);
 
         if (dataAtual > userData.exp) {
@@ -34,3 +35,4 @@ const AuthService = {
 };
 
 export default AuthService;
+
