@@ -1,4 +1,3 @@
-
 import Styles from './CardDoacao.module.css';
 export default function CardDoacao({ doacao, ativo }) {
     return (

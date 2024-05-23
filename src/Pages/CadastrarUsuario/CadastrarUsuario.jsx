@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import ToastService from '../../Services/ToastService';
 import axios from 'axios';
 
-const CadastrarUsuario = () => {
+const CadastrarUsuario = (Doacao) => {
   const [nome, setNome] = useState("");
   const [celular, setCelular] = useState("");
   const [email, setEmail] = useState("");
@@ -108,7 +108,7 @@ const CadastrarUsuario = () => {
       </div>
       <div className={styles.CardPrincipal}>
         {emailConfirmado && (
-          <span className={styles.DesativarTexto}>E-mail: {email}</span>
+          <span className={styles.DesativarTexto}>{Doacao.Email}</span>
         )}
         <hr className={styles.Hr}></hr>
         <div>

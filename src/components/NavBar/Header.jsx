@@ -21,9 +21,6 @@ function Header() {
             <Link to="/" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
-            <Link to="/QuemSomos" className={styles.navLink}>
-            <FontAwesomeIcon icon={faLink} /> Quem somos
-            </Link>
             <Link to="/EscolherCategoria">
               <button className={styles.anunciar}>Anunciar</button>
             </Link>
