@@ -88,3 +88,7 @@
     cursor: pointer;
     border-radius: 4px;
 }
+.loadingButton {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

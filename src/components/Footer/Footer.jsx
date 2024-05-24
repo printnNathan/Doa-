@@ -8,11 +8,11 @@ function Footer2() {
   return (
     <footer className="footer2">
       <div>
-        <h2>Links Úteis</h2>
+      <h2>Links Úteis</h2>
         <ul>
-          <li><a href="#"><FontAwesomeIcon icon={faHome} /> Home</a></li>
-          <li><a href="#"><FontAwesomeIcon icon={faInfoCircle} /> Sobre nós</a></li>
-          <li><a href="#"><FontAwesomeIcon icon={faPhone} /> Contato</a></li>
+          <li><a href="/"><FontAwesomeIcon icon={faHome} /> Home</a></li>
+          <li><a href="EscolherCategoria"><FontAwesomeIcon icon={faInfoCircle} />Categoria</a></li>
+          <li><a href="perfil"><FontAwesomeIcon icon={faPhone} /> Perfil</a></li>
         </ul>
       </div>
       <div>

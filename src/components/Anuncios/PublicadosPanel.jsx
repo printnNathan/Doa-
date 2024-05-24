@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './PublicadosPanel.module.css';
 import CardDoacao from '../CardDoacao/CardDoacao';
 import AuthService from '../../Services/AuthService';
@@ -7,20 +7,21 @@ import ToastService from '../../Services/ToastService';
 import axios from 'axios';
 
 function PublicadosPanel() {
-
   const [doacoes, setDoacoes] = useState([]);
   const [inativos, setInativos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const ongId = AuthService.PegarDadosUsuario()?.ID;
 
   async function listarPedidosDoacaoPorONG() {
     if (ongId) {
       try {
-        const response = await ApiService.get(`/PedidosDoacao/ong/${ongId}`)
+        const response = await ApiService.get(`/PedidosDoacao/ong/${ongId}`);
         setDoacoes(response);
       } catch (error) {
-
         ToastService.Error("Houve um erro no servidor ao listar doações\r\nTente novamente mais tarde.");
+      } finally {
+        setLoading(false);
       }
     }
   }
@@ -41,24 +42,28 @@ function PublicadosPanel() {
     }
   };
 
-
   useEffect(() => {
     listarPedidosDoacaoPorONG();
   }, []);
 
   return (
     <div className={styles.panelContainer}>
-      {doacoes && doacoes.map((doacao, key) => (
-        <CardDoacao
-          doacao={doacao}
-          key={key}
-          ativo={doacao.status}
-          onToggleStatus={() => inativarDoacao(doacao.id)}
-        />
-      ))}
+      {loading ? (
+        <div className={styles.loadingContainer}>
+          <div className={styles.loading}></div>
+        </div>
+      ) : (
+        doacoes && doacoes.map((doacao, key) => (
+          <CardDoacao
+            doacao={doacao}
+            key={key}
+            ativo={doacao.status}
+            onToggleStatus={() => inativarDoacao(doacao.id)}
+          />
+        ))
+      )}
     </div>
   );
-
 }
 
 export default PublicadosPanel;
