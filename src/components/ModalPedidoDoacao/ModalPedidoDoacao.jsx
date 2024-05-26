@@ -39,7 +39,8 @@ export default function ModalPedidoDoacao({ modalAberto, setModalAberto, doacao 
 
                 </div>
                 <div className={styles.title}>
-                    <span>{doacao?.titulo}</span>
+                    <span className={styles.titleSpan}>{doacao?.titulo}</span>
+                    <span className={styles.subtitle}>Tipo doacao</span>
                 </div>
 
                 <div className={styles.description}>

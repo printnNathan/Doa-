@@ -13,11 +13,19 @@
 .title {
     width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.title span {
+.titleSpan{
     font-size: larger;
     font-weight: 600;
+}
+
+.subtitle{
+    font-size: medium;
+    color: #8a8a8a;
 }
 
 .ong {
