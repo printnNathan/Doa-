@@ -17,6 +17,9 @@
 .anuncio {
   background-color: #f9f9f9; /* Fundo leve para destaque */
   border-radius: 8px; /* Bordas arredondadas */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 20px; /* Espaçamento interno */
   margin-top: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
@@ -49,8 +52,12 @@
   font-size: 25px;
   display: flex;
   align-items: center;
-  margin: 0 0 10px 0;
   color: #333; /* Cor de texto mais suave */
+}
+
+.anuncio span{
+  margin-right: 10px;
+  font-size: 25px;
 }
 
 .anuncio h1 .faClock,

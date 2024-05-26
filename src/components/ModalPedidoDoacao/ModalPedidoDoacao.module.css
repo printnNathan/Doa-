@@ -1,0 +1,85 @@
+.container {
+    height: 700px;
+    width: 1000px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.images {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.title span {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.ong {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ong img {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+.ongTexts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.ongName {
+    font-size: large;
+    font-weight: 600;
+}
+
+.description {
+    width: 100%;
+}
+
+.images img {
+    width: 600px;
+    height: 400px;
+}
+
+
+.separador {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    /* Você pode ajustar a cor e a espessura conforme necessário */
+    margin-top: 10px;
+    margin-left: 10px;
+    /* Centraliza o separador na tela */
+}
+
+.close {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.close svg {
+    height: 30px;
+    width: 30px;
+    fill: #666;
+    cursor: pointer;
+}

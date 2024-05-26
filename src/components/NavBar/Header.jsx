@@ -14,15 +14,15 @@ function Header() {
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="mx-auto">
-          <Link to="/Perfil" className={styles.navLink}>
+          <Nav className={["mx-auto", styles.mxAuto]}>
+            <Link to="/Perfil" className={styles.navLink}>
               <FontAwesomeIcon icon={faPortrait} /> Perfil
             </Link>
             <Link to="/" className={styles.navLink}>
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <Link to="/EscolherCategoria">
-              <button className={styles.anunciar}>Anunciar</button>
+              <button className={styles.anunciar}>+ Anunciar</button>
             </Link>
           </Nav>
         </Navbar.Collapse>

@@ -30,17 +30,17 @@ export const DoacaoProvider = ({ children }) => {
   };
 
   const listarInativos = async () => {
-    try {
-      const response = await axios.get('https://localhost:7284/api/PedidosDoacao/inativos');
-      if (response.status === 200) {
-        setInativos(response.data);
-      } else {
-        throw new Error('Erro ao listar doações inativas');
-      }
-    } catch (error) {
-      console.error('Erro ao listar doações inativas:', error);
-      alert('Erro ao listar doações inativas');
-    }
+    // try {
+    //   const response = await axios.get('https://localhost:7284/api/PedidosDoacao/inativos');
+    //   if (response.status === 200) {
+    //     setInativos(response.data);
+    //   } else {
+    //     throw new Error('Erro ao listar doações inativas');
+    //   }
+    // } catch (error) {
+    //   console.error('Erro ao listar doações inativas:', error);
+    //   alert('Erro ao listar doações inativas');
+    // }
   };
 
   const inativarDoacao = async (doacaoId) => {
