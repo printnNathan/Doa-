@@ -7,6 +7,8 @@ import ApiService from '../../Services/ApiService';
 import AuthService from '../../Services/AuthService';
 import { useNavigate } from 'react-router-dom';
 import ToastService from '../../Services/ToastService';
+import { BsBoxArrowInRight } from "react-icons/bs";
+
 import axios from 'axios';
 
 const CadastrarUsuario = (Doacao) => {
@@ -74,6 +76,11 @@ const CadastrarUsuario = (Doacao) => {
     setCelular(inputCelular);
   };
 
+  function Sair() {
+    AuthService.Sair();
+    navigate('/login');
+}
+
   return (
     <div>
       <NavBar />
@@ -120,12 +127,9 @@ const CadastrarUsuario = (Doacao) => {
         <div><h6 className={styles.CardPrincipal2}>Adicionar endereço +</h6></div>
       </div>
       <div className={styles.CardPrincipal}>
-        <div className={styles.DesativarContainer}>
-          <img src='https://img.freepik.com/vetores-premium/sinais-de-aviso-de-perigo-de-alta-tensao-isolado-em-um-fundo-branco_68708-427.jpg' alt="Alerta" width={80} height={90} />
-          <span className={styles.DesativarTexto}>Desativar minha conta</span>
-        </div>
-        <button className={styles.Desativar}>Desativar</button>
-        <span>Seu perfil será desabilitado e anúncios excluídos. Ative a conta quando quiser.</span>
+       
+          <span className={styles.DesativarTexto}>Sair da conta: </span>
+        <button onClick={Sair} className={styles.BotaoDeSair}><BsBoxArrowInRight/></button>
       </div>
       <Footer />
       <Esferas />

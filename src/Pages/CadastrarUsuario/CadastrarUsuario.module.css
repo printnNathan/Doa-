@@ -149,4 +149,9 @@ body {
     cursor: pointer;
     color: #007BFF;
   }
+
+  .BotaoDeSair{
+    width: 9%;
+    height: 30px;
+  }
   
