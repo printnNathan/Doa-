@@ -23,9 +23,9 @@ const CadastrarUsuario = (Doacao) => {
   const [bairro, setBairro] = useState("");
   const [complemento, setComplento] = useState("");
   const [estado, setEstado] = useState("");
-  const [biografia, setBiografia] = useState("");
   const [senhaVisivel, setSenhaVisivel] = useState(false);
   const [emailConfirmado, setEmailConfirmado] = useState(false);
+  const [fotoDePefil, setFotoDePerfil] = useState("")
 
   const navigate = useNavigate();
 
@@ -33,8 +33,11 @@ const CadastrarUsuario = (Doacao) => {
     async function ListarInformacoesONG() {
       try {
         const response = await ApiService.get("/ONGs/listarPorID");
-        setNome(response.data.nome);
-        setEmail(response.data.email);
+        setFotoDePerfil(response.fotoDePefil);
+        setSenha(response.senha);
+        setNome(response.nome);
+        setEmail(response.email);
+        setCelular(response.celular);
       } catch (error) {
         ToastService.Error('Erro ao listar informações da ONG');
       }
@@ -49,7 +52,8 @@ const CadastrarUsuario = (Doacao) => {
       const body = new URLSearchParams({
         nome: nome,
         email: email,
-        senha: senha
+        senha: senha,
+        celular: celular,
       });
 
       const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
@@ -117,14 +121,14 @@ const CadastrarUsuario = (Doacao) => {
         {emailConfirmado && (
           <span className={styles.DesativarTexto}>{Doacao.Email}</span>
         )}
-        <hr className={styles.Hr}></hr>
+        
         <div>
-          <img className={styles.img} src='https://miro.medium.com/v2/resize:fit:828/format:webp/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' alt="Foto de perfil" width={70} height={70} />
+          <img
+          src={fotoDePefil}
+          />
+
           <span className={styles.DesativarTexto}>Foto de perfil</span>
         </div>
-      </div>
-      <div className={styles.CardPrincipal}>
-        <div><h6 className={styles.CardPrincipal2}>Adicionar endereço +</h6></div>
       </div>
       <div className={styles.CardPrincipal}>
        
