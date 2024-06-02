@@ -33,8 +33,8 @@ const CadastrarUsuario = (Doacao) => {
     async function ListarInformacoesONG() {
       try {
         const response = await ApiService.get("/ONGs/listarPorID");
-        setNome(response.data.nome);
-        setEmail(response.data.email);
+        setNome(response.nome);
+        setEmail(response.email);
       } catch (error) {
         ToastService.Error('Erro ao listar informações da ONG');
       }

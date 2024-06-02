@@ -23,19 +23,19 @@ function App() {
       element: <EscolherCategoria />,
     },
     {
-      path: "/Requisicao",
+      path: "/RequisicaoDeServico",
       element: <RequisicaoDeServico />,
     },
     {
-      path: "/Perfil",
+      path: "/CadastrarUsuario",
       element: <CadastrarUsuario />,
-    }
+    },
   ]);
 
   return (
     <>
-      <ToastContainer />
       <RouterProvider router={router} />
+      <ToastContainer />
     </>
   );
 }
