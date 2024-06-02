@@ -7,12 +7,17 @@ import RequisicaoDeServico from './Pages/RequisicaoDeServico/RequisicaoDeServico
 import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
+import Perfil from './Pages/CadastrarUsuario/CadastrarUsuario'; 
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/Login",
       element: <Login />,
+    },
+    {
+      path: "/Perfil",
+      element: <Perfil />,
     },
     {
       path: "/",

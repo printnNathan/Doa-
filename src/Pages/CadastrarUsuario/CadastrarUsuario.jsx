@@ -8,7 +8,6 @@ import AuthService from '../../Services/AuthService';
 import { useNavigate } from 'react-router-dom';
 import ToastService from '../../Services/ToastService';
 import { BsBoxArrowInRight } from "react-icons/bs";
-
 import axios from 'axios';
 
 const CadastrarUsuario = (Doacao) => {
@@ -126,7 +125,7 @@ const CadastrarUsuario = (Doacao) => {
           <img
           src={fotoDePefil}
           />
-
+          
           <span className={styles.DesativarTexto}>Foto de perfil</span>
         </div>
       </div>
