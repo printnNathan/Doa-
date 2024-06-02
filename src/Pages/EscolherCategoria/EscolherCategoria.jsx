@@ -24,21 +24,21 @@ export default function EscolherCategoria() {
       </div>
       <div className={styles.Container}>
         <div className={styles.TopButtons}>
-          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(1)}>
+          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(4)}>
             <img src="https://cdn-icons-png.flaticon.com/512/864/864595.png" alt="Móveis" />
             <p className={styles.Opcoes}>Móveis</p>
           </button>
-          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(2)}>
+          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(3)}>
             <img src="https://cdn-icons-png.flaticon.com/512/1086/1086581.png" alt="Serviços" />
             <p className={styles.Opcoes}>Serviços</p>
           </button>
         </div>
         <div className={styles.BottomButtons}>
-          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(3)}>
+          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(1)}>
             <img src="https://cdn-icons-png.flaticon.com/512/2940/2940816.png" alt="Alimentos"/>
             <p className={styles.Opcoes}>Alimentos</p>
           </button>
-          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(4)}>
+          <button type="button" className={styles.Categorias} onClick={() => handleNavigate(2)}>
             <img src="https://cdn-icons-png.flaticon.com/512/130/130302.png" alt="Roupas" />
             <p className={styles.Opcoes}>Roupas</p>
           </button>

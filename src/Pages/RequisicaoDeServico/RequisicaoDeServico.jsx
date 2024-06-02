@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const RequisicaoDeServico = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { id_tipo } = location.state || {}; // Adiciona um fallback aqui
+  const { id_tipo } = location.state || {}; 
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [imagens, setImagens] = useState([]);
@@ -21,11 +21,13 @@ const RequisicaoDeServico = () => {
   useEffect(() => {
     if (!id_tipo) {
       console.error('id_tipo não fornecido, redirecionando...');
-      navigate('/EscolherCategoria'); // Redireciona se id_tipo não estiver presente
+      navigate('/EscolherCategoria');
     } else {
       console.log(`Tipo ID recebido: ${id_tipo}`);
     }
   }, [id_tipo, navigate]);
+
+  const tipoTela = 'RequisicaoDeServico';
 
   const handleFileChange = (event) => {
     const selectedFiles = event.target.files;
@@ -74,6 +76,7 @@ const RequisicaoDeServico = () => {
       console.log('Enviando pedido:', body);
 
       await ApiService.post("/PedidosDoacao/cadastrarpedido", body);
+      ToastService.Success("Pedido cadastrado com sucesso!");
     } catch (error) {
       console.error('Erro ao cadastrar pedido:', error);
       ToastService.Error("Erro ao cadastrar Pedido");
@@ -141,8 +144,8 @@ const RequisicaoDeServico = () => {
         </div>
       </div>
       <Footer />
-      <Esferas />
-    </div>
+      <Esferas tipoTela={tipoTela} /> 
+      </div>
   );
 }
 
