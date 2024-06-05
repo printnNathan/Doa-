@@ -8,12 +8,17 @@ import CadastrarUsuario from './Pages/CadastrarUsuario/CadastrarUsuario';
 import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 import Perfil from './Pages/CadastrarUsuario/CadastrarUsuario'; 
+import CardPerfil from './components/CardPerfil/CardPerfil';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/Login",
       element: <Login />,
+    },
+    {
+      path: "/CardPerfil",
+      element: <CardPerfil/>,
     },
     {
       path: "/Perfil",
