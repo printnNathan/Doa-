@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faMap, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-function Footer2() {
+function Footer2(doacao) {
   return (
     <footer className="footer2">
       <div>

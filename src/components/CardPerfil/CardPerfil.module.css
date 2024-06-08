@@ -1,200 +1,247 @@
-.conteiner {
-    position: relative;
-    border: 0.8px solid transparent;
-    border-radius: 5px;
-    width: 80%;
-    height: 430px;
-    padding: 5%;
-    margin: auto;
-    margin-top: 1%;
-    background-color: rgb(255, 0, 0);
-    display: flex;
-    flex-direction: row;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1em;
-    justify-content: space-between; 
+/* Container principal */
+.container {
+  position: relative;
+  border-radius: 5px;
+  width: 100%;
+  height: auto; /* Ajuste de altura automática para responsividade */
+  padding: 5%;
+  margin: auto;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column; /* Alterado para coluna para melhor layout em dispositivos móveis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em;
+  background-color: #fff; /* Fundo branco para destaque */
+  justify-content: space-around
+}
+
+.fotoDoUsuario{
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.container2 {
+  position: relative;
+  border-radius: 5px;
+  width: 80%;
+  height: auto;
+  padding: 5%;
+  margin: auto;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  background-color: #fff;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Reverte para linha em telas maiores */
+  }
 }
 
 
-.FotodePerfil {
-    height: 100%;
-    width: 49%;
-    background-color: rgb(12, 255, 97);
-    border: 1.5px solid #000;
-    border-radius: 10px;
+.fotoDePerfil{
+  height: 300px;
+  width: 40%;
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f9f9f9;
 }
 
-.Alteraçoes {
-    width: 49%;
-    height: 100%;
-    display: flex;
-    background-color: blueviolet;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-end;
-    border: 1.5px solid #000;
-    border-radius: 10px;
+/* Área de Alterações */
+.changes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  padding: 1em;
+  overflow-y: auto;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  max-width: 500px;
+  align-items: unset;
 }
 
-.Sair {
-    height: 13%;
-    width: 80%;
-    background-color: aqua;
-    border: 1.5px solid #000;
-    border-radius: 10px;
+@media (min-width: 768px) {
+  .changes {
+    margin-top: 0;
+  }
 }
+
+/* Estilização do Card Email */
+.card-email {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilização dos Inputs */
+.input {
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  box-sizing: border-box; /* Garantir que padding não aumente a largura */
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #007BFF; /* Cor de foco */
+  outline: none;
+}
+
+/* Botão de Toggle de Senha */
+.toggle-password {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007BFF;
+  transition: color 0.3s;
+}
+
+.toggle-password:hover {
+  color: #0056b3;
+}
+
+/* Contêiner de Senha */
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Seção de Logout */
+.logout {
+  height: 10%;
+  width: 45%;
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+
+.alterarFotoContainer{
+  margin-top: 5px;
+}
+
+.logout span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Botão de Sair */
+.button-logout {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.button-logout:hover {
+  color: #f01313;
+}
+
+/* Estilo Geral */
 body {
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .CardPrincipal {
-    position: relative;
-    border: 1.5px solid #000;
-    border-radius: 10px;
-    width: 45%;
-    height: 60%;
-    padding: 5%;
-    margin: auto;
-    margin-top:  1%;
-    background-color: rgb(255, 255, 255)
+  background-color: #fff;
+  font-family: Arial, sans-serif;
 }
-.CardPrincipal2 {
-    border: 1.5px solid #000000;
-    margin-top: 1%;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .Desativar {
-    position: absolute;
-    top: 10px; 
-    left: 600px; 
-    background-color: transparent;
-    border: none; 
-    color: #3b245375;
-    cursor: pointer;
-    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  }
-  
-  .Desativar:hover {
-    color: #f01313;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .CardPrincipal2 {
-    border: 1.5px solid #000;
-    border-radius: 50px;
-    width: 100%;
-    height: 60%;
-    padding: 4%;
-    margin: auto;
-    margin-top: 1%;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .Email {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    height: 40px;
-  }
-  
-  .Apelido {
-    background-color: rgba(128, 128, 128, 0.396);
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    height: 40px;
-  }
-  
-  .CardEmail {
-    margin-bottom: 10px;
-  }
-  
-  .Cardapelido {
-    margin-bottom: 10px;
-  }
-  
-  .Icons {
-    width: 9%;
-    height: 9%;
-  }
-  
-  .Icons2 {
-    display: flex;
-    flex-direction: space-between;
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .TextoLogin {
-    padding-bottom: 14px;
-  }
-  
-  .Comoaparecerápublicamente {
-    font-size: 12px;
-    top: 50%;
-  }
-  
-  .font1 {
-    font-size: 14px;
-  }
-  
-  .BotãoDeEntrar {
-    width: 100%;
-    padding: 7px;
-    border-radius: 10px;
-    background-color: #625959ce;
-    color: white;
-  }
-  
-  .Bola {
-    width: 200px; 
-    height: 200px; 
-    background-color: #692cab6b;
-    border-radius: 50%; 
-    position: absolute; 
-    margin-top: 1px;
-    margin-left: 250px;
 
+/* Classe Adicional de Estilo */
+.card-principal, .card-principal2 {
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  padding: 4%;
+  margin: auto;
+  margin-top: 1%;
+  background-color: #fff;
 }
-.Hr 
-{
-    border-bottom: black;
+
+.desativar-container {
+  display: flex;
+  align-items: center;
 }
-  .Span
-   {
 
-    width: 200px;
-    height: 200px;
-  }
-  
-  .DesativarContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .DesativarTexto {
-    margin-left: 10px;
-    font-size: 20px; 
-    font-weight: bold; 
-    color: #333; 
-  }
-  
-  .SenhaContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ToggleSenha {
-    margin-left: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #007BFF;
-  }
+.desativar-texto {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
 
-  .BotaoDeSair{
-    width: 9%;
-    height: 30px;
-  }
+.icons {
+  width: 9%;
+  height: 9%;
+}
+
+.texto-login {
+  padding-bottom: 14px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+
+.font1 {
+  font-size: 14px;
+  margin-bottom: 0.5em;
+  color: black; /* Alterado para maior contraste */
+}
+
+.button-entrar {
+  width: 100%;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: #625959ce;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.button-entrar:hover {
+  background-color: #4e3e3e;
+}
+
+.bola {
+  width: 200px;
+  height: 200px;
+  background-color: #692cab6b;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 250px;
+}
+
+.hr {
+  border-bottom: 1px solid black;
+}
+
+.span {
+  width: 200px;
+  height: 200px;
+}

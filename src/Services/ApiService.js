@@ -8,8 +8,9 @@ function createHeader() {
             headers: {
                 Authorization: 'Bearer ' + jwt
             }
-        }
+        };
     }
+    return {};
 }
 
 const baseUrl = "https://localhost:7284/api";
@@ -17,7 +18,6 @@ const baseUrl = "https://localhost:7284/api";
 const ApiService = {
     async get(endpoint) {
         const headers = createHeader();
-
         try {
             const response = await axios.get(baseUrl + endpoint, headers);
             return response.data;
@@ -27,12 +27,22 @@ const ApiService = {
     },
 
     async post(endpoint, body) {
-        const header = createHeader();
+        const headers = createHeader();
         try {
-            const response = await axios.post(baseUrl + endpoint, body, header);
+            const response = await axios.post(baseUrl + endpoint, body, headers);
             return response.data;
         } catch (error) {
             throw new Error(`Erro ao realizar a requisição POST para ${endpoint}: ${error.message}`);
+        }
+    },
+
+    async put(endpoint, body) {
+        const headers = createHeader();
+        try {
+            const response = await axios.put(baseUrl + endpoint, body, headers);
+            return response.data;
+        } catch (error) {
+            throw new Error(`Erro ao realizar a requisição PUT para ${endpoint}: ${error.message}`);
         }
     }
 };

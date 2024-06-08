@@ -7,7 +7,7 @@ import ToastService from '../../Services/ToastService';
 import { BsBoxArrowInRight } from "react-icons/bs";
 import axios from 'axios';
 
-export default function CardPerfil() {
+export default function CardPerfil(doacao) {
   const [nome, setNome] = useState("");
   const [celular, setCelular] = useState("");
   const [email, setEmail] = useState("");
@@ -17,11 +17,13 @@ export default function CardPerfil() {
   const [numero, setNumero] = useState("");
   const [cidade, setCidade] = useState("");
   const [bairro, setBairro] = useState("");
-  const [complemento, setComplento] = useState("");
+  const [complemento, setComplemento] = useState("");
   const [estado, setEstado] = useState("");
   const [senhaVisivel, setSenhaVisivel] = useState(false);
   const [emailConfirmado, setEmailConfirmado] = useState(false);
-  const [fotoDePerfil, setFotoDePerfil] = useState("");
+  const [fotoPerfil, setFotoDePerfil] = useState("");
+  const [imagens, setImagens] = useState([]);
+  const [previa, setPrevia] = useState([]);
 
   const navigate = useNavigate();
 
@@ -29,11 +31,12 @@ export default function CardPerfil() {
     async function ListarInformacoesONG() {
       try {
         const response = await ApiService.get("/ONGs/listarPorID");
-        setFotoDePerfil(response.fotoDePerfil);
+        setFotoDePerfil(response.fotoPerfil);
         setSenha(response.senha);
         setNome(response.nome);
         setEmail(response.email);
         setCelular(response.celular);
+        console.log(response)
       } catch (error) {
         ToastService.Error('Erro ao listar informações da ONG');
       }
@@ -81,45 +84,90 @@ export default function CardPerfil() {
     navigate('/login');
   }
 
+  const handleFileChange = (event) => {
+    const selectedFiles = event.target.files;
+
+    if (selectedFiles.length > 0) {
+      const previas = [];
+      const imagens = [];
+
+      Array.from(selectedFiles).forEach(file => {
+        previas.push(URL.createObjectURL(file));
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const base64 = e.target.result.split(',')[1];
+          imagens.push(base64);
+
+          if (imagens.length === selectedFiles.length) {
+            setImagens(imagens);
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+
+      setPrevia(previas);
+    } else {
+      setImagens([]);
+      setPrevia([]);
+    }
+  };
+
+  const handleAlterarFotoClick = () => {
+    document.getElementById('inputAlterarFoto').click();
+  };
+
   return (
-    <div>
-      <div className={Styles.conteiner}>
-        <div className={Styles.FotodePerfil}>
-          <img src={fotoDePerfil} alt="Foto de perfil" />
-          <span className={Styles.DesativarTexto}>Foto de perfil</span>
+    <div className={Styles.container2}>
+      <div className={Styles.container}>
+        <div className={Styles.fotoDePerfil}>
+          <img src={fotoPerfil} className={Styles.fotoDoUsuario} />
+          <div className={Styles.alterarFotoContainer}>
+            <button className={Styles.alterarFotoButton} onClick={handleAlterarFotoClick}>
+              Alterar Foto
+            </button>
+            <input
+              id="inputAlterarFoto"
+              type="file"
+              accept="image/jpeg"
+              style={{ display: 'none' }}
+              onChange={handleFileChange}
+            />
+            {previa.map((src, index) => (
+              <img key={index} className={Styles.fotoDoUsuario} src={src} alt={`Preview ${index + 1}`} />
+            ))}
+          </div>
         </div>
-        <div className={Styles.Alteraçoes}>
-        <h1 className={Styles.TextoLogin}>Meu cadastro</h1>
-          <div className={Styles.CardEmail}>
+        <div className={Styles.changes}>
+          <div className={Styles.cardEmail}>
             <span className={Styles.font1}>Nome completo:</span>
-            <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} className={Styles.Email} />
+            <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} className={Styles.input} />
           </div>
-          <div className={Styles.CardEmail}>
+          <div className={Styles.cardEmail}>
             <span className={Styles.font1}>E-mail:</span>
-            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={Styles.Email} />
+            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={Styles.input} />
           </div>
-          <div className={Styles.CardEmail}>
+          <div className={Styles.cardEmail}>
             <span className={Styles.font1}>Celular:</span>
-            <input type="text" name="celular" value={celular} onChange={handleChangeCelular} className={Styles.Email} />
+            <input type="text" name="celular" value={celular} onChange={handleChangeCelular} className={Styles.input} />
           </div>
-          <div className={Styles.CardEmail}>
+          <div className={Styles.cardEmail}>
             <span className={Styles.font1}>Senha:</span>
-            <div className={Styles.SenhaContainer}>
-              <input type={senhaVisivel ? "text" : "password"} value={senha} onChange={(e) => setSenha(e.target.value)} className={Styles.Email} />
-              <button type="button" onClick={toggleSenhaVisivel} className={Styles.ToggleSenha}>
+            <div className={Styles.passwordContainer}>
+              <input type={senhaVisivel ? "text" : "password"} value={senha} onChange={(e) => setSenha(e.target.value)} className={Styles.input} />
+              <button type="button" onClick={toggleSenhaVisivel} className={Styles.togglePassword}>
                 {senhaVisivel ? "Ocultar" : "Mostrar"}
               </button>
             </div>
-            </div>
-            <div className={Styles.Sair}>
-          <span >Sair da conta:</span>
-          <button onClick={Sair} ><BsBoxArrowInRight /></button>
           </div>
         </div>
       </div>
+      <div className={Styles.logout}>
+        <span>Sair da conta:</span>
+        <button onClick={Sair} className={Styles.buttonLogout}><BsBoxArrowInRight /></button>
+      </div>
       <div>
-        <form onSubmit={handleSubmit}>
-        </form>
+        <div onSubmit={handleSubmit}></div>
       </div>
     </div>
   );
