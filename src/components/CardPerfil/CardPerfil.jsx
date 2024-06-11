@@ -5,7 +5,6 @@ import AuthService from '../../Services/AuthService';
 import { useNavigate } from 'react-router-dom';
 import ToastService from '../../Services/ToastService';
 import { BsBoxArrowInRight } from "react-icons/bs";
-import axios from 'axios';
 
 export default function CardPerfil(doacao) {
   const [nome, setNome] = useState("");
@@ -22,8 +21,8 @@ export default function CardPerfil(doacao) {
   const [senhaVisivel, setSenhaVisivel] = useState(false);
   const [emailConfirmado, setEmailConfirmado] = useState(false);
   const [fotoPerfil, setFotoDePerfil] = useState("");
-  const [imagens, setImagens] = useState([]);
-  const [previa, setPrevia] = useState([]);
+  const [novaFoto, setNovaFoto] = useState(null);
+  const [previa, setPrevia] = useState(null);
 
   const navigate = useNavigate();
 
@@ -44,28 +43,34 @@ export default function CardPerfil(doacao) {
 
     ListarInformacoesONG();
   }, []);
+  const ongId = AuthService.PegarDadosUsuario()?.ID;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const body = new URLSearchParams({
+      const body = {
+        id: ongId,
         nome: nome,
         email: email,
         senha: senha,
         celular: celular,
-      });
-
-      const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
-      const token = response.data.token;
-      AuthService.SalvarToken(token);
-
-      ToastService.Success("Cadastro realizado com sucesso!");
+        fotoPerfil: novaFoto || fotoPerfil // Define a nova foto, caso exista, senão mantém a foto anterior
+      };
+      
+  
+      console.log("Dados enviados para atualização:", body);
+  
+      await ApiService.put(`/ONGs/atualizar`, body);
+      ToastService.Success("Dados atualizados com sucesso!");
       setEmailConfirmado(true);
+      setNovaFoto(null);
     } catch (error) {
-      console.error('Erro ao enviar pedido:', error);
+      ToastService.Error('Erro ao enviar pedido:', error);
       ToastService.Error("Erro ao enviar pedido. Por favor, tente novamente.");
     }
   };
+  
+  
 
   const toggleSenhaVisivel = () => {
     setSenhaVisivel(!senhaVisivel);
@@ -85,31 +90,15 @@ export default function CardPerfil(doacao) {
   }
 
   const handleFileChange = (event) => {
-    const selectedFiles = event.target.files;
+    const selectedFile = event.target.files[0];
 
-    if (selectedFiles.length > 0) {
-      const previas = [];
-      const imagens = [];
-
-      Array.from(selectedFiles).forEach(file => {
-        previas.push(URL.createObjectURL(file));
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const base64 = e.target.result.split(',')[1];
-          imagens.push(base64);
-
-          if (imagens.length === selectedFiles.length) {
-            setImagens(imagens);
-          }
-        };
-        reader.readAsDataURL(file);
-      });
-
-      setPrevia(previas);
+    if (selectedFile) {
+      const previaUrl = URL.createObjectURL(selectedFile);
+      setPrevia(previaUrl);
+      setNovaFoto(selectedFile);
     } else {
-      setImagens([]);
-      setPrevia([]);
+      setPrevia(null);
+      setNovaFoto(null);
     }
   };
 
@@ -121,7 +110,7 @@ export default function CardPerfil(doacao) {
     <div className={Styles.container2}>
       <div className={Styles.container}>
         <div className={Styles.fotoDePerfil}>
-          <img src={fotoPerfil} className={Styles.fotoDoUsuario} />
+          <img src={previa ? previa : fotoPerfil} className={Styles.fotoDoUsuario} />
           <div className={Styles.alterarFotoContainer}>
             <button className={Styles.alterarFotoButton} onClick={handleAlterarFotoClick}>
               Alterar Foto
@@ -133,9 +122,6 @@ export default function CardPerfil(doacao) {
               style={{ display: 'none' }}
               onChange={handleFileChange}
             />
-            {previa.map((src, index) => (
-              <img key={index} className={Styles.fotoDoUsuario} src={src} alt={`Preview ${index + 1}`} />
-            ))}
           </div>
         </div>
         <div className={Styles.changes}>
@@ -161,14 +147,13 @@ export default function CardPerfil(doacao) {
             </div>
           </div>
         </div>
+        <button onClick={handleSubmit} className={Styles.buttonSalvar}>Salvar alterações</button>
       </div>
       <div className={Styles.logout}>
         <span>Sair da conta:</span>
         <button onClick={Sair} className={Styles.buttonLogout}><BsBoxArrowInRight /></button>
       </div>
-      <div>
-        <div onSubmit={handleSubmit}></div>
-      </div>
     </div>
   );
 }
+
