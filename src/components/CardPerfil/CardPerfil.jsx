@@ -95,7 +95,7 @@ export default function CardPerfil(props) {
     } else {
         setNovaFoto(null);
     }
-};
+  };
 
   const handleAlterarFotoClick = () => {
     document.getElementById('inputAlterarFoto').click();

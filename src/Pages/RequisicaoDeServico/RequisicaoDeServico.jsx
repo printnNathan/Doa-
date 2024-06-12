@@ -77,6 +77,7 @@ const RequisicaoDeServico = () => {
 
       await ApiService.post("/PedidosDoacao/cadastrarpedido", body);
       ToastService.Success("Pedido cadastrado com sucesso!");
+      navigate('/')
     } catch (error) {
       console.error('Erro ao cadastrar pedido:', error);
       ToastService.Error("Erro ao cadastrar Pedido");
