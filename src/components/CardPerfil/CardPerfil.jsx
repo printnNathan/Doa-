@@ -6,23 +6,16 @@ import { useNavigate } from 'react-router-dom';
 import ToastService from '../../Services/ToastService';
 import { BsBoxArrowInRight } from "react-icons/bs";
 
-export default function CardPerfil(doacao) {
+export default function CardPerfil(props) {
   const [nome, setNome] = useState("");
   const [celular, setCelular] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [cep, setCep] = useState("");
-  const [logradouro, setLogradouro] = useState("");
-  const [numero, setNumero] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [bairro, setBairro] = useState("");
-  const [complemento, setComplemento] = useState("");
-  const [estado, setEstado] = useState("");
-  const [senhaVisivel, setSenhaVisivel] = useState(false);
-  const [emailConfirmado, setEmailConfirmado] = useState(false);
   const [fotoPerfil, setFotoDePerfil] = useState("");
   const [novaFoto, setNovaFoto] = useState(null);
   const [previa, setPrevia] = useState(null);
+  const [senhaVisivel, setSenhaVisivel] = useState(false);
+  const [emailConfirmado, setEmailConfirmado] = useState(false);
 
   const navigate = useNavigate();
 
@@ -35,7 +28,7 @@ export default function CardPerfil(doacao) {
         setNome(response.nome);
         setEmail(response.email);
         setCelular(response.celular);
-        console.log(response)
+        console.log(response);
       } catch (error) {
         ToastService.Error('Erro ao listar informações da ONG');
       }
@@ -43,6 +36,7 @@ export default function CardPerfil(doacao) {
 
     ListarInformacoesONG();
   }, []);
+
   const ongId = AuthService.PegarDadosUsuario()?.ID;
 
   const handleSubmit = async (event) => {
@@ -54,23 +48,19 @@ export default function CardPerfil(doacao) {
         email: email,
         senha: senha,
         celular: celular,
-        fotoPerfil: novaFoto || fotoPerfil // Define a nova foto, caso exista, senão mantém a foto anterior
+        base64: novaFoto ? novaFoto : ""
       };
-      
-  
+
       console.log("Dados enviados para atualização:", body);
-  
+
       await ApiService.put(`/ONGs/atualizar`, body);
       ToastService.Success("Dados atualizados com sucesso!");
       setEmailConfirmado(true);
       setNovaFoto(null);
     } catch (error) {
-      ToastService.Error('Erro ao enviar pedido:', error);
       ToastService.Error("Erro ao enviar pedido. Por favor, tente novamente.");
     }
   };
-  
-  
 
   const toggleSenhaVisivel = () => {
     setSenhaVisivel(!senhaVisivel);
@@ -93,14 +83,19 @@ export default function CardPerfil(doacao) {
     const selectedFile = event.target.files[0];
 
     if (selectedFile) {
-      const previaUrl = URL.createObjectURL(selectedFile);
-      setPrevia(previaUrl);
-      setNovaFoto(selectedFile);
+        const previaUrl = URL.createObjectURL(selectedFile);
+        setPrevia(previaUrl);
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const base64 = e.target.result.split(',')[1];
+            setNovaFoto(base64);
+        };
+        reader.readAsDataURL(selectedFile);
     } else {
-      setPrevia(null);
-      setNovaFoto(null);
+        setNovaFoto(null);
     }
-  };
+};
 
   const handleAlterarFotoClick = () => {
     document.getElementById('inputAlterarFoto').click();
@@ -110,7 +105,7 @@ export default function CardPerfil(doacao) {
     <div className={Styles.container2}>
       <div className={Styles.container}>
         <div className={Styles.fotoDePerfil}>
-          <img src={previa ? previa : fotoPerfil} className={Styles.fotoDoUsuario} />
+          <img src={previa ? previa : fotoPerfil} className={Styles.fotoDoUsuario} alt="Foto do perfil" />
           <div className={Styles.alterarFotoContainer}>
             <button className={Styles.alterarFotoButton} onClick={handleAlterarFotoClick}>
               Alterar Foto
@@ -147,13 +142,14 @@ export default function CardPerfil(doacao) {
             </div>
           </div>
         </div>
-        <button onClick={handleSubmit} className={Styles.buttonSalvar}>Salvar alterações</button>
       </div>
-      <div className={Styles.logout}>
-        <span>Sair da conta:</span>
-        <button onClick={Sair} className={Styles.buttonLogout}><BsBoxArrowInRight /></button>
+      <div className={Styles.footer}>
+        <button onClick={handleSubmit} className={Styles.buttonSalvar}>Salvar alterações</button>
+        <div className={Styles.logout}>
+          <span>Sair da conta:</span>
+          <button onClick={Sair} className={Styles.buttonLogout}><BsBoxArrowInRight /></button>
+        </div>
       </div>
     </div>
   );
 }
-
