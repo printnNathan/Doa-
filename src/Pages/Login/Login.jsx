@@ -21,7 +21,7 @@ export default function Cadastro() {
 
     function verificarLogin() {
         const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-        if (usuarioEstaLogado) {
+        if (usuarioEstaLogado  ) {
             navigate("/");
         }
     }
@@ -33,15 +33,19 @@ export default function Cadastro() {
                 email,
                 senha,
             });
-
+    
             const response = await axios.post('https://localhost:7284/api/CadastrarONG/Loginong', body);
             const token = response.data.token;
             AuthService.SalvarToken(token);
-            const ongId = response.data.ongId;
-            setOngId(ongId);
-
-            ToastService.Success("Seja bem-vindo, " + email);
-            navigate('/');
+            const validado = response.data.validado;
+    
+            if (validado) {
+                ToastService.Success("Seja bem-vindo, " + email);
+                navigate('/');
+            } else {
+                ToastService.Info("Aguarde a validação da sua conta.");
+                navigate('/aguardandovalidacao');
+            }
         } catch (error) {
             if (error.response?.status === 401) {
                 ToastService.Error("E-mail e/ou senha inválidos!");
@@ -52,7 +56,7 @@ export default function Cadastro() {
             setLoading(false);
         }
     }
-
+    
     return (
         <div>
             <ModalCadastroUsuario
@@ -97,5 +101,3 @@ export default function Cadastro() {
         </div>
     );
 }
-
-

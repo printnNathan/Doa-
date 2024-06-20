@@ -4,7 +4,7 @@ const ToastService = {
     Error(message) {
         toast.error(message, {
             position: "top-right",
-            autoClose: 50,
+            autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -17,7 +17,20 @@ const ToastService = {
     Success(message) {
         toast.success(message, {
             position: "top-right",
-            autoClose: 50,
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
+    },
+    Info(message) {
+        toast.info(message, {
+            position: "top-right",
+            autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

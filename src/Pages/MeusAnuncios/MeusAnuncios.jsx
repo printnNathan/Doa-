@@ -27,7 +27,6 @@ const Home = () => {
                 }
             } catch (error) {
                 console.error("Erro ao buscar dados do usuário:", error);
-                // Adicione tratamento de erro aqui, como exibir uma mensagem para o usuário
             } finally {
                 setLoading(false);
             }

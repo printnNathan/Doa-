@@ -16,8 +16,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333; /* Cor de texto suave */
-  text-align: center; /* Centraliza o título */
+  color: #333; 
+  text-align: center; 
 }
 
 .homeLayout {
@@ -51,8 +51,6 @@ body {
   height: 100vh;
 }
 
-/* Adiciona estilos para Navbar, Anuncios e Footer para manter consistência */
-
 .Navbar {
   background-color: #f9f9f9;
   padding: 10px 0;
@@ -75,7 +73,6 @@ body {
   margin-top: 20px;
 }
 
-/* Ajuste responsivo */
 @media (max-width: 768px) {
   .container {
     padding: 10px;

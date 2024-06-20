@@ -29,6 +29,10 @@ const AuthService = {
             localStorage.removeItem("jwt");
             return false;
         }
+        const decodedToken = jwtDecode(token);
+        if (!decodedToken.validado) {
+            return false;
+        }
 
         return true;
     }

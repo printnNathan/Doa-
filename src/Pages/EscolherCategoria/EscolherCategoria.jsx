@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar/Header';
 import Esferas from '../../components/Esferas/Esferas';
 import styles from './EscolherCategoria.module.css';
+import AuthService from '../../Services/AuthService';
+import ApiService from '../../Services/ApiService';
 
 export default function EscolherCategoria() {
   const navigate = useNavigate();
   const tipoTela = 'escolherCategoria';
+
+  
+  useEffect(() => {
+    async function fetchData() {
+            const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
+            if (!usuarioEstaLogado) {
+                navigate("/login");
+                return;
+            }    
+    }
+
+    fetchData();
+}, [navigate]);
 
   const handleNavigate = (id_tipo) => {
     console.log(`Navigating to RequisicaoDeServico with id_tipo: ${id_tipo}`);
