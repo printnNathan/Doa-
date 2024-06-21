@@ -14,7 +14,7 @@ export default function EscolherCategoria() {
   useEffect(() => {
     async function fetchData() {
             const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-            if (!usuarioEstaLogado) {
+            if (usuarioEstaLogado) {
                 navigate("/login");
                 return;
             }    
