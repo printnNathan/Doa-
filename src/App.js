@@ -9,7 +9,6 @@ import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 import Perfil from './Pages/CadastrarUsuario/CadastrarUsuario'; 
 import CardPerfil from './components/CardPerfil/CardPerfil';
-import AguardandoValidacao from './Pages/AguardandoValidacao/AguardandoValidacao';
 
 function App() {
   const router = createBrowserRouter([
@@ -20,10 +19,6 @@ function App() {
     {
       path: "/CardPerfil",
       element: <CardPerfil/>,
-    },
-    {
-      path: "/AguardandoValidacao",
-      element: <AguardandoValidacao/>,
     },
     {
       path: "/Perfil",
