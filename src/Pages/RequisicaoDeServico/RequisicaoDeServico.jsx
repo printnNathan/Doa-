@@ -21,7 +21,7 @@ const RequisicaoDeServico = () => {
   useEffect(() => {
     async function fetchData() {
       const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-      if (!usuarioEstaLogado) {
+      if (usuarioEstaLogado) {
           navigate("/login");
           return;
       }    

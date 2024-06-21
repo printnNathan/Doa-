@@ -16,7 +16,7 @@ const Home = () => {
         async function fetchData() {
             try {
                 const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-                if (!usuarioEstaLogado) {
+                if (usuarioEstaLogado) {
                     navigate("/login");
                     return;
                 }
