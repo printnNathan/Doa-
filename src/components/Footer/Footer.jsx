@@ -26,9 +26,9 @@ function Footer2(doacao) {
       <div>
         <h2>Contato</h2>
         <ul>
-        <li><a href="#"><FontAwesomeIcon icon={faMap} /> Endereço: Av. Exemplo, 123 - Cidade  </a></li>
-          <li><a href="#"><FontAwesomeIcon icon={faEnvelope} /> Email: exemplo@email.com </a></li>
-          <li><a href="#"><FontAwesomeIcon icon={faPhone} />  Telefone: (00) 1234-5678  </a></li>
+        <li><a href="#"><FontAwesomeIcon icon={faMap} /> Endereço: Av. Ermelinda, 123 - São Paulo  </a></li>
+          <li><a href="#"><FontAwesomeIcon icon={faEnvelope} /> Email: doamais@email.com </a></li>
+          <li><a href="#"><FontAwesomeIcon icon={faPhone} />  Telefone: (11) 4002-8922  </a></li>
         </ul>
       </div>
     </footer>
