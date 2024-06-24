@@ -9,11 +9,7 @@ import EscolherCategoria from './Pages/EscolherCategoria/EscolherCategoria';
 import MeusAnuncios from './Pages/MeusAnuncios/MeusAnuncios';
 import Perfil from './Pages/CadastrarUsuario/CadastrarUsuario'; 
 import CardPerfil from './components/CardPerfil/CardPerfil';
-<<<<<<< HEAD
-import AguardandoValidacao from './Pages/AguardandoValidacao/AguardandoValidacao';
 import RequisicaoOutros from './Pages/RequisicaoOutros/RequisicaoOutros';
-=======
->>>>>>> 37dedc2ae3a27164404f0c5137b28fcde96e8a82
 
 function App() {
   const router = createBrowserRouter([
@@ -26,13 +22,6 @@ function App() {
       element: <CardPerfil />,
     },
     {
-<<<<<<< HEAD
-      path: "/AguardandoValidacao",
-      element: <AguardandoValidacao />,
-    },
-    {
-=======
->>>>>>> 37dedc2ae3a27164404f0c5137b28fcde96e8a82
       path: "/Perfil",
       element: <Perfil />,
     },
