@@ -18,7 +18,6 @@ const RequisicaoDeServico = () => {
   const [imagens, setImagens] = useState([]);
   const [previa, setPrevia] = useState([]);
 
-
   const tipoTela = 'RequisicaoDeServico';
 
   const handleFileChange = (event) => {
