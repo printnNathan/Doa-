@@ -15,10 +15,14 @@ export default function CardDoacao({ doacao, ativo, onToggleStatus, abrirModal }
             setLoading(false);
         }
     };
+
+    // Verifica se doacao e doacao.imagensPedido existem antes de acessar doacao.imagensPedido[0].link
+    const imagemSrc = doacao?.imagensPedido?.[0]?.link ?? "";
+
     return (
         <div className={Styles.container} onClick={() => abrirModal(doacao)}>
             <div className={Styles.imageContainer}>
-                <img className={Styles.image} src={doacao.imagensPedido[0].link ?? ""} />
+                <img className={Styles.image} src={imagemSrc} alt="Imagem da doação" />
             </div>
             <div className={Styles.content}>
                 <div className={Styles.textContainer}>
@@ -38,4 +42,5 @@ export default function CardDoacao({ doacao, ativo, onToggleStatus, abrirModal }
         </div>
     );
 }
+
 

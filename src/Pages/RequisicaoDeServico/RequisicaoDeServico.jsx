@@ -18,23 +18,6 @@ const RequisicaoDeServico = () => {
   const [imagens, setImagens] = useState([]);
   const [previa, setPrevia] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const usuarioEstaLogado = AuthService.VerificarSeUsuarioEstaLogado();
-      if (!usuarioEstaLogado) {
-        navigate("/login");
-      }    
-    }
-
-    if (!id_tipo) {
-      console.error('id_tipo não fornecido, redirecionando...');
-      navigate('/EscolherCategoria');
-    } else {
-      console.log(`Tipo ID recebido: ${id_tipo}`);
-    }
-    
-    fetchData();
-  }, [id_tipo, navigate]);
 
   const tipoTela = 'RequisicaoDeServico';
 
