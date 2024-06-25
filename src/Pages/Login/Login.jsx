@@ -50,7 +50,7 @@ export default function Cadastro() {
                 ToastService.Error("E-mail e/ou senha inválidos!");
             } 
             else if (error.response.status === 428) {
-                ToastService.Error("Sua conta difjsoldfj");
+                ToastService.Error("Sua conta ainda não foi verificada. Retorne daqui a 24h⏰");
             } else {
                 ToastService.Error("Houve um erro ao realizar o login. Tente novamente mais tarde.");
             }
