@@ -8,6 +8,9 @@ import styles from "./Header.module.css";
 import { Link } from 'react-router-dom';
 import { faPortrait } from '@fortawesome/free-solid-svg-icons';
 
+
+
+
 function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -22,7 +25,7 @@ function Header() {
               <FontAwesomeIcon icon={faList} /> Meus Anúncios
             </Link>
             <Link to="/EscolherCategoria">
-              <button className={styles.anunciar}>+ Anunciar</button>
+              <button className={styles.anunciar}>Anunciar</button>
             </Link>
           </Nav>
         </Navbar.Collapse>

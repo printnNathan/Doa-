@@ -15,6 +15,7 @@ const AuthService = {
 
     try {
       const userData = jwtDecode(token);
+      console.log(userData);
       return userData;
     } catch (error) {
       console.error("Erro ao decodificar token:", error);

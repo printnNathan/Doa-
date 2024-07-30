@@ -105,7 +105,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='celular' value={celular} onChange={(e) => setCelular(e.target.value)} className={styles.inputForm} />
             </div>
 
-            <div>
+            <div className={styles.Titulos}>
                 <span>E-Mail</span>
             </div>
 
@@ -113,15 +113,15 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='E-mail' value={email} onChange={(e) => setEmail(e.target.value)}  className={styles.inputForm}/>
             </div>
 
-            <div>
-                 <span>Senha</span>
+            <div className={styles.Titulos}>
+                 <span >Senha</span>
             </div>
 
             <div className={"input-container"}>
             <input placeholder='Senha' type='Password' value={senha} onChange={(e) => setSenha(e.target.value)}  className={styles.inputForm}/>
             </div>
 
-            <div>
+            <div  className={styles.Titulos}>
             <span>Cep</span>
             </div>
 
@@ -129,7 +129,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='cep' value={cep} onChange={(e) => setCep(e.target.value)}  className={styles.inputForm}/>
             </div>
 
-            <div>
+            <div  className={styles.Titulos}>
             <span>Logradouro</span>
             </div>
 
@@ -137,7 +137,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='logradouro' value={logradouro} onChange={(e) => setLogradouro(e.target.value)} className={styles.inputForm} />
             </div>
 
-            <div>
+            <div  className={styles.Titulos}>
             <span>Numero</span>
             </div>
 
@@ -145,7 +145,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='numero' value={numero} onChange={(e) => setNumero(e.target.value)} className={styles.inputForm} />
             </div>
 
-            <div>
+            <div  className={styles.Titulos}>
             <span>Cidade</span>
             </div>
 
@@ -153,7 +153,7 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='cidade' value={cidade} onChange={(e) => setCidade(e.target.value)} className={styles.inputForm} />
             </div>
 
-            <div>
+            <div  className={styles.Titulos}>
             <span>Bairro</span>
             </div>
 
@@ -161,37 +161,44 @@ export default function ModalCadastroUsuario({ modalAberto, setModalAberto }) {
             <input placeholder='bairro' value={bairro} onChange={(e) => setBairro(e.target.value)} className={styles.inputForm} />
             </div>
 
-            <div>
-            <span>complemento</span>
+            <div  className={styles.Titulos}>
+            <span>Complemento</span>
             </div>
 
             <div className={"input-container"}>
             <input placeholder='complemento' value={complemento} onChange={(e) => setComplento(e.target.value)} className={styles.inputForm} />
             </div>
 
+            <div  className={styles.Titulos}>
             <span>Estado</span>
+            </div>
+        
             <div className={"input-container"}>
             <input placeholder='estado' value={estado} onChange={(e) => setEstado(e.target.value)} className={styles.inputForm} />
             </div>
 
+            <div  className={styles.Titulos}>
             <span>Biografia</span>
+            </div>
+
             <div className={"input-container"}>
             <input placeholder='biografia' value={biografia} onChange={(e) => setBiografia(e.target.value)} className={styles.inputForm} />
             </div>
             
-            <div>
+            <div  className={styles.Previa}>
                 <img className={styles.imagem} src={previa}/>
             </div>
 
-            <input type="file" accept="image/jpeg" onChange={handleFileChange} />
-
-
-            <div>
-            <button onClick={() => { setModalAberto(false) }}>Fechar</button>
+            <div className={styles.CadastrarFotodePerfil}>
+            <input className={styles.Loginimg} type="file" accept="image/jpeg" onChange={handleFileChange} />
             </div>
 
-            <div>
-            <button onClick={Cadastrar}>Cadastrar</button>
+            <div className={styles.Botaofechar}>
+            <button className={styles.ButtonClose} onClick={() => { setModalAberto(false) }}>Fechar</button>
+            </div>
+
+            <div className={styles.BotaoCadastrar}>
+            <button className={styles.ButtonLogin} onClick={Cadastrar}>Cadastrar</button>
             </div>
 
 

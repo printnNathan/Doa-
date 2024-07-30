@@ -3,57 +3,57 @@ body{
 }
 
 .Bola {
-    width: 150px; /* Largura da bola */
-    height: 150px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
+    width: 150px; 
+    height: 150px; 
+    background-color: #692cab6b; 
+    border-radius: 50%; 
+    position: absolute;
     top: 5px;
     margin-top: 50px;
     margin-left: 460px;
     z-index: -1;
 }
 .Bola2 {
-    width: 150px; /* Largura da bola */
-    height: 150px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
+    width: 150px; 
+    height: 150px; 
+    background-color: #692cab6b; 
+    border-radius: 50%;
+    position: absolute; 
     top: 50px;
     margin-top: 200px;
     margin-left: 920px;
     z-index: -100;
 }
 .Bola3 {
-    width: 150px; /* Largura da bola */
-    height: 150px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
+    width: 150px;
+    height: 150px;
+    background-color: #692cab6b; 
+    border-radius: 50%;
+    position: absolute;
     top: 50px;
     margin-top: 350px;
     margin-left: 460px;
     z-index: -100;
 }
 .Bola4 {
-    width: 200px; /* Largura da bola */
-    height: 200px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
-    right: -90px; /* Empurra a bola para fora da tela na direção direita */
-    top: 550px; /* Posiciona a bola 550px do topo da tela */
+    width: 200px; 
+    height: 200px; 
+    background-color: #692cab6b; 
+    border-radius: 50%; 
+    position: absolute; 
+    right: 10px; 
+    top: 550px;
     z-index: -100;
 }
 
 .Bola5 {
-    width: 200px; /* Largura da bola */
-    height: 200px; /* Altura da bola (igual à largura para torná-la redonda) */
-    background-color: #692cab6b; /* Cor da bola com 50% de opacidade */
-    border-radius: 50%; /* Torna a borda do elemento redonda, criando uma bola */
-    position: absolute; /* Posicionamento absoluto */
-    top: -100px; /* Posiciona a bola 100px acima do topo da tela */
-    margin-top: 0; /* Reseta a margem superior */
-    margin-left: -80px; /* Posiciona a bola 100px para a esquerda */
+    width: 200px; 
+    height: 200px;
+    background-color: #692cab6b;
+    border-radius: 50%;
+    position: absolute; 
+    top: -10px;
+    margin-top: 0; 
+    margin-left: 0px; 
     z-index: -1;
 }

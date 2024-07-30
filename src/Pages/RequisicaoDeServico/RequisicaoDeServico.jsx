@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './Requisicaodeservico.module.css';
 import Esferas from "../../components/Esferas/Esferas";
@@ -8,17 +8,34 @@ import ApiService from "../../Services/ApiService";
 import ToastService from "../../Services/ToastService";
 import AuthService from "../../Services/AuthService";
 import { Link } from 'react-router-dom';
+import 'react-slideshow-image/dist/styles.css';
+import { CCarousel, CCarouselItem, CImage } from '@coreui/react';
+import 'react-slideshow-image/dist/styles.css';
+
 
 const RequisicaoDeServico = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { id_tipo } = location.state || {}; 
+  const { id_tipo } = location.state || {};
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [imagens, setImagens] = useState([]);
   const [previa, setPrevia] = useState([]);
 
   const tipoTela = 'RequisicaoDeServico';
+
+  /*
+    useEffect(() => {
+      ApiService.get('https://localhost:7284/api')
+       .then(response => {
+        setImagens(response.data);
+       })
+       .catch(error => {
+        console.error('Erro ao buscar imagens:', error)
+       })
+    }, [])
+  
+  */
 
   const handleFileChange = (event) => {
     const selectedFiles = event.target.files;
@@ -78,8 +95,41 @@ const RequisicaoDeServico = () => {
   return (
     <div>
       <NavBar />
+
       <div className={styles.container}>
         <h1 className={styles.text}>Agora, compartilhe algumas informações sobre seu produto</h1>
+
+        {/* 
+        <div>
+          <Slide>
+            <div className="each-slide-effect">
+              {previa.map((src, index) => (
+                <img key={index}  className="each-slide-effect" src={src} alt={`Preview ${index + 1}`} />
+              ))}
+            </div>
+          </Slide>
+        </div>
+*/}
+
+        <div className={styles.images}>
+          <CCarousel controls>
+            {previa?.map((src, index) => (
+              <CCarouselItem key={index}>
+                <CImage src={src} alt={`Preview ${index + 1}`} />
+              </CCarouselItem>
+            ))}
+          </CCarousel>
+        </div>
+
+        <div className={styles.formGroup}>
+          <input
+            multiple
+            type="file"
+            accept="image/jpeg"
+            onChange={handleFileChange}
+          />
+        </div>
+
         <div className={styles.form}>
           <div className={styles.formGroup}>
             <span className={styles.label}>TÍTULO:</span>
@@ -101,19 +151,7 @@ const RequisicaoDeServico = () => {
               onChange={(e) => setDescricao(e.target.value)}
             />
           </div>
-          <div className={styles.previewContainer}>
-            {previa.map((src, index) => (
-              <img key={index} className={styles.previewImage} src={src} alt={`Preview ${index + 1}`} />
-            ))}
-          </div>
-          <div className={styles.formGroup}>
-            <input
-              multiple
-              type="file"
-              accept="image/jpeg"
-              onChange={handleFileChange}
-            />
-          </div>
+
           <div className={styles.formGroup}>
             <form onSubmit={handleSubmit}>
               <h5 className={styles.label}>CONTATO</h5>
@@ -136,7 +174,7 @@ const RequisicaoDeServico = () => {
         </div>
       </div>
       <Footer />
-      <Esferas tipoTela={tipoTela} /> 
+      <Esferas tipoTela={tipoTela} />
     </div>
   );
 }

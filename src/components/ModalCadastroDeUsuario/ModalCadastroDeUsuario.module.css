@@ -6,7 +6,8 @@
 }
 
 .Titulos{
-    padding-bottom: 12px;
+   padding-top: 12px;
+
 }
 
 .imagem{
@@ -14,4 +15,39 @@
     height: 100px;
 }
 
+.Previa{
+    padding-top: 14px;
+}
 
+
+.CadastrarFotodePerfil{
+    padding-top: 12px;
+    padding-bottom: 0;
+}
+
+.Botaofechar{
+    padding: 12px;
+    margin-left: -12px;
+
+}
+
+.BotaoCadastar{
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid black; 
+}
+
+.ButtonClose{
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.ButtonLogin{
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.loginimg{
+    border-radius: 4px;
+    padding: 3px;
+}
